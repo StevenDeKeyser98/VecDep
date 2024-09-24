@@ -1,6 +1,6 @@
 #' @title bwd1asR0
 #'
-#' @description Given a q-dimensional random vector \eqn{\mathbf{X} = (\mathbf{X}_{1},...,\mathbf{X}_{k})} with \eqn{\mathbf{X}_i} a \eqn{d_{i}} dimensional random vector, i.e., \eqn{q = d_{1} + ... + d_{k}},
+#' @description Given a q-dimensional random vector \eqn{\mathbf{X} = (\mathbf{X}_{1},...,\mathbf{X}_{k})} with \eqn{\mathbf{X}_{i}} a \eqn{d_{i}} dimensional random vector, i.e., \eqn{q = d_{1} + ... + d_{k}},
 #' this function simulates a sample from the asymptotic distribution of the correlation-based Bures-Wasserstein coefficient \eqn{\mathcal{D}_{1}}
 #' between \eqn{\mathbf{X}_1,...,\mathbf{X}_k} given the entire correlation matrix \eqn{\mathbf{R}} is equal to \eqn{\mathbf{R}_{0}} (correlation matrix under independence of \eqn{\mathbf{X}_{1},...,\mathbf{X}_{k}}).
 #' The argument dim should be in ascending order.
