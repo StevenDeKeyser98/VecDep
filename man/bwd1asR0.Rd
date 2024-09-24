@@ -19,7 +19,7 @@ A sample of size M from the asymptotic distribution of the first Bures-Wasserste
 \description{
 Given a q-dimensional random vector \eqn{\mathbf{X} = (\mathbf{X}_{1},...,\mathbf{X}_{k})} with \eqn{\mathbf{X}_{i}} a \eqn{d_{i}} dimensional random vector, i.e., \eqn{q = d_{1} + ... + d_{k}},
 this function simulates a sample from the asymptotic distribution of the correlation-based Bures-Wasserstein coefficient \eqn{\mathcal{D}_{1}}
-between \eqn{\mathbf{X}_1,...,\mathbf{X}_k} given the entire correlation matrix \eqn{\mathbf{R}} is equal to \eqn{\mathbf{R}_{0}} (correlation matrix under independence of \eqn{\mathbf{X}_{1},...,\mathbf{X}_{k}}).
+between \eqn{\mathbf{X}_{1},...,\mathbf{X}_{k}} given the entire correlation matrix \eqn{\mathbf{R}} is equal to \eqn{\mathbf{R}_{0}} (correlation matrix under independence of \eqn{\mathbf{X}_{1},...,\mathbf{X}_{k}}).
 The argument dim should be in ascending order.
 This function requires importation of the python modules "numpy" and "scipy".
 }
