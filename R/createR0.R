@@ -6,7 +6,14 @@
 #' @param R  The correlation matrix of \eqn{\mathbf{X}}.
 #' @param dim  The vector of dimensions \eqn{(d_{1},...,d_{k})}.
 #'
-#' @return The first Bures-Wasserstein dependence coefficient \eqn{\mathcal{D}_{1}} between \eqn{\mathbf{X}_{1},...,\mathbf{X}_{k}}.
+#' @details Given a correlation matrix \deqn{\mathbf{R} = \begin{pmatrix} \mathbf{R}_{11} & \mathbf{R}_{12} & \cdots & \mathbf{R}_{1k} \\
+#'                                                              \mathbf{R}_{12}^{\text{T}} & \mathbf{R}_{22} & \cdots & \mathbf{R}_{2k} \\
+#'                                                              \vdots & \vdots & \ddots & \vdots \\
+#'                                                              \mathbf{R}_{1k}^{\text{T}} & \mathbf{R}_{2k}^{\text{T}} & \cdots & \mathbf{R}_{kk} \end{pmatrix},}
+#'         the matrix \eqn{\mathbf{R}_{0} = \text{diag}(\mathbf{R}_{11}, \dots, \mathbf{R}_{kk})}, being the correlation matrix
+#'         under independence of \eqn{\mathbf{X}_{1}, \dots, \mathbf{X}_{k}}, is returned.
+#'
+#' @return The correlation matrix under independence of \eqn{\mathbf{X}_{1}, \dots, \mathbf{X}_{n}}.
 #' @examples
 #' q = 10
 #' dim = c(1,2,3,4)

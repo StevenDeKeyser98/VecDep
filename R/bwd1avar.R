@@ -1,14 +1,31 @@
 #' @title bwd1avar
 #'
 #' @description Given a q-dimensional random vector \eqn{\mathbf{X} = (\mathbf{X}_{1},...,\mathbf{X}_{k})} with \eqn{\mathbf{X}_{i}} a \eqn{d_{i}} dimensional random vector, i.e., \eqn{q = d_{1} + ... + d_{k}},
-#' this function computes the asymptotic variance of the correlation-based Bures-Wasserstein coefficient \eqn{\mathcal{D}_{1}}
+#' this function computes the asymptotic variance of the plug-in estimator for the correlation-based Bures-Wasserstein coefficient \eqn{\mathcal{D}_{1}}
 #' between \eqn{\mathbf{X}_{1},...,\mathbf{X}_{k}} given the entire correlation matrix \eqn{\mathbf{R}}.
 #' The argument dim should be in ascending order.
 #'
 #' @param R  The correlation matrix of \eqn{\mathbf{X}}.
 #' @param dim  The vector of dimensions \eqn{(d_{1},...,d_{k})}, in ascending order.
 #'
-#' @return The asymptotic variance of the first Bures-Wasserstein dependence coefficient \eqn{\mathcal{D}_{1}} between \eqn{\mathbf{X}_{1},...,\mathbf{X}_{k}}.
+#' @details
+#' The asymptotic variance of the plug-in estimator \eqn{\mathcal{D}_{1}(\widehat{\mathbf{R}}_{n})} is computed at \eqn{\mathbf{R}},
+#' where \eqn{\widehat{\mathbf{R}}_{n}} is the sample matrix of normal scores rank correlations.
+#' The underlying assumption is that the copula of \eqn{\mathbf{X}} is Gaussian.
+#'
+#' @return The asymptotic variance of the plug-in estimator for the first Bures-Wasserstein dependence coefficient \eqn{\mathcal{D}_{1}} between \eqn{\mathbf{X}_{1},...,\mathbf{X}_{k}}.
+#'
+#' @references
+#' De Keyser, S. & Gijbels, I. (2024).
+#' High-dimensional copula-based Wasserstein dependence.
+#' doi: https://doi.org/10.48550/arXiv.2404.07141.
+#'
+#' @seealso \code{\link{bwd1}} for the calculation of the first Bures-Wasserstein dependence coefficient \eqn{\mathcal{D}_{1}},
+#'          \code{\link{bwd2}} for the calculation of the second Bures-Wasserstein dependence coefficient \eqn{\mathcal{D}_{2}},
+#'          \code{\link{bwd2avar}} for the calculation of the asymptotic variance of the plug-in estimator for \eqn{\mathcal{D}_{2}},
+#'          \code{\link{bwd1asR0}} for sampling from the asymptotic distribution of the plug-in estimator for \eqn{\mathcal{D}_{1}} under the hypothesis of independence between \eqn{\mathbf{X}_{1},\dots,\mathbf{X}_{k}},
+#'          \code{\link{bwd2asR0}} for sampling from the asymptotic distribution of the plug-in estimator for \eqn{\mathcal{D}_{2}} under the hypothesis of independence between \eqn{\mathbf{X}_{1},\dots,\mathbf{X}_{k}}.
+#'
 #' @examples
 #' q = 10
 #' dim = c(1,2,3,4)

@@ -7,7 +7,28 @@
 #' @param omegas  A grid of candidate penalty parameters in \eqn{[0,1]}.
 #' @param K       The number of folds to be used.
 #'
+#' @details  The loss function is the Gaussian log-likelihood, i.e., given an estimated (penalized)
+#'           Gaussian copula correlation matrix (normal scores rank correlation matrix) \eqn{\widehat{\mathbf{R}}_{n}^{(-j)}} computed on a training set leaving out fold j, and
+#'           \eqn{\widehat{\mathbf{R}}_{n}^{(j)}} the empirical (non-penalized)
+#'           Gaussian copula correlation matrix computed on test fold j, we search for the tuning parameter that minimizes
+#'           \deqn{\sum_{j = 1}^{K} \left [\ln \left ( \left | \widehat{\mathbf{R}}_{n}^{(-j)} \right | \right ) + \text{tr} \left \{\widehat{\mathbf{R}}_{n}^{(j)} \left (\widehat{\mathbf{R}}_{n}^{(-j)} \right )^{-1} \right \} \right ].}
+#'           The underlying assumption is that the copula of \eqn{\mathbf{X}} is Gaussian.
+#'
 #' @return The optimal ridge penalty parameter minimizing the cross-validation error.
+#'
+#' @references
+#' De Keyser, S. & Gijbels, I. (2024).
+#' High-dimensional copula-based Wasserstein dependence.
+#' doi: https://doi.org/10.48550/arXiv.2404.07141.
+#'
+#' Warton, D.I. (2008).
+#' Penalized normal likelihood and ridge regularization of correlation and covariance matrices.
+#' Journal of the American Statistical Association 103(481):340-349.
+#' doi: https://doi.org/10.1198/016214508000000021.
+#'
+#' @seealso \code{\link{estR}} for computing the (Ridge penalized) empirical Gaussian copula correlation matrix.
+#'
+#'
 #' @examples
 #' q = 10
 #' n = 50

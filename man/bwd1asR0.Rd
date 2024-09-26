@@ -14,14 +14,19 @@ bwd1asR0(R, dim, M)
 \item{M}{The sample size.}
 }
 \value{
-A sample of size M from the asymptotic distribution of the first Bures-Wasserstein dependence coefficient \eqn{\mathcal{D}_{1}} under independence of \eqn{\mathbf{X}_{1},...,\mathbf{X}_{k}}.
+A sample of size M from the asymptotic distribution of the plug-in estimator for the first Bures-Wasserstein dependence coefficient \eqn{\mathcal{D}_{1}} under independence of \eqn{\mathbf{X}_{1},...,\mathbf{X}_{k}}.
 }
 \description{
 Given a q-dimensional random vector \eqn{\mathbf{X} = (\mathbf{X}_{1},...,\mathbf{X}_{k})} with \eqn{\mathbf{X}_{i}} a \eqn{d_{i}} dimensional random vector, i.e., \eqn{q = d_{1} + ... + d_{k}},
-this function simulates a sample from the asymptotic distribution of the correlation-based Bures-Wasserstein coefficient \eqn{\mathcal{D}_{1}}
+this function simulates a sample from the asymptotic distribution of the plug-in estimator for the correlation-based Bures-Wasserstein coefficient \eqn{\mathcal{D}_{1}}
 between \eqn{\mathbf{X}_{1},...,\mathbf{X}_{k}} given the entire correlation matrix \eqn{\mathbf{R}} is equal to \eqn{\mathbf{R}_{0}} (correlation matrix under independence of \eqn{\mathbf{X}_{1},...,\mathbf{X}_{k}}).
 The argument dim should be in ascending order.
 This function requires importation of the python modules "numpy" and "scipy".
+}
+\details{
+A sample of size M is drawn from the asymptotic distribution of the plug-in estimator \eqn{\mathcal{D}_{1}(\widehat{\mathbf{R}}_{n})} at \eqn{\mathbf{R}_{0} = \text{diag}(\mathbf{R}_{11}, \dots, \mathbf{R}_{kk})},
+where \eqn{\widehat{\mathbf{R}}_{n}} is the sample matrix of normal scores rank correlations.
+The underlying assumption is that the copula of \eqn{\mathbf{X}} is Gaussian.
 }
 \examples{
 q = 5
@@ -29,4 +34,16 @@ dim = c(2,3)
 R = 0.5^(abs(matrix(1:q-1,nrow = q, ncol = q, byrow = TRUE) - (1:q-1))) # AR(1) correlation matrix with correlation 0.5
 R0 = createR0(R,dim)
 sample = bwd1asR0(R0,dim,1000)
+}
+\references{
+De Keyser, S. & Gijbels, I. (2024).
+High-dimensional copula-based Wasserstein dependence.
+doi: https://doi.org/10.48550/arXiv.2404.07141.
+}
+\seealso{
+\code{\link{bwd1}} for the calculation of the first Bures-Wasserstein dependence coefficient \eqn{\mathcal{D}_{1}},
+         \code{\link{bwd2}} for the calculation of the second Bures-Wasserstein dependence coefficient \eqn{\mathcal{D}_{2}},
+         \code{\link{bwd1avar}} for the calculation of the asymptotic variance of the plug-in estimator for \eqn{\mathcal{D}_{1}},
+         \code{\link{bwd2avar}} for the calculation of the asymptotic variance of the plug-in estimator for \eqn{\mathcal{D}_{2}},
+         \code{\link{bwd2asR0}} for sampling from the asymptotic distribution of the plug-in estimator for \eqn{\mathcal{D}_{2}} under the hypothesis of independence between \eqn{\mathbf{X}_{1},\dots,\mathbf{X}_{k}}.
 }
