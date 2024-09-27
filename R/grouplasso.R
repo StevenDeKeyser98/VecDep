@@ -1,6 +1,6 @@
 #' @title grouplasso
 #'
-#' @description Given a \eqn{q}-dimensional random vector \eqn{\mathbf{X} = (\mathbf{X}_{1},...,\mathbf{X}_{k})} with \eqn{\mathbf{X}_{i}} a \eqn{d_{i}} dimensional random vector, i.e., \eqn{q = d_{1} + ... + d_{k}},
+#' @description Given a \eqn{q}-dimensional random vector \eqn{\mathbf{X} = (\mathbf{X}_{1},...,\mathbf{X}_{k})} with \eqn{\mathbf{X}_{i}} a \eqn{d_{i}}-dimensional random vector, i.e., \eqn{q = d_{1} + ... + d_{k}},
 #' this function computes the empirical penalized Gaussian copula covariance matrix with the Gaussian log-likelihood
 #' plus the grouped lasso penalty as objective function, where the groups are the diagonal and off-diagonal blocks corresponding to the different
 #' random vectors.

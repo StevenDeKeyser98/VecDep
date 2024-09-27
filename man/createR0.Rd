@@ -15,7 +15,7 @@ createR0(R, dim)
 The correlation matrix under independence of \eqn{\mathbf{X}_{1}, \dots, \mathbf{X}_{n}}.
 }
 \description{
-Given a \eqn{q}-dimensional random vector \eqn{\mathbf{X} = (\mathbf{X}_{1},...,\mathbf{X}_{k})} with \eqn{\mathbf{X}_{i}} a \eqn{d_{i}} dimensional random vector, i.e., \eqn{q = d_{1} + ... + d_{k}},
+Given a \eqn{q}-dimensional random vector \eqn{\mathbf{X} = (\mathbf{X}_{1},...,\mathbf{X}_{k})} with \eqn{\mathbf{X}_{i}} a \eqn{d_{i}}-dimensional random vector, i.e., \eqn{q = d_{1} + ... + d_{k}},
 this function constructs the correlation matrix under independence of \eqn{\mathbf{X}_{1},...,\mathbf{X}_{k}}, given the entire correlation matrix \eqn{\mathbf{R}}.
 }
 \details{

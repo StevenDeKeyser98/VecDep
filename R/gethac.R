@@ -1,0 +1,94 @@
+#' @title gethac
+#'
+#' @description Given a \eqn{q}-dimensional random vector \eqn{\mathbf{X} = (\mathbf{X}_{1},...,\mathbf{X}_{k})} with \eqn{\mathbf{X}_{i}} a \eqn{d_{i}}-dimensional random vector, i.e., \eqn{q = d_{1} + ... + d_{k}},
+#' this function construct a hac object (hierarchical Archimedean copula) with two nesting levels given
+#' the specified dimensions and parameters of the root and \eqn{k} child copulas.
+#'
+#' @param dim  The vector of dimensions \eqn{(d_{1},...,d_{k})}.
+#' @param thetas  The parameters \eqn{(\theta_{0}, \theta_{1}, \dots, \theta_{k})}.
+#' @param type The type of Archimedean copula.
+#'
+#' @details
+#' A hierarchical (or nested) Archimedean copula \eqn{C} with two nesting levels and \eqn{k} child copulas is given by
+#' \deqn{C(\mathbf{u}) = C_{0} \left (C_{1}(\mathbf{u}_{1}), \dots, C_{k}(\mathbf{u}_{k}) \right ),}
+#' where \eqn{\mathbf{u} = (\mathbf{u}_{1}, \dots, \mathbf{u}_{k}) \in \mathbb{R}^{q}} with \eqn{\mathbf{u}_{i} \in \mathbb{R}^{d_{i}}} for \eqn{i = 1, \dots, k}.
+#' The (\eqn{k}-dimensional) copula \eqn{C_{0}} is called the root copula, and the (\eqn{d_{i}}-dimensional) copulas \eqn{C_{i}} are the child copulas.
+#'
+#' They all belong to the class of Archimedean copulas, and we denote \eqn{\theta_{i}} for the parameter of \eqn{C_{i}} for \eqn{i = 0,1,\dots,k}.
+#' A sufficient condition to guarantee that \eqn{C} indeed is a copula, is that \eqn{C_{0},C_{1}, \dots, C_{k}} are all a particular member of this class of Archimedean copulas (e.g., Clayton),
+#' and such that \eqn{\theta_{0} \leq \theta_{i}} for \eqn{i = 1, \dots, k} (sufficient nesting condition).
+#'
+#' When a certain child copula \eqn{C_{i}} is one dimensional (\eqn{\mathbf{X}_{i}} is one dimensional), \eqn{\theta_{i}} can be any number.
+#' It must hold that length(thetas) \eqn{ =  k + 1}.
+#'
+#' Many functions for working with nested Archimedean copulas are developed in the R package 'HAC',
+#' and the function gethac utilizes these functions to quickly construct a hac object that is useful for modelling
+#' the dependence between \eqn{\mathbf{X}_{1}, \dots, \mathbf{X}_{k}}.
+#' See also the package HAC for the different possibilities of type (specified by a number in \eqn{\{1,\dots,10\}}).
+#'
+#'
+#'@return A hac object with two nesting levels and \eqn{k} child copulas.
+#'
+#' @references
+#' De Keyser, S. & Gijbels, I. (2024).
+#' Parametric dependence between random vectors via copula-based divergence measures.
+#' Journal of Multivariate Analysis 203:105336.
+#' doi: https://doi.org/10.1016/j.jmva.2024.105336.
+#'
+#' Okhrin, O., Ristig, A. & Chen, G. (2024).
+#' HAC: estimation, simulation and visualization of hierarchical Archimedean copulae (HAC), R package version 1.1-1.
+#' url:  https://CRAN.R-project.org/package=HAC.
+#'
+#' @examples
+#' dim = c(3,5,1,2)
+#' thetas = c(2,2,3,1,4)
+#' HAC = gethac(dim,thetas,type = 1) # 11 dimensional nested Gumbel copula with (theta_0,theta_1,theta_2,theta_3,theta_4) = (2,2,3,1,4)
+#'                                   # where the value of theta_3 could be anything, because the third random vector is one dimensional
+#'
+#' @export
+
+
+gethac = function(dim, thetas, type){
+
+  k = length(dim) # Amount of random vectors
+
+  tree_list = vector(mode = "list", length = k+1) # Empty list
+  start = 1 # Index corresponding to first position of current random vector
+
+  for(i in 1:k){
+
+    sumdim = sum(dim[1:i]) # Index corresponding to last position of current random vector
+
+    if(dim[i] == 1){ # When X_i is one dimensional
+
+      child = c(paste("X",toString(start:sumdim),sep = "")) # Child copula is one dimensional
+
+    } else{
+
+      child = vector(mode = "list", length = dim[i]) # List for child copula
+      pos = 1
+
+      for(j in start:sumdim){
+
+        child[[pos]] = paste("X",toString(j),sep = "") # Variables belonging to child copula
+        pos = pos + 1
+
+      }
+
+      child[[dim[i]+1]] = thetas[i+1] # Parameter of child copula
+
+    }
+
+    tree_list[[i]] = child # Add child copula to hierarcical structure
+    start = sumdim + 1 # Update index
+
+  }
+
+  tree_list[[k+1]] = thetas[1] # Parameter of root copula
+  cop = HAC::hac(type = type, tree = tree_list) # Construct HAC object
+
+  return(cop)
+
+}
+
+
