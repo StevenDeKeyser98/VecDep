@@ -6,7 +6,27 @@
 #' @param R  The correlation matrix of \eqn{\mathbf{X}}.
 #' @param dim  The vector of dimensions \eqn{(d_{1},...,d_{k})}.
 #'
+#' @details
+#' Given a correlation matrix \deqn{\mathbf{R} = \begin{pmatrix} \mathbf{R}_{11} & \mathbf{R}_{12} & \cdots & \mathbf{R}_{1k} \\
+#'                                                              \mathbf{R}_{12}^{\text{T}} & \mathbf{R}_{22} & \cdots & \mathbf{R}_{2k} \\
+#'                                                              \vdots & \vdots & \ddots & \vdots \\
+#'                                                              \mathbf{R}_{1k}^{\text{T}} & \mathbf{R}_{2k}^{\text{T}} & \cdots & \mathbf{R}_{kk} \end{pmatrix},}
+#' the Hellinger distance equals \deqn{\mathcal{D}_{(\sqrt{t}-1)^{2}}^{\mathcal{N}}(\mathbf{R}) = 2 - 2 \frac{2^{q/2} |\mathbf{R}|^{1/4}}{\left |\mathbf{I}_{q} + \mathbf{R}_{0}^{-1} \mathbf{R} \right |^{1/2} \prod_{i = 1}^{k} \left | \mathbf{R}_{ii} \right |^{1/4}},}
+#' where \eqn{\mathbf{I}_{q}} denotes the identity matrix, and \eqn{\mathbf{R}_{0} = \text{diag}(\mathbf{R}_{11},\dots,\mathbf{R}_{kk})} is the correlation matrix under independence of \eqn{\mathbf{X}_{1}, \dots, \mathbf{X}_{k}}.
+#' The underlying assumption is that the copula of \eqn{\mathbf{X}} is Gaussian.
+#'
 #' @return The correlation-based Hellinger distance between \eqn{\mathbf{X}_{1},...,\mathbf{X}_{k}}.
+#'
+#' @references
+#' De Keyser, S. & Gijbels, I. (2024).
+#' Parametric dependence between random vectors via copula-based divergence measures.
+#' Journal of Multivariate Analysis 203:105336.
+#' doi: https://doi.org/10.1016/j.jmva.2024.105336.
+#'
+#' @seealso \code{\link{minormal}} for the computation of the mutual information,
+#'          \code{\link{Helnormalavar}} for the computation of the asymptotic variance of the plug-in estimator for the Hellinger distance.
+#'
+#'
 #' @examples
 #' q = 10
 #' dim = c(1,2,3,4)

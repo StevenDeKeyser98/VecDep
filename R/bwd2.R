@@ -14,7 +14,7 @@
 #' the coefficient \eqn{\mathcal{D}_{2}} equals \deqn{\mathcal{D}_{2}(\mathbf{R}) =
 #' \frac{d_{W}^{2}(\mathbf{R},\mathbf{R}_{0})}{\sup_{\mathbf{A} \in \Gamma(\mathbf{R}_{11}, \dots, \mathbf{R}_{kk})} d_{W}^{2}(\mathbf{A},\mathbf{R}_{0})},}
 #' where \eqn{d_{W}} stands for the Bures-Wasserstein distance, \eqn{\Gamma(\mathbf{R}_{11}, \dots, \mathbf{R}_{kk})} denotes the set of all correlation matrices
-#' with diagonal blocks \eqn{\mathbf{R}_{ii}} for \eqn{i = 1, \dots, k}, the matrix \eqn{\mathbf{R}_{0} = \text{diag}(\mathbf{R}_{11},\dots,\mathbf{R}_{kk})} is the correlation matrix under independence, and \eqn{\mathbf{I}_{q}} is the identity matrix.
+#' with diagonal blocks \eqn{\mathbf{R}_{ii}} for \eqn{i = 1, \dots, k}, and the matrix \eqn{\mathbf{R}_{0} = \text{diag}(\mathbf{R}_{11},\dots,\mathbf{R}_{kk})} is the correlation matrix under independence.
 #' The underlying assumption is that the copula of \eqn{\mathbf{X}} is Gaussian.
 #'
 #' @return The second Bures-Wasserstein dependence coefficient \eqn{\mathcal{D}_{2}} between \eqn{\mathbf{X}_{1},...,\mathbf{X}_{k}}.
@@ -24,8 +24,8 @@
 #' High-dimensional copula-based Wasserstein dependence.
 #' doi: https://doi.org/10.48550/arXiv.2404.07141.
 #'
-#' @seealso \code{\link{bwd1}} for the calculation of the first Bures-Wasserstein dependence coefficient \eqn{\mathcal{D}_{1}},
-#'          \code{\link{bwd2avar}} for the calculation of the asymptotic variance of the plug-in estimator for \eqn{\mathcal{D}_{2}}.
+#' @seealso \code{\link{bwd1}} for the computation of the first Bures-Wasserstein dependence coefficient \eqn{\mathcal{D}_{1}},
+#'          \code{\link{bwd2avar}} for the computation of the asymptotic variance of the plug-in estimator for \eqn{\mathcal{D}_{2}}.
 #'
 #' @examples
 #' q = 10

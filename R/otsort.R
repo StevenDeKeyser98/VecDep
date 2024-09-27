@@ -6,12 +6,16 @@
 #' @param sample A sample from a q-dimensional random vector \eqn{\mathbf{X}} (n x q matrix with observations in rows, variables in columns).
 #' @param dim  The vector of dimensions \eqn{(d_{1},...,d_{k})}, in order as given in sample.
 #'
+#' @details
+#' The columns of sample are rearranged such that the data corresponding to the random vector \eqn{\mathbf{X}_{i}}
+#' having the smallest dimension \eqn{d_{i}} comes first, then the random vector with second smallest dimension, and so on.
+#'
 #' @return A list with elements "sample" containing the ordered sample, and "dim" containing the ordered dimensions.
 #' @examples
 #' q = 10
 #' n = 50
 #' dim = c(2,3,1,4)
-#' sample = mvtnorm::rmvnorm(n,rep(0,q),diag(q),method = "chol") # Sample from multivariate normal distribution
+#' sample = mvtnorm::rmvnorm(n,rep(0,q),diag(q), method = "chol") # Sample from multivariate normal distribution
 #' ordered = otsort(sample,dim)
 
 #' @export

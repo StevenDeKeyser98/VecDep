@@ -18,10 +18,14 @@ A list with elements "sample" containing the ordered sample, and "dim" containin
 Given a q-dimensional random vector \eqn{\mathbf{X} = (\mathbf{X}_{1},...,\mathbf{X}_{k})} with \eqn{\mathbf{X}_{i}} a \eqn{d_{i}} dimensional random vector, i.e., \eqn{q = d_{1} + ... + d_{k}},
 this function sorts the columns (variables) of a sample of \eqn{\mathbf{X}} such that the dimensions are in ascending order.
 }
+\details{
+The columns of sample are rearranged such that the data corresponding to the random vector \eqn{\mathbf{X}_{i}}
+having the smallest dimension \eqn{d_{i}} comes first, then the random vector with second smallest dimension, and so on.
+}
 \examples{
 q = 10
 n = 50
 dim = c(2,3,1,4)
-sample = mvtnorm::rmvnorm(n,rep(0,q),diag(q),method = "chol") # Sample from multivariate normal distribution
+sample = mvtnorm::rmvnorm(n,rep(0,q),diag(q), method = "chol") # Sample from multivariate normal distribution
 ordered = otsort(sample,dim)
 }

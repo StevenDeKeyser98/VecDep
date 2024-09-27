@@ -18,9 +18,28 @@ The correlation-based Hellinger distance between \eqn{\mathbf{X}_{1},...,\mathbf
 Given a q-dimensional random vector \eqn{\mathbf{X} = (\mathbf{X}_{1},...,\mathbf{X}_{k})} with \eqn{\mathbf{X}_{i}} a \eqn{d_{i}} dimensional random vector, i.e., \eqn{q = d_{1} + ... + d_{k}},
 this function computes the correlation-based Hellinger distance between \eqn{\mathbf{X}_{1},...,\mathbf{X}_{k}} given the entire correlation matrix \eqn{\mathbf{R}}.
 }
+\details{
+Given a correlation matrix \deqn{\mathbf{R} = \begin{pmatrix} \mathbf{R}_{11} & \mathbf{R}_{12} & \cdots & \mathbf{R}_{1k} \\
+                                                             \mathbf{R}_{12}^{\text{T}} & \mathbf{R}_{22} & \cdots & \mathbf{R}_{2k} \\
+                                                             \vdots & \vdots & \ddots & \vdots \\
+                                                             \mathbf{R}_{1k}^{\text{T}} & \mathbf{R}_{2k}^{\text{T}} & \cdots & \mathbf{R}_{kk} \end{pmatrix},}
+the Hellinger distance equals \deqn{\mathcal{D}_{(\sqrt{t}-1)^{2}}^{\mathcal{N}}(\mathbf{R}) = 2 - 2 \frac{2^{q/2} |\mathbf{R}|^{1/4}}{\left |\mathbf{I}_{q} + \mathbf{R}_{0}^{-1} \mathbf{R} \right |^{1/2} \prod_{i = 1}^{k} \left | \mathbf{R}_{ii} \right |^{1/4}},}
+where \eqn{\mathbf{I}_{q}} denotes the identity matrix, and \eqn{\mathbf{R}_{0} = \text{diag}(\mathbf{R}_{11},\dots,\mathbf{R}_{kk})} is the correlation matrix under independence of \eqn{\mathbf{X}_{1}, \dots, \mathbf{X}_{k}}.
+The underlying assumption is that the copula of \eqn{\mathbf{X}} is Gaussian.
+}
 \examples{
 q = 10
 dim = c(1,2,3,4)
 R = 0.5^(abs(matrix(1:q-1,nrow = q, ncol = q, byrow = TRUE) - (1:q-1))) # AR(1) correlation matrix with correlation 0.5
 Helnormal(R,dim)
+}
+\references{
+De Keyser, S. & Gijbels, I. (2024).
+Parametric dependence between random vectors via copula-based divergence measures.
+Journal of Multivariate Analysis 203:105336.
+doi: https://doi.org/10.1016/j.jmva.2024.105336.
+}
+\seealso{
+\code{\link{minormal}} for the computation of the mutual information,
+         \code{\link{Helnormalavar}} for the computation of the asymptotic variance of the plug-in estimator for the Hellinger distance.
 }
