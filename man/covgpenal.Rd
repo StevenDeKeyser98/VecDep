@@ -21,7 +21,7 @@ covgpenal(
 
 \item{omegas}{The candidate values for the tuning parameter in \eqn{[0,\infty)}.}
 
-\item{derpenal}{The derivative of the penalty function to be used (default = scad with parameter a = 3.7).}
+\item{derpenal}{The derivative of the penalty function to be used (default = scad with parameter \eqn{a = 3.7}).}
 
 \item{nsteps}{The number of weighted covariance graphical lasso iterations (default = 1).}
 }
@@ -34,7 +34,7 @@ plus a lasso-type penalty as objective function.
 Model selection is done by choosing omega such that BIC is maximal.
 }
 \details{
-The aim is to solve/compute \deqn{\widehat{\boldsymbol{\Sigma}}_{\text{LT},n} = \text{arg min}_{\boldsymbol{\Sigma} > 0} \left \{
+The aim is to solve/compute \deqn{\widehat{\boldsymbol{\Sigma}}_{\text{LT},n} \in \text{arg min}_{\boldsymbol{\Sigma} > 0} \left \{
 \ln \left | \boldsymbol{\Sigma} \right | + \text{tr} \left (\boldsymbol{\Sigma}^{-1} \widehat{\boldsymbol{\Sigma}}_{n} \right ) + P_{\text{LT}}\left (\boldsymbol{\Sigma},\omega_{n} \right ) \right \},}
 where the penalty function \eqn{P_{\text{LT}}} is of lasso-type:
 \deqn{P_{\text{LT}} \left (\boldsymbol{\Sigma},\omega_{n} \right ) = \sum_{ij} p_{\omega_{n}} \left (\Delta_{ij} \left |\sigma_{ij} \right | \right ),}
@@ -43,8 +43,8 @@ for a certain penalty function \eqn{p_{\omega_{n}}} with penalty parameter \eqn{
 The matrix \eqn{\widehat{\boldsymbol{\Sigma}}_{n}} is the matrix of sample normal scores covariances.
 
 In case \eqn{p_{\omega_{n}}(t) = \omega_{n} t} is the lasso penalty, the implementation for the
-(weighted) covariance graphical lasso is available in the R package 'covglasso'. For general penalty functions,
-we perform a local linear approximation to the penalty function and do (nsteps, default = 1) weighted covariance graphical lasso optimizations.
+(weighted) covariance graphical lasso is available in the R package 'covglasso' (see the manual for further explanations). For general penalty functions,
+we perform a local linear approximation to the penalty function and iteratively do (nsteps, default = 1) weighted covariance graphical lasso optimizations.
 
 The default for the penalty function is the scad (derpenal = derivative of scad penalty), i.e.,
 \deqn{p_{\omega_{n},\text{scad}}^{\prime}(t) = \omega_{n} \left [1 \left (t \leq \omega_{n} \right ) + \frac{\max \left (a \omega_{n} - t,0 \right )}{\omega_{n} (a-1)} 1 \left (t > \omega_{n} \right ) \right ],}
@@ -75,11 +75,14 @@ High-dimensional copula-based Wasserstein dependence.
 doi: https://doi.org/10.48550/arXiv.2404.07141.
 
 Fop, M. (2021).
-covglasso: Sparse Covariance Matrix Estimation, R package version 1.0.3.
+covglasso: sparse covariance matrix estimation, R package version 1.0.3.
 url: https://CRAN.R-project.org/package=covglasso.
 
 Wang, H. (2014).
 Coordinate descent algorithm for covariance graphical lasso.
 Statistics and Computing 24:521-529.
 doi: https://doi.org/10.1007/s11222-013-9385-5.
+}
+\seealso{
+\code{\link{grouplasso}} for group lasso estimation of the normal scores rank correlation matrix.
 }

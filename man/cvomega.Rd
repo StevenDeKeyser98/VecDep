@@ -7,7 +7,7 @@
 cvomega(sample, omegas, K)
 }
 \arguments{
-\item{sample}{A sample from a q-dimensional random vector \eqn{\mathbf{X}} (n x q matrix with observations in rows, variables in columns).}
+\item{sample}{A sample from a \eqn{q}-dimensional random vector \eqn{\mathbf{X}} (\eqn{n \times q} matrix with observations in rows, variables in columns).}
 
 \item{omegas}{A grid of candidate penalty parameters in \eqn{[0,1]}.}
 

@@ -1,24 +1,24 @@
 #' @title estR
 #'
-#' @description This function computes the sample Q-scores rank correlation matrix.
+#' @description This function computes the sample \eqn{Q}-scores rank correlation matrix.
 #' A ridge penalization is possible.
 #'
-#' @param sample A sample from a q-dimensional random vector \eqn{\mathbf{X}} (n x q matrix with observations in rows, variables in columns).
+#' @param sample A sample from a \eqn{q}-dimensional random vector \eqn{\mathbf{X}} (\eqn{n \times q} matrix with observations in rows, variables in columns).
 #' @param omega  The penalty parameter for ridge penalization (default = 1, meaning no penalization).
 #' @param Q      The quantile function to be applied to the copula pseudo-observations (default = qnorm()).
 #'
-#' @details Given a q-dimensional random vector \eqn{\mathbf{X} = (\mathbf{X}_{1},...,\mathbf{X}_{k})} with \eqn{\mathbf{X}_{i} = (X_{i1}, \dots, X_{id_{i}})} a \eqn{d_{i}} dimensional random vector, i.e., \eqn{q = d_{1} + ... + d_{k}}, the sample Q-scores rank correlation matrix is given as \deqn{\widehat{\mathbf{R}}_{n} = \begin{pmatrix}
+#' @details Given a \eqn{q}-dimensional random vector \eqn{\mathbf{X} = (\mathbf{X}_{1},...,\mathbf{X}_{k})} with \eqn{\mathbf{X}_{i} = (X_{i1}, \dots, X_{id_{i}})} a \eqn{d_{i}} dimensional random vector, i.e., \eqn{q = d_{1} + ... + d_{k}}, the sample \eqn{Q}-scores rank correlation matrix is given as \deqn{\widehat{\mathbf{R}}_{n} = \begin{pmatrix}
 #' \widehat{\mathbf{R}}_{11} & \widehat{\mathbf{R}}_{12} & \cdots & \widehat{\mathbf{R}}_{1k} \\ \widehat{\mathbf{R}}_{12}^{\text{T}} & \widehat{\mathbf{R}}_{22} & \cdots & \widehat{\mathbf{R}}_{2k} \\ \vdots & \vdots & \ddots & \vdots \\ \widehat{\mathbf{R}}_{1k}^{\text{T}} & \widehat{\mathbf{R}}_{2k}^{\text{T}} & \cdots & \widehat{\mathbf{R}}_{kk}
 #' \end{pmatrix} \hspace{0.2cm} \text{with} \hspace{0.2cm} \left (\widehat{\mathbf{R}}_{im} \right )_{jt} = \widehat{\rho}_{ij,mt} = \frac{\frac{1}{n} \sum_{\ell = 1}^{n} \widehat{Z}_{ij}^{(\ell)} \widehat{Z}_{mt}^{(\ell)}}{\frac{1}{n} \sum_{\ell = 1}^{n} \left [Q \left (\frac{\ell}{n+1} \right ) \right ]^{2}},}
-#' for \eqn{i,m = 1, \dots, k}, \eqn{j = 1, \dots, d_{i}}, and \eqn{t = 1, \dots, d_{m}}, based on the observed Q-scores
+#' for \eqn{i,m = 1, \dots, k}, \eqn{j = 1, \dots, d_{i}}, and \eqn{t = 1, \dots, d_{m}}, based on the observed \eqn{Q}-scores
 #' \deqn{\widehat{Z}_{ij}^{(\ell)} = Q \left (\frac{n}{n+1} \widehat{F}_{ij} \left (X_{ij}^{(\ell)} \right )\right ) = Q \left (\frac{1}{n+1} \sum_{t = 1}^{n} 1 \left \{X_{ij}^{(t)} \leq X_{ij}^{(\ell)} \right \} \right ),}
 #' for \eqn{\ell = 1, \dots, n}, where \eqn{\widehat{F}_{ij}} is the empirical cdf of the sample \eqn{X_{ij}^{(1)},\dots,X_{ij}^{(n)}} for \eqn{i = 1, \dots, k} and \eqn{j = 1, \dots, d_{i}}.
 #' The underlying assumption is that the copula of \eqn{\mathbf{X}} is meta-elliptical.
-#' The default for Q is the standard normal quantile function (corresponding to the assumption of a Gaussian copula).
+#' The default for \eqn{Q} is the standard normal quantile function (corresponding to the assumption of a Gaussian copula).
 #' Ridge penalization (especially in the Gaussian copula setting) with penalty parameter omega = \eqn{\omega} boils down to computing
 #' \deqn{\omega \widehat{\mathbf{R}}_{n} + (1-\omega) \mathbf{I}_{q},} where \eqn{\mathbf{I}_{q}} stands for the identity matrix.
 #'
-#' @return The (ridge penalized) sample Q-scores rank correlation matrix.
+#' @return The (ridge penalized) sample \eqn{Q}-scores rank correlation matrix.
 #'
 #' @references
 #' De Keyser, S. & Gijbels, I. (2024).

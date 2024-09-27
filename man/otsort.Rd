@@ -7,7 +7,7 @@
 otsort(sample, dim)
 }
 \arguments{
-\item{sample}{A sample from a q-dimensional random vector \eqn{\mathbf{X}} (n x q matrix with observations in rows, variables in columns).}
+\item{sample}{A sample from a \eqn{q}-dimensional random vector \eqn{\mathbf{X}} (\eqn{n \times q} matrix with observations in rows, variables in columns).}
 
 \item{dim}{The vector of dimensions \eqn{(d_{1},...,d_{k})}, in order as given in sample.}
 }
@@ -15,7 +15,7 @@ otsort(sample, dim)
 A list with elements "sample" containing the ordered sample, and "dim" containing the ordered dimensions.
 }
 \description{
-Given a q-dimensional random vector \eqn{\mathbf{X} = (\mathbf{X}_{1},...,\mathbf{X}_{k})} with \eqn{\mathbf{X}_{i}} a \eqn{d_{i}} dimensional random vector, i.e., \eqn{q = d_{1} + ... + d_{k}},
+Given a \eqn{q}-dimensional random vector \eqn{\mathbf{X} = (\mathbf{X}_{1},...,\mathbf{X}_{k})} with \eqn{\mathbf{X}_{i}} a \eqn{d_{i}} dimensional random vector, i.e., \eqn{q = d_{1} + ... + d_{k}},
 this function sorts the columns (variables) of a sample of \eqn{\mathbf{X}} such that the dimensions are in ascending order.
 }
 \details{

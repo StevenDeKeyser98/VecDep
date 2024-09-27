@@ -3,7 +3,7 @@
 #' @description This functions selects the omega tuning parameter for ridge penalization of the empirical Gaussian copula correlation matrix via cross-validation.
 #'              The objective function is the Gaussian log-likelihood, and a grid search is performed using K folds.
 #'
-#' @param sample  A sample from a q-dimensional random vector \eqn{\mathbf{X}} (n x q matrix with observations in rows, variables in columns).
+#' @param sample  A sample from a \eqn{q}-dimensional random vector \eqn{\mathbf{X}} (\eqn{n \times q} matrix with observations in rows, variables in columns).
 #' @param omegas  A grid of candidate penalty parameters in \eqn{[0,1]}.
 #' @param K       The number of folds to be used.
 #'
