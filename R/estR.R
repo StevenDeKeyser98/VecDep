@@ -31,7 +31,6 @@
 #'
 #' @seealso \code{\link{cvomega}} for selecting omega using K-fold cross-validation in case of a Gaussian copula.
 #'
-#'
 #' @examples
 #' # Multivariate normal copula setting
 
@@ -61,7 +60,7 @@
 #' @export
 
 
-estR = function(sample,omega = 1,Q = function(t){qnorm(t)}){
+estR = function(sample, omega = 1, Q = function(t){qnorm(t)}){
 
   n = nrow(sample) # Sample size
   q = ncol(sample) # Total dimension

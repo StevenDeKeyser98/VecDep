@@ -33,7 +33,7 @@
 
 #' @export
 
-Helnormalavar = function(R,dim){
+Helnormalavar = function(R, dim){
 
   q = nrow(R) # Total dimension
   k = length(dim) # Amount of random vectors

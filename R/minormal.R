@@ -34,7 +34,7 @@
 
 #' @export
 
-minormal = function(R,dim){
+minormal = function(R, dim){
 
   R0 = createR0(R,dim) # Correlation matrix under independence of X_1,...,X_k
 

@@ -36,7 +36,7 @@
 #' @export
 
 
-Helnormal = function(R,dim){
+Helnormal = function(R, dim){
 
   q = nrow(R) # Total dimension
 

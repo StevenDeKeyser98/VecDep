@@ -40,7 +40,7 @@
 
 #' @export
 
-cvomega = function(sample,omegas,K){
+cvomega = function(sample, omegas, K){
 
   n = nrow(sample) # Sample size
   q = ncol(sample) # Total dimension

@@ -22,7 +22,7 @@
 
 #' @export
 
-createR0 = function(R,dim){
+createR0 = function(R, dim){
 
   R0 = matrix(0,nrow(R),ncol(R)) # Initialize matrix of zeroes
 

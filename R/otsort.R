@@ -21,7 +21,7 @@
 #' @export
 
 
-otsort = function(sample,dim){
+otsort = function(sample, dim){
 
   k = length(dim) # Amount of random vectors
 

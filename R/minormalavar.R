@@ -34,7 +34,7 @@
 #' @export
 
 
-minormalavar = function(R,dim){
+minormalavar = function(R, dim){
 
   R0 = createR0(R,dim) # R0 matrix
   M = (1/2) * (solve(R0) - solve(R)) # Matrix for Fréchet derivative

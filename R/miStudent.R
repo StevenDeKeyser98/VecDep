@@ -39,7 +39,7 @@
 #' @export
 
 
-miStudent = function(R,dim,nu){
+miStudent = function(R, dim, nu){
 
   q = sum(dim) # Total dimension
   k = length(dim) # Amount of random vectors

@@ -36,7 +36,7 @@
 
 #' @export
 
-bwd2avar = function(R,dim){
+bwd2avar = function(R, dim){
 
   q = nrow(R) # Total dimension
   k = length(dim) # Amount of random vectors
