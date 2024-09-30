@@ -11,7 +11,7 @@ Helhac(cop, dim, M)
 
 \item{dim}{The vector of dimensions \eqn{(d_{1},...,d_{k})}.}
 
-\item{M}{The size of the Monte Carlo sample used for approximating the integral of the \eqn{\Phi}-dependence.}
+\item{M}{The size of the Monte Carlo sample used for approximating the integral of the Hellinger distance.}
 }
 \value{
 The Hellinger distance between \eqn{\mathbf{X}_{1}, \dots, \mathbf{X}_{k}} (i.e., between all the child copulas of the hac object).

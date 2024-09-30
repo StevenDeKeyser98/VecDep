@@ -7,7 +7,7 @@
 #'
 #' @param cop A hac object as provided by the function \code{\link{gethac}}.
 #' @param dim The vector of dimensions \eqn{(d_{1},...,d_{k})}.
-#' @param M The size of the Monte Carlo sample used for approximating the integral of the \eqn{\Phi}-dependence.
+#' @param M The size of the Monte Carlo sample used for approximating the integral of the Hellinger distance.
 #'
 #' @details
 #' When \eqn{\mathbf{X}} has copula density \eqn{c} with marginal copula densities \eqn{c_{i}} of \eqn{\mathbf{X}_{i}} for \eqn{i = 1, \dots, k},
