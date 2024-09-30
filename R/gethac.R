@@ -39,6 +39,9 @@
 #' HAC: estimation, simulation and visualization of hierarchical Archimedean copulae (HAC), R package version 1.1-1.
 #' url:  https://CRAN.R-project.org/package=HAC.
 #'
+#' @seealso \code{\link{phihac}} for computing the \eqn{\Phi}-dependence between all the child copulas of a hac object with two nesting levels,
+#'          \code{\link{Helhac}} for computing the Hellinger distance between all the child copulas of a hac object with two nesting levels.
+#'
 #' @examples
 #' dim = c(3,5,1,2)
 #' thetas = c(2,2,3,1,4)
