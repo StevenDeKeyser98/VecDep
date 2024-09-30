@@ -22,7 +22,7 @@
 #' It must hold that length(thetas) \eqn{ =  k + 1}.
 #'
 #' Many functions for working with nested Archimedean copulas are developed in the R package 'HAC',
-#' and the function \code{\link{phihac}} utilizes these functions to quickly construct a hac object that is useful for modelling
+#' and the function \code{\link{gethac}} utilizes these functions to quickly construct a hac object that is useful for modelling
 #' the dependence between \eqn{\mathbf{X}_{1}, \dots, \mathbf{X}_{k}}.
 #' See also the package HAC for the different possibilities of type (specified by a number in \eqn{\{1,\dots,10\}}).
 #'
