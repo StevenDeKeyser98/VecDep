@@ -33,7 +33,8 @@
 #'
 #'
 #' @seealso \code{\link{gethac}} for creating a hac object with two nesting levels,
-#'          \code{\link{phihac}} for computing the \eqn{\Phi}-dependence between all the child copulas of a hac object with two nesting levels.
+#'          \code{\link{phihac}} for computing the \eqn{\Phi}-dependence between all the child copulas of a hac object with two nesting levels,
+#'          \code{\link{mlehac}} for maximum pseudo-likelihood estimation of the parameters of a hac object with two nesting levels.
 #'
 #' @examples
 #' dim = c(2,2)
@@ -44,7 +45,7 @@
 #' @export
 
 
-Helhac = function(cop,dim,M){
+Helhac = function(cop, dim, M){
 
   k = length(cop$tree) - 1 # Number of random vectors
   childs = childhac(cop) # Get all child copulas

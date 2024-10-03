@@ -27,7 +27,7 @@
 #' See also the package HAC for the different possibilities of type (specified by a number in \eqn{\{1,\dots,10\}}).
 #'
 #'
-#'@return A hac object with two nesting levels and \eqn{k} child copulas.
+#' @return A hac object with two nesting levels and \eqn{k} child copulas.
 #'
 #' @references
 #' De Keyser, S. & Gijbels, I. (2024).
@@ -40,7 +40,8 @@
 #' url:  https://CRAN.R-project.org/package=HAC.
 #'
 #' @seealso \code{\link{phihac}} for computing the \eqn{\Phi}-dependence between all the child copulas of a hac object with two nesting levels,
-#'          \code{\link{Helhac}} for computing the Hellinger distance between all the child copulas of a hac object with two nesting levels.
+#'          \code{\link{Helhac}} for computing the Hellinger distance between all the child copulas of a hac object with two nesting levels,
+#'          \code{\link{mlehac}} for maximum pseudo-likelihood estimation of the parameters of a hac object with two nesting levels.
 #'
 #' @examples
 #' dim = c(3,5,1,2)

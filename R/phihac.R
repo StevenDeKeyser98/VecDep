@@ -29,7 +29,9 @@
 #' doi: https://doi.org/10.1016/j.jmva.2024.105336.
 #'
 #' @seealso \code{\link{gethac}} for creating a hac object with two nesting levels,
-#'          \code{\link{Helhac}} for computing the Hellinger distance between all the child copulas of a hac object with two nesting levels.
+#'          \code{\link{Helhac}} for computing the Hellinger distance between all the child copulas of a hac object with two nesting levels,
+#'          \code{\link{mlehac}} for maximum pseudo-likelihood estimation of the parameters of a hac object with two nesting levels.
+#'
 #'
 #' @examples
 #' dim = c(2,2)
@@ -41,7 +43,7 @@
 
 
 
-phihac = function(cop,dim,M,phi){
+phihac = function(cop, dim, M, phi){
 
   k = length(cop$tree) - 1 # Number of random vectors
 
