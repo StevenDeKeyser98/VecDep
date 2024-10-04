@@ -1,7 +1,7 @@
 #' @title elldistrest
 #'
 #' @description This functions performs improved kernel density estimation of the generator of an elliptical
-#' distribution using Liebscher's algorithm, combined with a shrinkage function.
+#' distribution by using Liebscher's algorithm, combined with a shrinkage function.
 #'
 #' @param Z  A sample from a \eqn{q}-dimensional random vector \eqn{\mathbf{Z}} (\eqn{n \times q} matrix with observations in rows, variables in columns).
 #' @param mu The (estimated) mean of \eqn{\mathbf{Z}} (default \eqn{= 0}).
@@ -11,9 +11,9 @@
 #' @param Kernel The kernel used for the smoothing (default = "epanechnikov").
 #' @param a The tuning parameter to improve the performance at \eqn{0}.
 #' @param shrink The shrinkage function to further improve the performance at \eqn{0} and guarantee the existence of the AMISE bandwidth.
-#' @param normalize  A value in \eqn{\{1,2\}} indicating the normalization procedure that is applied to the estimated generator.
+#' @param normalize  A value in \eqn{\{1,2\}} indicating the normalization procedure that is applied to the estimated generator (default = 1).
 #' @param ... See the R package ElliptCopulas for details on other arguments.
-
+#'
 #' @details
 #' The context is the one of a \eqn{q}-dimensional random vector \eqn{\mathbf{Z}} following an elliptical distribution with
 #' generator \eqn{g_{\mathcal{R}} : (0,\infty) \rightarrow \mathbb{R}} and scale matrix \eqn{\mathbf{R}} such that the density of \eqn{\mathbf{Z}} is given by
@@ -60,8 +60,9 @@
 #' Journal of Multivariate Analysis 92(1):205-225.
 #' doi: https://doi.org/10.1016/j.jmva.2003.09.007.
 #'
-#' @seealso \code{\link{elliptselect}} for selecting optimal tuning parameters for the improved kernel estimator of the elliptical generator.
-#'
+#' @seealso \code{\link{ellcopest}} for improved kernel estimation of the elliptical generator of a meta-elliptical copula,
+#'          \code{\link{elliptselect}} for selecting optimal tuning parameters for the improved kernel estimator of the elliptical generator,
+#'          \code{\link{phiellip}} for estimating the \eqn{\Phi}-dependence between \eqn{k} random vectors having a meta-elliptical copula.
 #' @examples
 #' q = 4
 #' n = 1000 # Sample size

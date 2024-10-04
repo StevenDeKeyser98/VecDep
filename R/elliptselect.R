@@ -33,7 +33,9 @@
 #' International Journal of Approximate Reasoning 165:109090.
 #' doi: https://doi.org/10.1016/j.ijar.2023.109090.
 #'
-#' @seealso \code{\link{elldistrest}} for improved kernel estimation of the elliptical generator.
+#' @seealso \code{\link{elldistrest}} for improved kernel estimation of the elliptical generator of an elliptical distribution,
+#'          \code{\link{ellcopest}} for improved kernel estimation of the elliptical generator of a meta-elliptical copula,
+#'          \code{\link{phiellip}} for estimating the \eqn{\Phi}-dependence between \eqn{k} random vectors having a meta-elliptical copula.
 #'
 #' @examples
 #' q = 4
