@@ -27,6 +27,13 @@ This function requires importation of the python modules "numpy" and "scipy".
 A sample of size M is drawn from the asymptotic distribution of the plug-in estimator \eqn{\mathcal{D}_{2}(\widehat{\mathbf{R}}_{n})} at \eqn{\mathbf{R}_{0} = \text{diag}(\mathbf{R}_{11}, \dots, \mathbf{R}_{kk})},
 where \eqn{\widehat{\mathbf{R}}_{n}} is the sample matrix of normal scores rank correlations.
 The underlying assumption is that the copula of \eqn{\mathbf{X}} is Gaussian.
+
+To create a Python virtual environment with "numpy" and "scipy",
+run:
+install_tensorflow()
+reticulate::use_virtualenv("r-tensorflow", required = FALSE)
+reticulate::py_install("numpy")
+reticulate::py_install("scipy")
 }
 \examples{
 q = 5

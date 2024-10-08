@@ -5,7 +5,7 @@
 #' between \eqn{\mathbf{X}_{1},...,\mathbf{X}_{k}} given the entire correlation matrix \eqn{\mathbf{R}} is equal to \eqn{\mathbf{R}_{0}} (correlation matrix under independence of \eqn{\mathbf{X}_{1},...,\mathbf{X}_{k}}).
 #' The argument dim should be in ascending order.
 #' This function requires importation of the python modules "numpy" and "scipy".
-
+#'
 #'
 #' @param R  The correlation matrix of \eqn{\mathbf{X}}.
 #' @param dim  The vector of dimensions \eqn{(d_{1},...,d_{k})}, in ascending order.
@@ -15,6 +15,14 @@
 #' A sample of size M is drawn from the asymptotic distribution of the plug-in estimator \eqn{\mathcal{D}_{1}(\widehat{\mathbf{R}}_{n})} at \eqn{\mathbf{R}_{0} = \text{diag}(\mathbf{R}_{11}, \dots, \mathbf{R}_{kk})},
 #' where \eqn{\widehat{\mathbf{R}}_{n}} is the sample matrix of normal scores rank correlations.
 #' The underlying assumption is that the copula of \eqn{\mathbf{X}} is Gaussian.
+#'
+#' To create a Python virtual environment with "numpy" and "scipy",
+#' run:
+#' install_tensorflow()
+#' reticulate::use_virtualenv("r-tensorflow", required = FALSE)
+#' reticulate::py_install("numpy")
+#' reticulate::py_install("scipy")
+#'
 #' @return A sample of size M from the asymptotic distribution of the plug-in estimator for the first Bures-Wasserstein dependence coefficient \eqn{\mathcal{D}_{1}} under independence of \eqn{\mathbf{X}_{1},...,\mathbf{X}_{k}}.
 #'
 #' @references

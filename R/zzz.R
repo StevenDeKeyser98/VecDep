@@ -8,6 +8,13 @@ install_tensorflow = function(..., envname = "r-tensorflow"){
 
 }
 
+# To create a Python virtual environment with "numpy" and "scipy",
+# run:
+
+# install_tensorflow()
+# reticulate::use_virtualenv("r-tensorflow", required = FALSE)
+# reticulate::py_install("numpy")
+# reticulate::py_install("scipy")
 
 numpy = NULL
 scipy = NULL
@@ -16,16 +23,16 @@ scipy = NULL
 
   cat("Welcome to the R package VecDep!")
 
-  install_tensorflow()
+  # install_tensorflow()
 
   # Use the "r-tensorflow" environment
 
-  reticulate::use_virtualenv("r-tensorflow", required = FALSE)
+  # reticulate::use_virtualenv("r-tensorflow", required = FALSE)
 
   # Delay load foo module (will only be loaded when accessed via $)
 
-  reticulate::py_install("numpy")
-  reticulate::py_install("scipy")
+  # reticulate::py_install("numpy")
+  # reticulate::py_install("scipy")
 
   numpy <<- reticulate::import("numpy", delay_load = TRUE)
   scipy <<- reticulate::import("scipy", delay_load = TRUE)
