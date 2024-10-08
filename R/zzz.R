@@ -9,7 +9,7 @@ install_tensorflow = function(..., envname = "r-tensorflow"){
 }
 
 
-numpy = NULL
+# numpy = NULL
 scipy = NULL
 
 .onLoad = function(libname, pkgname) {
