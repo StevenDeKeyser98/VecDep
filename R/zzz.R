@@ -9,7 +9,7 @@ install_tensorflow = function(..., envname = "r-tensorflow"){
 }
 
 
-# numpy = NULL
+numpy = NULL
 scipy = NULL
 
 .onLoad = function(libname, pkgname) {
@@ -24,10 +24,10 @@ scipy = NULL
 
   # Delay load foo module (will only be loaded when accessed via $)
 
-  # reticulate::py_install("numpy")
+  reticulate::py_install("numpy")
   reticulate::py_install("scipy")
 
-  # numpy <<- reticulate::import("numpy", delay_load = TRUE)
+  numpy <<- reticulate::import("numpy", delay_load = TRUE)
   scipy <<- reticulate::import("scipy", delay_load = TRUE)
 
 }
