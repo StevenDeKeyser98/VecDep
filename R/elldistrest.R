@@ -63,6 +63,7 @@
 #' @seealso \code{\link{ellcopest}} for improved kernel estimation of the elliptical generator of a meta-elliptical copula,
 #'          \code{\link{elliptselect}} for selecting optimal tuning parameters for the improved kernel estimator of the elliptical generator,
 #'          \code{\link{phiellip}} for estimating the \eqn{\Phi}-dependence between \eqn{k} random vectors having a meta-elliptical copula.
+#'
 #' @examples
 #' q = 4
 #' n = 1000 # Sample size

@@ -22,8 +22,8 @@
 #' Journal of Multivariate Analysis 203:105336.
 #' doi: https://doi.org/10.1016/j.jmva.2024.105336.
 #'
-#' @seealso \code{\link{Helnormal}} for the computation of the Hellinger distance,
-#'          \code{\link{minormalavar}} for the computation of the asymptotic variance of the plug-in estimator for the mutual information,
+#' @seealso \code{\link{Helnormal}} for the computation of the Gaussian copula Hellinger distance,
+#'          \code{\link{minormalavar}} for the computation of the asymptotic variance of the plug-in estimator for the Gaussian copula mutual information,
 #'          \code{\link{miStudent}} for the computation of the Student-t mutual information.
 #'
 #' @examples
