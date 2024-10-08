@@ -24,8 +24,9 @@ scipy = NULL
 
   # Delay load foo module (will only be loaded when accessed via $)
 
-  reticulate::py_install("numpy")
-  reticulate::py_install("scipy")
+  # reticulate::py_install("numpy")
+  # reticulate::py_install("scipy")
+
   numpy <<- reticulate::import("numpy", delay_load = TRUE)
   scipy <<- reticulate::import("scipy", delay_load = TRUE)
 
