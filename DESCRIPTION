@@ -1,8 +1,10 @@
 Package: VecDep
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Measuring copula-based dependence between random vectors
 Version: 0.1.0
-Author: Who wrote it
+Authors@R: c(
+    person("Steven", "De Keyser", email = "steven.dekeyser@kuleuven.be", role = c("cre","aut")),
+    person("Dennis", "Hammerschmidt", email = "XX@XX.com", role = "aut"))
 Maintainer: The package maintainer <yourself@somewhere.net>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
