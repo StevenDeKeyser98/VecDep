@@ -49,6 +49,6 @@ doi: https://doi.org/10.1016/j.ijar.2023.109090.
 }
 \seealso{
 \code{\link{betakernelestimator}} for the computation of the beta kernel copula density estimator,
-         \code{\link{hamse}} for local bandwidth selection for the beta kernel or Gaussian transformation kernel copula density estimator,
-         \code{\link{phinp}} for fully non-parametric estimation of the \eqn{\Phi}-dependence between \eqn{k} random vectors.
+\code{\link{hamse}} for local bandwidth selection for the beta kernel or Gaussian transformation kernel copula density estimator,
+\code{\link{phinp}} for fully non-parametric estimation of the \eqn{\Phi}-dependence between \eqn{k} random vectors.
 }

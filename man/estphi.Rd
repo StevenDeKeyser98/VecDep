@@ -32,13 +32,13 @@ for a certain continuous, convex function \eqn{\Phi : (0,\infty) \rightarrow \ma
 This functions allows to estimate \eqn{\mathcal{D}_{\Phi}} in several ways (options for est_method)
 
 \itemize{ \item list("hac", type = type, M = M) for parametric estimation by fitting a hierarchical Archimedean copula (hac) via pseudo-maximum likelihood estimation,
-      using a generator of type = type and a simulated Monte Carlo sample of size \eqn{M} in order to approximate the expectation, see also the functions \code{\link{mlehac}} and \code{\link{phihac}},
-      \item list("nphac", estimator = estimator, type = type) for fully non-parametric estimation using the beta kernel estimator
-      or Gaussian transformation kernel estimator using a fitted hac (via pseudo-maximum likelihood estimation) of type = type to find locally optimal bandwidths, see also the function \code{\link{phinp}},
-      \item list("np", estimator = estimator, bw_method = bw_method) for fully non-parametric estimation using the beta kernel estimator or
-             Gaussian transformation kernel estimator, see \code{\link{phinp}} for different bw_method arguments (either 1 or 2, for performing local bandwidth selection),
-      \item list("ellip", grid = grid) for semi-parametric estimation through meta-elliptical copulas, with bandwidths determined by the \code{\link{elliptselect}} function,
-      see also the function \code{\link{phiellip}}.}
+using a generator of type = type and a simulated Monte Carlo sample of size \eqn{M} in order to approximate the expectation, see also the functions \code{\link{mlehac}} and \code{\link{phihac}},
+\item list("nphac", estimator = estimator, type = type) for fully non-parametric estimation using the beta kernel estimator
+or Gaussian transformation kernel estimator using a fitted hac (via pseudo-maximum likelihood estimation) of type = type to find locally optimal bandwidths, see also the function \code{\link{phinp}},
+\item list("np", estimator = estimator, bw_method = bw_method) for fully non-parametric estimation using the beta kernel estimator or
+Gaussian transformation kernel estimator, see \code{\link{phinp}} for different bw_method arguments (either 1 or 2, for performing local bandwidth selection),
+\item list("ellip", grid = grid) for semi-parametric estimation through meta-elliptical copulas, with bandwidths determined by the \code{\link{elliptselect}} function,
+see also the function \code{\link{phiellip}}.}
 }
 \examples{
 # Hierarchical Archimedean copula setting
@@ -90,6 +90,6 @@ doi: https://doi.org/10.1016/j.jmva.2024.105336.
 }
 \seealso{
 \code{\link{phihac}} for computing the \eqn{\Phi}-dependence between all the child copulas of a hac object with two nesting levels,
-         \code{\link{phinp}} for fully non-parametric estimation of the \eqn{\Phi}-dependence between \eqn{k} random vectors,
-         \code{\link{phiellip}} for estimating the \eqn{\Phi}-dependence between \eqn{k} random vectors having a meta-elliptical copula.
+\code{\link{phinp}} for fully non-parametric estimation of the \eqn{\Phi}-dependence between \eqn{k} random vectors,
+\code{\link{phiellip}} for estimating the \eqn{\Phi}-dependence between \eqn{k} random vectors having a meta-elliptical copula.
 }

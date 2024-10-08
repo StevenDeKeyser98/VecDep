@@ -31,7 +31,6 @@ Use the normal generator \eqn{g_{\mathcal{R}}(t) = e^{-t/2}/(2 \pi)^{q/2}} as re
 \deqn{\Psi(t) = \frac{\pi^{q/2}}{\Gamma(q/2)} \left (\psi^{-1}(t) \right )^{\prime} \left (\psi^{-1}(t) \right )^{q/2 - 1} g_{\mathcal{R}} \left (\psi^{-1}(t) \right ),} as well as
 \deqn{h_{n}^{\text{opt}} = \left \{\frac{\left (\int_{-1}^{1} k^{2}(t) dt \right ) \left (\int_{0}^{\infty} \alpha(t)^{-1} \Psi(t) dt \right )}{\left (\int_{-1}^{1} t^{2} k(t) dt \right )^{2} \left (\int_{0}^{\infty} \left (\alpha(t)^{2} \Psi^{\prime \prime}(t) \right )^{2} dt \right )} \right \}^{1/5} n^{-1/5}.}
 
-
 When \eqn{q = 2}, take \eqn{\alpha(t) = 1} (there is no need for shrinkage), and take \eqn{h_{n}^{\text{opt}}}. The value of \eqn{a} does not matter.
 
 When \eqn{q > 2}, specify a grid of candidate \eqn{\delta}-values in \eqn{(3/4 - 1/q,1)} and a grid of \eqn{a}-values in \eqn{(0, \infty)}.
@@ -52,6 +51,6 @@ doi: https://doi.org/10.1016/j.ijar.2023.109090.
 }
 \seealso{
 \code{\link{elldistrest}} for improved kernel estimation of the elliptical generator of an elliptical distribution,
-         \code{\link{ellcopest}} for improved kernel estimation of the elliptical generator of a meta-elliptical copula,
-         \code{\link{phiellip}} for estimating the \eqn{\Phi}-dependence between \eqn{k} random vectors having a meta-elliptical copula.
+\code{\link{ellcopest}} for improved kernel estimation of the elliptical generator of a meta-elliptical copula,
+\code{\link{phiellip}} for estimating the \eqn{\Phi}-dependence between \eqn{k} random vectors having a meta-elliptical copula.
 }

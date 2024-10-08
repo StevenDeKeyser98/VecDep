@@ -102,3 +102,6 @@ bwd1asR0 = function(R, dim, M){
   return(samples)
 
 }
+
+
+

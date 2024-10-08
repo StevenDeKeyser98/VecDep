@@ -63,6 +63,6 @@ url:  https://CRAN.R-project.org/package=HAC.
 }
 \seealso{
 \code{\link{gethac}} for creating a hac object with two nesting levels,
-         \code{\link{phihac}} for computing the \eqn{\Phi}-dependence between all the child copulas of a hac object with two nesting levels,
-         \code{\link{Helhac}} for computing the Hellinger distance between all the child copulas of a hac object with two nesting levels.
+\code{\link{phihac}} for computing the \eqn{\Phi}-dependence between all the child copulas of a hac object with two nesting levels,
+\code{\link{Helhac}} for computing the Hellinger distance between all the child copulas of a hac object with two nesting levels.
 }

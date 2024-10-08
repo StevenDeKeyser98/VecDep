@@ -23,8 +23,8 @@ Given a correlation matrix \deqn{\mathbf{R} = \begin{pmatrix} \mathbf{R}_{11} & 
                                                              \mathbf{R}_{12}^{\text{T}} & \mathbf{R}_{22} & \cdots & \mathbf{R}_{2k} \\
                                                              \vdots & \vdots & \ddots & \vdots \\
                                                              \mathbf{R}_{1k}^{\text{T}} & \mathbf{R}_{2k}^{\text{T}} & \cdots & \mathbf{R}_{kk} \end{pmatrix},}
-        the matrix \eqn{\mathbf{R}_{0} = \text{diag}(\mathbf{R}_{11}, \dots, \mathbf{R}_{kk})}, being the correlation matrix
-        under independence of \eqn{\mathbf{X}_{1}, \dots, \mathbf{X}_{k}}, is returned.
+the matrix \eqn{\mathbf{R}_{0} = \text{diag}(\mathbf{R}_{11}, \dots, \mathbf{R}_{kk})}, being the correlation matrix
+under independence of \eqn{\mathbf{X}_{1}, \dots, \mathbf{X}_{k}}, is returned.
 }
 \examples{
 q = 10

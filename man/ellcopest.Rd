@@ -110,6 +110,6 @@ doi: https://doi.org/10.1016/j.jmva.2003.09.007.
 }
 \seealso{
 \code{\link{elldistrest}} for improved kernel estimation of the elliptical generator of an elliptical distribution,
-         \code{\link{elliptselect}} for selecting optimal tuning parameters for the improved kernel estimator of the elliptical generator,
-         \code{\link{phiellip}} for estimating the \eqn{\Phi}-dependence between \eqn{k} random vectors having a meta-elliptical copula.
+\code{\link{elliptselect}} for selecting optimal tuning parameters for the improved kernel estimator of the elliptical generator,
+\code{\link{phiellip}} for estimating the \eqn{\Phi}-dependence between \eqn{k} random vectors having a meta-elliptical copula.
 }

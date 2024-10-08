@@ -90,6 +90,6 @@ doi: https://doi.org/10.1016/j.ijar.2023.109090.
 }
 \seealso{
 \code{\link{elldistrest}} for improved kernel estimation of the elliptical generator of an elliptical distribution,
-         \code{\link{ellcopest}} for improved kernel estimation of the elliptical generator of a meta-elliptical copula,
-         \code{\link{elliptselect}} for selecting optimal tuning parameters for the improved kernel estimator of the elliptical generator.
+\code{\link{ellcopest}} for improved kernel estimation of the elliptical generator of a meta-elliptical copula,
+\code{\link{elliptselect}} for selecting optimal tuning parameters for the improved kernel estimator of the elliptical generator.
 }

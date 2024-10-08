@@ -53,22 +53,22 @@ see also the functions \code{\link{minormal}}, \code{\link{estR}}, and \code{\li
 \item list("phi", "Hel", "Gauss", omegas = omegas) for the estimated Gaussian copula Hellinger distance. Use omegas = 1 for no penalty, or a sequence of omegas for a ridge penalty tuned via 5-fold cross-validation,
 see also the functions \code{\link{Helnormal}}, \code{\link{estR}}, and \code{\link{cvomega}},
 \item list("phi", phi(t), "hac", type = type, M = M) for general \eqn{\Phi}-dependence with specified function phi(t) = \eqn{\Phi(t)},
-       estimated by fitting (via pseudo maximum likelihood estimation) a hierarchical Archimedean copula of given type = type,
-       and computed based on a Monte Carlo sample of size \eqn{M} in order to approximate the expectation, see also the functions \code{\link{mlehac}}, \code{\link{phihac}} and \code{\link{estphi}},
+estimated by fitting (via pseudo maximum likelihood estimation) a hierarchical Archimedean copula of given type = type,
+and computed based on a Monte Carlo sample of size \eqn{M} in order to approximate the expectation, see also the functions \code{\link{mlehac}}, \code{\link{phihac}} and \code{\link{estphi}},
 \item list("phi", phi(t), "nphac", estimator = estimator, type = type) for general \eqn{\Phi}-dependence with specified function phi(t) = \eqn{\Phi(t)},
-       estimated via non-parametric beta kernel estimation or Gaussian transformation kernel estimation,
-       and local bandwidth selection, by using a fitted (via pseudo maximum likelihood) hierarchical Archimedean copula
-       as reference copula, see also the functions \code{\link{phinp}} and \code{\link{estphi}},
+estimated via non-parametric beta kernel estimation or Gaussian transformation kernel estimation,
+and local bandwidth selection, by using a fitted (via pseudo maximum likelihood) hierarchical Archimedean copula
+as reference copula, see also the functions \code{\link{phinp}} and \code{\link{estphi}},
 \item list("phi", phi(t), "np", estimator = estimator, bw_method = bw_method) for general \eqn{\Phi}-dependence with specified function phi(t) = \eqn{\Phi(t)},
-        estimated via non-parametric beta kernel estimation or Gaussian transformation kernel estimation,
-        and local bandwidth selection, either by using a non-parametric kernel estimator as reference copula if bw_method = 1,
-        or by using a big O bandwidth rule if bw_method = 2, see also the functions \code{\link{phinp}} and \code{\link{estphi}},
+estimated via non-parametric beta kernel estimation or Gaussian transformation kernel estimation,
+and local bandwidth selection, either by using a non-parametric kernel estimator as reference copula if bw_method = 1,
+or by using a big O bandwidth rule if bw_method = 2, see also the functions \code{\link{phinp}} and \code{\link{estphi}},
 \item list("phi", phi(t), "ellip", grid = grid) for general \eqn{\Phi}-dependence with specified function phi(t) = \eqn{\Phi(t)},
-       estimated via the improved MECIP procedure on the specified grid, and parameter selection done via
-       the function \code{\link{elliptselect}} using the Gaussian generator as reference generator, see also the functions \code{\link{phiellip}} and \code{\link{estphi}},
+estimated via the improved MECIP procedure on the specified grid, and parameter selection done via
+the function \code{\link{elliptselect}} using the Gaussian generator as reference generator, see also the functions \code{\link{phiellip}} and \code{\link{estphi}},
 \item list("ot", coef = coef, omegas = omegas) for Gaussian copula Bures-Wasserstein dependence measures, either coefficient \eqn{\mathcal{D}_{1}} (coef = 1) or coefficient \eqn{\mathcal{D}_{2}} (coef = 2).
-       Use omegas = 1 for no penalty, or a sequence of omegas for a ridge penalty tuned via 5-fold cross-validation,
-       see also the functions \code{\link{bwd1}}, \code{\link{bwd2}}, \code{\link{estR}}, and \code{\link{cvomega}}.}
+Use omegas = 1 for no penalty, or a sequence of omegas for a ridge penalty tuned via 5-fold cross-validation,
+see also the functions \code{\link{bwd1}}, \code{\link{bwd2}}, \code{\link{estR}}, and \code{\link{cvomega}}.}
 
 When \eqn{d_{1} + d_{2} >} max_dim, the specified link function (say \eqn{L}) is used
 for computing the similarity between \eqn{\mathbb{X}} and \eqn{\mathbb{Y}}, i.e.,
@@ -164,8 +164,8 @@ doi: https://doi.org/10.48550/arXiv.2404.07141.
 }
 \seealso{
 \code{\link{minormal}} for the computation of the Gaussian copula mutual information,
-         \code{\link{Helnormal}} for the computation of the Gaussian copula Hellinger distance,
-         \code{\link{estphi}} for several approach to estimating the \eqn{\Phi}-dependence between \eqn{k} random vectors,
-         \code{\link{bwd1}} for the computation of the first Bures-Wasserstein dependence coefficient \eqn{\mathcal{D}_{1}},
-         \code{\link{bwd2}} for the computation of the second Bures-Wasserstein dependence coefficient \eqn{\mathcal{D}_{2}}.
+\code{\link{Helnormal}} for the computation of the Gaussian copula Hellinger distance,
+\code{\link{estphi}} for several approach to estimating the \eqn{\Phi}-dependence between \eqn{k} random vectors,
+\code{\link{bwd1}} for the computation of the first Bures-Wasserstein dependence coefficient \eqn{\mathcal{D}_{1}},
+\code{\link{bwd2}} for the computation of the second Bures-Wasserstein dependence coefficient \eqn{\mathcal{D}_{2}}.
 }

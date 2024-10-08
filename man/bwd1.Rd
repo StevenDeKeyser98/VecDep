@@ -42,5 +42,5 @@ doi: https://doi.org/10.48550/arXiv.2404.07141.
 }
 \seealso{
 \code{\link{bwd2}} for the computation of the second Bures-Wasserstein dependence coefficient \eqn{\mathcal{D}_{2}},
-         \code{\link{bwd1avar}} for the computation of the asymptotic variance of the plug-in estimator for \eqn{\mathcal{D}_{1}}.
+\code{\link{bwd1avar}} for the computation of the asymptotic variance of the plug-in estimator for \eqn{\mathcal{D}_{1}}.
 }

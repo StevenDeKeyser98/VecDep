@@ -18,15 +18,15 @@ The optimal ridge penalty parameter minimizing the cross-validation error.
 }
 \description{
 This functions selects the omega tuning parameter for ridge penalization of the empirical Gaussian copula correlation matrix via cross-validation.
-             The objective function is the Gaussian log-likelihood, and a grid search is performed using K folds.
+The objective function is the Gaussian log-likelihood, and a grid search is performed using K folds.
 }
 \details{
 The loss function is the Gaussian log-likelihood, i.e., given an estimated (penalized)
-          Gaussian copula correlation matrix (normal scores rank correlation matrix) \eqn{\widehat{\mathbf{R}}_{n}^{(-j)}} computed on a training set leaving out fold j, and
-          \eqn{\widehat{\mathbf{R}}_{n}^{(j)}} the empirical (non-penalized)
-          Gaussian copula correlation matrix computed on test fold j, we search for the tuning parameter that minimizes
-          \deqn{\sum_{j = 1}^{K} \left [\ln \left ( \left | \widehat{\mathbf{R}}_{n}^{(-j)} \right | \right ) + \text{tr} \left \{\widehat{\mathbf{R}}_{n}^{(j)} \left (\widehat{\mathbf{R}}_{n}^{(-j)} \right )^{-1} \right \} \right ].}
-          The underlying assumption is that the copula of \eqn{\mathbf{X}} is Gaussian.
+Gaussian copula correlation matrix (normal scores rank correlation matrix) \eqn{\widehat{\mathbf{R}}_{n}^{(-j)}} computed on a training set leaving out fold j, and
+\eqn{\widehat{\mathbf{R}}_{n}^{(j)}} the empirical (non-penalized)
+Gaussian copula correlation matrix computed on test fold j, we search for the tuning parameter that minimizes
+\deqn{\sum_{j = 1}^{K} \left [\ln \left ( \left | \widehat{\mathbf{R}}_{n}^{(-j)} \right | \right ) + \text{tr} \left \{\widehat{\mathbf{R}}_{n}^{(j)} \left (\widehat{\mathbf{R}}_{n}^{(-j)} \right )^{-1} \right \} \right ].}
+The underlying assumption is that the copula of \eqn{\mathbf{X}} is Gaussian.
 }
 \examples{
 q = 10

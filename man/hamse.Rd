@@ -15,7 +15,7 @@ hamse(input, cop = NULL, pseudos = NULL, n, estimator, bw_method)
 
 \item{n}{The sample size.}
 
-\item{estimator}{Either ``beta'' or ``trans'' for the beta kernel or the Gaussian transformation kernel copula density estimator.}
+\item{estimator}{Either \verb{beta'' or }trans'' for the beta kernel or the Gaussian transformation kernel copula density estimator.}
 
 \item{bw_method}{A number in \eqn{\{0,1\}} specifying the method used for computing the bandwidth.}
 }
@@ -24,12 +24,10 @@ The optimal local bandwidth (in terms of amse).
 }
 \description{
 This function performs local bandwidth selection based on the amse (asymptotic mean squared error)
-             for the beta kernel or Gaussian transformation kernel copula density estimator.
+for the beta kernel or Gaussian transformation kernel copula density estimator.
 }
 \details{
-When estimator = ``beta'', this function computes, at a certain input, a numerical approximation of the optimal local bandwidth (for the beta kernel copula density estimator) in terms of the amse
-(asymptotic mean squared error) given in equation (27) of De Keyser & Gijbels (2024).
-When estimator = ``trans'' (for the Gaussian transformation kernel copula density estimator), this optimal bandwidth is given
+When estimator = \verb{beta'', this function computes, at a certain input, a numerical approximation of the optimal local bandwidth (for the beta kernel copula density estimator) in terms of the amse (asymptotic mean squared error) given in equation (27) of De Keyser & Gijbels (2024). When estimator = }trans'' (for the Gaussian transformation kernel copula density estimator), this optimal bandwidth is given
 at the end of Section 5.2 in De Keyser & Gijbels (2024).
 
 Of course, these optimal bandwidths depend upon the true unknown copula.
@@ -70,6 +68,6 @@ doi: https://doi.org/10.1016/j.ijar.2023.109090.
 }
 \seealso{
 \code{\link{betakernelestimator}} for the computation of the beta kernel copula density estimator,
-         \code{\link{transformationestimator}} for the computation of the Gaussian transformation kernel copula density estimator,
-         \code{\link{phinp}} for fully non-parametric estimation of the \eqn{\Phi}-dependence between \eqn{k} random vectors.
+\code{\link{transformationestimator}} for the computation of the Gaussian transformation kernel copula density estimator,
+\code{\link{phinp}} for fully non-parametric estimation of the \eqn{\Phi}-dependence between \eqn{k} random vectors.
 }

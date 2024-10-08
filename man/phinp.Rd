@@ -15,7 +15,7 @@ phinp(sample, cop = NULL, dim, phi, estimator, bw_method)
 
 \item{phi}{The function \eqn{\Phi}.}
 
-\item{estimator}{Either ``beta'' or ``trans'' for the beta kernel or the Gaussian transformation kernel copula density estimator.}
+\item{estimator}{Either \verb{beta'' or }trans'' for the beta kernel or the Gaussian transformation kernel copula density estimator.}
 
 \item{bw_method}{A number in \eqn{\{0,1,2\}} specifying the method used for computing optimal local bandwidths.}
 }
@@ -38,8 +38,7 @@ The expectation \eqn{\mathbb{E}} is replaced by the empirical mean using the est
 Hereby, \eqn{\widehat{F}_{ij}(x_{ij}) = \frac{1}{n+1} \sum_{\ell = 1}^{n} 1 \left (X_{ij}^{(\ell)} \leq x_{ij} \right )} is the (rescaled) empirical cdf of \eqn{X_{ij}} based on a sample \eqn{X_{ij}^{(1)}, \dots, X_{ij}^{(n)}} for \eqn{i = 1, \dots, k} and \eqn{j = 1, \dots, d_{i}}.
 
 The joint copula density \eqn{c} and marginal copula densities \eqn{c_{i}} for \eqn{i = 1, \dots, k} are estimated via fully non-parametric copula kernel density estimation.
-When estimator = ``beta'', the beta kernel copula density estimator is used.
-When estimator = ``trans'', the Gaussian transformation kernel copula density estimator is used.
+When estimator = \verb{beta'', the beta kernel copula density estimator is used. When estimator = }trans'', the Gaussian transformation kernel copula density estimator is used.
 
 Bandwidth selection is done locally by using the function \code{\link{hamse}}.
 When bw_method = 0, then the given fitted (e.g., via MLE using \code{\link{mlehac}}) hac object (hierarchical Archimedean copula) cop is used as reference copula.
@@ -71,6 +70,6 @@ doi: https://doi.org/10.1016/j.ijar.2023.109090.
 }
 \seealso{
 \code{\link{betakernelestimator}} for the computation of the beta kernel copula density estimator,
-         \code{\link{transformationestimator}} for the computation of the Gaussian transformation kernel copula density estimator,
-         \code{\link{hamse}} for local bandwidth selection for the beta kernel or Gaussian transformation kernel copula density estimator.
+\code{\link{transformationestimator}} for the computation of the Gaussian transformation kernel copula density estimator,
+\code{\link{hamse}} for local bandwidth selection for the beta kernel or Gaussian transformation kernel copula density estimator.
 }
