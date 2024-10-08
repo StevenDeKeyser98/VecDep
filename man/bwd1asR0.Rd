@@ -30,9 +30,13 @@ The underlying assumption is that the copula of \eqn{\mathbf{X}} is Gaussian.
 
 To create a Python virtual environment with "numpy" and "scipy",
 run:
+
 install_tensorflow()
+
 reticulate::use_virtualenv("r-tensorflow", required = FALSE)
+
 reticulate::py_install("numpy")
+
 reticulate::py_install("scipy")
 }
 \examples{

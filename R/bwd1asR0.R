@@ -18,9 +18,13 @@
 #'
 #' To create a Python virtual environment with "numpy" and "scipy",
 #' run:
+#'
 #' install_tensorflow()
+#'
 #' reticulate::use_virtualenv("r-tensorflow", required = FALSE)
+#'
 #' reticulate::py_install("numpy")
+#'
 #' reticulate::py_install("scipy")
 #'
 #' @return A sample of size M from the asymptotic distribution of the plug-in estimator for the first Bures-Wasserstein dependence coefficient \eqn{\mathcal{D}_{1}} under independence of \eqn{\mathbf{X}_{1},...,\mathbf{X}_{k}}.
