@@ -1,19 +1,18 @@
 
 
-install_tensorflow = function(..., envname = "r-tensorflow") {
+install_tensorflow = function(..., envname = "r-tensorflow"){
 
   # Function install_tensorflow() to create a python virtual environment
-  #
 
   reticulate::py_install("tensorflow", envname = envname, ...)
 
 }
 
 
-numpy <- NULL
-scipy <- NULL
+numpy = NULL
+scipy = NULL
 
-.onLoad <- function(libname, pkgname) {
+.onLoad = function(libname, pkgname) {
 
   cat("Welcome to the R package VecDep!")
 
