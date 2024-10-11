@@ -13,5 +13,5 @@ Next to this, functions for Bures-Wasserstein dependence coefficients and Gaussi
 
 * De Keyser, S. & Gijbels, I. (2024). High-dimensional copula-based Wasserstein dependence. doi: https://doi.org/10.48550/arXiv.2404.07141,
 
-  are implemented as well. 
+are implemented as well. 
 
