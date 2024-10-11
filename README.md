@@ -1,3 +1,5 @@
+# VecDep
+
 This R package gathers together several functions that can be used for copula-based measuring of dependence between a finite amount of random vectors.
 
 In particular, several estimation procedures are implemented for the class of phi-dependence measures, including Gaussian copula and hierarchical Archimedean copula methods, as studied in 
