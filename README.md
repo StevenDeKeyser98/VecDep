@@ -1,5 +1,12 @@
 This R package gathers together several functions that can be used for copula-based measuring of dependence between a finite amount of random vectors.
 
-In particular, several estimation procedures are implemented for the class of phi-dependence measures, including Gaussian copula and hierarchical copula methods, as studied in 
+In particular, several estimation procedures are implemented for the class of phi-dependence measures, including Gaussian copula and hierarchical Archimedean copula methods, as studied in 
 
-De Keyser, S. & Gijbels, I. (2024). Parametric dependence between random vectors via copula-based divergence measures. Journal of Multivariate Analysis 203:105336. doi: https://doi.org/10.1016/j.jmva.2024.105336.
+De Keyser, S. & Gijbels, I. (2024). Parametric dependence between random vectors via copula-based divergence measures. Journal of Multivariate Analysis 203:105336. doi: https://doi.org/10.1016/j.jmva.2024.105336,
+
+and a semi-parametric meta-elliptical method and fully non-parameteric methods, as studied in 
+
+De Keyser, S. & Gijbels, I. (2024). Hierarchical variable clustering via copula-based divergence measures between random vectors. International Journal of Approximate Reasoning 165:109090. doi: https://doi.org/10.1016/j.ijar.2023.109090.
+
+The latter reference also discusses an algorithm for hierarchical variable clustering based on multivariate similarities between random vectors, which is implemented in this R package as well.
+
