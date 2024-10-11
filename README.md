@@ -4,7 +4,7 @@ In particular, several estimation procedures are implemented for the class of ph
 
 * De Keyser, S. & Gijbels, I. (2024). Parametric dependence between random vectors via copula-based divergence measures. Journal of Multivariate Analysis 203:105336. doi: https://doi.org/10.1016/j.jmva.2024.105336,
 
-and a semi-parametric meta-elliptical method and fully non-parameteric methods, as investigated in 
+and a semi-parametric meta-elliptical method and fully non-parametric methods, as investigated in 
 
 * De Keyser, S. & Gijbels, I. (2024). Hierarchical variable clustering via copula-based divergence measures between random vectors. International Journal of Approximate Reasoning 165:109090. doi: https://doi.org/10.1016/j.ijar.2023.109090.
 
