@@ -43,12 +43,13 @@
 #'          \code{\link{otsort}} for rearranging the columns of sample such that dim is in ascending order.
 #'
 #' @examples
+#' \dontrun{
 #' q = 5
 #' dim = c(2,3)
 #' R = 0.5^(abs(matrix(1:q-1,nrow = q, ncol = q, byrow = TRUE) - (1:q-1))) # AR(1) correlation matrix with correlation 0.5
 #' R0 = createR0(R,dim)
 #' sample = bwd1asR0(R0,dim,1000)
-
+#'}
 #' @export
 
 
