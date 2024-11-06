@@ -37,7 +37,7 @@
 #'          \code{\link{mlehac}} for maximum pseudo-likelihood estimation of the parameters of a hac object with two nesting levels.
 #'
 #' @examples
-#' \donttrun{
+#' \donttest{
 #' dim = c(2,2)
 #' thetas = c(2,3,4)
 #' HAC = gethac(dim,thetas,type = 1) # 4 dimensional nested Gumbel copula with (theta_0,theta_1,theta_2) = (2,3,4)
