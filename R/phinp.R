@@ -45,23 +45,25 @@
 #'
 #'
 #' @examples
+#' \donttest{
 #' q = 4
 #' dim = c(2,2)
 #' n = 500 # Sample size
-
+#'
 #' HAC = gethac(dim,c(2,3,4),type = 1) # Four dimensional hierarchical Gumbel copula with parameters (theta_0,theta_1,theta_2) = (2,3,4)
 #' sample = HAC::rHAC(n,HAC) # Sample
-
+#'
 #' est_cop = mlehac(sample,dim,1,c(2,3,4)) # Maximum pseudo-likelihood estimator to be used as reference copula for bw_method = 0
-
+#'
 #' # Estimate mutual information between two random vectors of size 2 in different ways
-
+#'
 #' est_phi_1 = phinp(sample,cop = est_cop,dim = dim,phi = function(t){t * log(t)},estimator = "beta",bw_method = 0)
 #' est_phi_2 = phinp(sample,cop = est_cop,dim = dim,phi = function(t){t * log(t)},estimator = "trans",bw_method = 0)
 #' est_phi_3 = phinp(sample,dim = dim,phi = function(t){t * log(t)},estimator = "beta",bw_method = 1)
 #' est_phi_4 = phinp(sample,dim = dim,phi = function(t){t * log(t)},estimator = "trans",bw_method = 1)
 #' est_phi_5 = phinp(sample,dim = dim,phi = function(t){t * log(t)},estimator = "beta",bw_method = 2)
 #' est_phi_6 = phinp(sample,dim = dim,phi = function(t){t * log(t)},estimator = "trans",bw_method = 2)
+#'}
 #'
 #' @export
 

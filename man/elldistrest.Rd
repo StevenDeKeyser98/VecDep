@@ -76,6 +76,7 @@ When normalize = 1, this corresponds to \eqn{\mathbf{R}} being the correlation m
 When normalize = 2, this corresponds to the identifiability condition of Derumigny & Fermanian (2022).
 }
 \examples{
+\donttest{
 q = 4
 n = 1000 # Sample size
 grid = seq(0.005,100,by = 0.005) # Grid on which to evaluate the elliptical generator
@@ -90,6 +91,7 @@ a = opt_parameters$Opta ; p = opt_parameters$Optp ; h = opt_parameters$Opth  # O
 g_est = elldistrest(Z = sample, Sigma_m1 = diag(q), grid = grid, h = h, a = a, shrink = function(t){shrinkage(t,p)}) # Estimated elliptical generator
 plot(grid,g_est,type = "l", xlim = c(0,8))
 lines(grid,g_q,col = "green")
+}
 
 }
 \references{

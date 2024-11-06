@@ -4,7 +4,10 @@
 \alias{install_tensorflow}
 \title{install_tensorflow}
 \usage{
-install_tensorflow(..., envname = "r-tensorflow")
+install_tensorflow(envname = "r-tensorflow")
+}
+\arguments{
+\item{envname}{Name of the environment.}
 }
 \description{
 This function installes a python virtual environment.

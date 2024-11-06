@@ -38,10 +38,11 @@
 #'          \code{\link{phiellip}} for estimating the \eqn{\Phi}-dependence between \eqn{k} random vectors having a meta-elliptical copula.
 #'
 #' @examples
+#' \donttest{
 #' q = 4
 #' n = 1000
 #' opt_parameters = elliptselect(n,q,seq((3/4)-(1/q)+0.01,1-0.01,len = 200),seq(0.01,2,len = 200))
-#'
+#' }
 #' @export
 
 

@@ -41,6 +41,7 @@ Gaussian transformation kernel estimator, see \code{\link{phinp}} for different 
 see also the function \code{\link{phiellip}}.}
 }
 \examples{
+\donttest{
 # Hierarchical Archimedean copula setting
 q = 4
 dim = c(2,2)
@@ -75,6 +76,7 @@ sample = mvtnorm::rmvnorm(n,rep(0,q),R,method = "chol") # Sample from 4-dimensio
 est_phi = estphi(sample,dim,list("ellip",grid = seq(0.005,100,by = 0.005)),function(t){t * log(t)})
 
 true_phi = minormal(R,dim)
+}
 
 }
 \references{

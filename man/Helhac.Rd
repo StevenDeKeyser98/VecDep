@@ -37,10 +37,12 @@ The function \code{\link{Helhac}} computes \eqn{\widetilde{\mathcal{D}}_{(\sqrt{
 as produced by the function \code{\link{gethac}}.
 }
 \examples{
+\donttrun{
 dim = c(2,2)
 thetas = c(2,3,4)
 HAC = gethac(dim,thetas,type = 1) # 4 dimensional nested Gumbel copula with (theta_0,theta_1,theta_2) = (2,3,4)
 Hel = Helhac(HAC,dim,10000) # Hellinger distance based on Monte Carlo sample of size 10000
+}
 
 }
 \references{

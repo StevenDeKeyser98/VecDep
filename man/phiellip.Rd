@@ -59,6 +59,7 @@ When normalize = 1, this corresponds to \eqn{\mathbf{R}} being the correlation m
 When normalize = 2, this corresponds to the identifiability condition of Derumigny & Fermanian (2022).
 }
 \examples{
+\donttest{
 q = 4
 dim = c(2,2)
 n = 1000 # Sample size
@@ -76,6 +77,7 @@ a2 = a1 ; p2 = p1 ; h2 = h1
 params = list("h" = c(h,h1,h2), "a" = c(a,a1,a2), "p" = c(p,p1,p2))
 
 est_phi = phiellip(sample, dim, function(t){t * log(t)}, grid, params) # Mutual information between two random vectors of size 2
+}
 
 }
 \references{

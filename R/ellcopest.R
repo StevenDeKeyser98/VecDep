@@ -65,6 +65,7 @@
 #'          \code{\link{phiellip}} for estimating the \eqn{\Phi}-dependence between \eqn{k} random vectors having a meta-elliptical copula.
 #'
 #' @examples
+#' \donttest{
 #' q = 4
 #' n = 1000 # Sample size
 #' grid = seq(0.005,100,by = 0.005) # Grid on which to evaluate the elliptical generator
@@ -83,6 +84,7 @@
 
 #' plot(grid,g_est,type = "l", xlim = c(0,8))
 #' lines(grid,g_q,col = "green")
+#'}
 #'
 #' @export
 

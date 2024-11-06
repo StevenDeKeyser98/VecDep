@@ -60,6 +60,7 @@
 #'          \code{\link{elliptselect}} for selecting optimal tuning parameters for the improved kernel estimator of the elliptical generator.
 #'
 #' @examples
+#' \donttest{
 #' q = 4
 #' dim = c(2,2)
 #' n = 1000 # Sample size
@@ -77,6 +78,7 @@
 #' params = list("h" = c(h,h1,h2), "a" = c(a,a1,a2), "p" = c(p,p1,p2))
 #'
 #' est_phi = phiellip(sample, dim, function(t){t * log(t)}, grid, params) # Mutual information between two random vectors of size 2
+#'}
 #'
 #' @export
 
