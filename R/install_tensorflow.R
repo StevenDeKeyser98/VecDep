@@ -1,6 +1,6 @@
 #' @title install_tensorflow
 #'
-#' @description This function installes a python virtual environment.
+#' @description This function installs a python virtual environment.
 #'
 #' @param envname Name of the environment.
 #'

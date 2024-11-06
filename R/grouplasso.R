@@ -59,7 +59,7 @@
 #' @seealso \code{\link{covgpenal}} for (elementwise) lasso-type estimation of the normal scores rank correlation matrix.
 #'
 #' @examples
-#'
+#' \donttest{
 #' q = 10
 #' dim = c(5,5)
 #' n = 100
@@ -72,7 +72,7 @@
 #' Sigma_est = cov(scores) * ((n-1)/n) # Sample matrix of normal scores covariances
 #' omega = seq(0.01, 0.6, length = 50) # Candidate tuning parameters
 #' Sigma_est_penal = grouplasso(Sigma_est, Sigma_est, n, omega, dim)
-#'
+#'}
 #' @export
 
 grouplasso = function(Sigma, S, n, omegas, dim, step.size = 100){

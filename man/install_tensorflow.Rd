@@ -10,5 +10,5 @@ install_tensorflow(envname = "r-tensorflow")
 \item{envname}{Name of the environment.}
 }
 \description{
-This function installes a python virtual environment.
+This function installs a python virtual environment.
 }

@@ -57,7 +57,7 @@ and df (degrees of freedom) equals
 with \eqn{\widehat{\boldsymbol{\Sigma}}_{\omega_{n},ij}} the \eqn{(i,j)}'th block of \eqn{\widehat{\boldsymbol{\Sigma}}_{\omega_{n}}}, similarly for \eqn{\widehat{\boldsymbol{\Sigma}}_{n,ij}}.
 }
 \examples{
-
+\donttest{
 q = 10
 dim = c(5,5)
 n = 100
@@ -69,7 +69,7 @@ for(j in 1:q){scores[,j] = qnorm((n/(n+1)) * ecdf(sample[,j])(sample[,j]))}
 Sigma_est = cov(scores) * ((n-1)/n) # Sample matrix of normal scores covariances
 omega = seq(0.01, 0.6, length = 50) # Candidate tuning parameters
 Sigma_est_penal = grouplasso(Sigma_est, Sigma_est, n, omega, dim)
-
+}
 }
 \references{
 De Keyser, S. & Gijbels, I. (2024).
