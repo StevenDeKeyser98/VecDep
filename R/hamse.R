@@ -39,7 +39,7 @@
 #' n = 1000 # Sample size
 #'
 #' HAC = gethac(dim,c(2,3,4),type = 1) # Four dimensional hierarchical Gumbel copula with parameters (theta_0,theta_1,theta_2) = (2,3,4)
-#' sample = HAC::rHAC(n,HAC) # Sample
+#' sample = suppressWarnings(HAC::rHAC(n,HAC)) # Sample
 #' pseudos = matrix(0,n,q)
 #' for(j in 1:q){pseudos[,j] = (n/(n+1)) * ecdf(sample[,j])(sample[,j])} # Copula pseudo-observations
 #'
