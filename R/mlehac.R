@@ -7,7 +7,8 @@
 #' @param sample A sample from a \eqn{q}-dimensional random vector \eqn{\mathbf{X}} (\eqn{n \times q} matrix with observations in rows, variables in columns).
 #' @param dim The vector of dimensions \eqn{(d_{1},...,d_{k})}.
 #' @param type The type of Archimedean copula.
-#' @param start_val The starting values for the parameters \eqn{(\theta_{0},\theta_{1},...,\theta_{k})} of the hierarchical Archimedean copula.
+#' @param start_val The starting values for the parameters \eqn{(\theta_{0},\theta_{1},...,\theta_{k})} of the \cr
+#'                  hierarchical Archimedean copula.
 #'
 #' @details
 #' Under the assumption that \eqn{\mathbf{X} = (\mathbf{X}_{1}, \dots, \mathbf{X}_{k})} has a hierarchical Archimedean copula with two nesting levels, i.e.,
@@ -31,12 +32,11 @@
 #' @references
 #' De Keyser, S. & Gijbels, I. (2024).
 #' Parametric dependence between random vectors via copula-based divergence measures.
-#' Journal of Multivariate Analysis 203:105336.
-#'
+#' Journal of Multivariate Analysis 203:105336. \cr
 #' doi: https://doi.org/10.1016/j.jmva.2024.105336.
 #'
 #' Okhrin, O., Ristig, A. & Chen, G. (2024).
-#' HAC: estimation, simulation and visualization of hierarchical Archimedean copulae (HAC), R package version 1.1-1.
+#' HAC: estimation, simulation and visualization of hierarchical Archimedean copulae (HAC), R package version 1.1-1. \cr
 #' url:  https://CRAN.R-project.org/package=HAC.
 #'
 #' @seealso \code{\link{gethac}} for creating a hac object with two nesting levels,

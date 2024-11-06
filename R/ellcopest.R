@@ -18,6 +18,7 @@
 #'
 #' @details
 #' The context is the one of a \eqn{q}-dimensional random vector \eqn{\mathbf{X} = (\mathbf{X}_{1}, \dots, \mathbf{X}_{k})},
+#'
 #' with \eqn{\mathbf{X}_{i} = (X_{i1}, \dots, X_{id_{i}})} for \eqn{i = 1, \dots, k}, having a meta-elliptical copula.
 #' This means that there exists a generator \eqn{g_{\mathcal{R}} : (0,\infty) \rightarrow \mathbb{R}} and a quantile function \eqn{Q}, such that the random vector \eqn{\mathbf{Z} = (\mathbf{Z}_{1}, \dots, \mathbf{Z}_{k})} with
 #' \deqn{\mathbf{Z}_{i} = (Z_{i1}, \dots, Z_{id_{i}}) = \left(\left (Q \circ F_{i1} \right ) \left (X_{i1} \right ), \dots, \left (Q \circ F_{id_{i}} \right ) \left (X_{id_{i}} \right )  \right )} for \eqn{i = 1, \dots, k},
@@ -31,7 +32,7 @@
 #' \code{\link{elldistrest}}, performing improved kernel estimation with shrinkage function.
 #' This procedure is repeated for a certain amount (niter) of iterations to obtain a final estimate for \eqn{g_{\mathcal{R}}}.
 #'
-#' The estimator without the shrinkage function \eqn{\alpha} is implemented in the R package 'ElliptCopulas'.
+#' The estimator without the shrinkage function \eqn{\alpha} is implemented in the R package ElliptCopulas.
 #' We use this implementation and bring in the shrinkage function.
 #'
 #' In order to make \eqn{g_{\mathcal{R}}} identifiable, an extra normalization procedure is implemented
@@ -48,8 +49,7 @@
 #'
 #' Derumigny, A. & Fermanian, J.-D. (2022).
 #' Identifiability and estimation of meta-elliptical copula generators.
-#' Journal of Multivariate Analysis 190:104962.
-#'
+#' Journal of Multivariate Analysis 190:104962. \cr
 #' doi: https://doi.org/10.1016/j.jmva.2022.104962.
 #'
 #' De Keyser, S. & Gijbels, I. (2024).

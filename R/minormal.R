@@ -19,8 +19,7 @@
 #' @references
 #' De Keyser, S. & Gijbels, I. (2024).
 #' Parametric dependence between random vectors via copula-based divergence measures.
-#' Journal of Multivariate Analysis 203:105336.
-#'
+#' Journal of Multivariate Analysis 203:105336. \cr
 #' doi: https://doi.org/10.1016/j.jmva.2024.105336.
 #'
 #' @seealso \code{\link{Helnormal}} for the computation of the Gaussian copula Hellinger distance,

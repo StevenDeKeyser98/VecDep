@@ -50,8 +50,7 @@ doi: https://doi.org/10.48550/arXiv.2404.07141.
 
 Warton, D.I. (2008).
 Penalized normal likelihood and ridge regularization of correlation and covariance matrices.
-Journal of the American Statistical Association 103(481):340-349.
-
+Journal of the American Statistical Association 103(481):340-349. \cr
 doi: https://doi.org/10.1198/016214508000000021.
 }
 \seealso{

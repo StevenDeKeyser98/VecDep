@@ -32,13 +32,11 @@
 #' @references
 #' De Keyser, S. & Gijbels, I. (2024).
 #' Parametric dependence between random vectors via copula-based divergence measures.
-#' Journal of Multivariate Analysis 203:105336.
-#'
+#' Journal of Multivariate Analysis 203:105336. \cr
 #' doi: https://doi.org/10.1016/j.jmva.2024.105336.
 #'
 #' Okhrin, O., Ristig, A. & Chen, G. (2024).
-#' HAC: estimation, simulation and visualization of hierarchical Archimedean copulae (HAC), R package version 1.1-1.
-#'
+#' HAC: estimation, simulation and visualization of hierarchical Archimedean copulae (HAC), R package version 1.1-1. \cr
 #' url: https://CRAN.R-project.org/package=HAC.
 #'
 #' @seealso \code{\link{phihac}} for computing the \eqn{\Phi}-dependence between all the child copulas of a hac object with two nesting levels,

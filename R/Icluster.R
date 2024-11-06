@@ -44,7 +44,8 @@
 #'        estimated via non-parametric beta kernel estimation or Gaussian transformation kernel estimation,
 #'        and local bandwidth selection, by using a fitted (via pseudo maximum likelihood) hierarchical Archimedean copula
 #'        as reference copula, see also the functions \code{\link{phinp}} and \code{\link{estphi}},
-#' \item list("phi", phi(t), "np", estimator = estimator, bw_method = bw_method) for general \eqn{\Phi}-dependence with specified function phi(t) = \eqn{\Phi(t)},
+#' \item list("phi", phi(t), "np", estimator = estimator, bw_method = bw_method) for general \cr
+#' \eqn{\Phi}-dependence with specified function phi(t) = \eqn{\Phi(t)},
 #'         estimated via non-parametric beta kernel estimation or Gaussian transformation kernel estimation,
 #'         and local bandwidth selection, either by using a non-parametric kernel estimator as reference copula if bw_method = 1,
 #'         or by using a big O bandwidth rule if bw_method = 2, see also the functions \code{\link{phinp}} and \code{\link{estphi}},
@@ -75,8 +76,7 @@
 #'
 #' De Keyser, S. & Gijbels, I. (2024).
 #' Parametric dependence between random vectors via copula-based divergence measures.
-#' Journal of Multivariate Analysis 203:105336.
-#'
+#' Journal of Multivariate Analysis 203:105336. \cr
 #' doi: https://doi.org/10.1016/j.jmva.2024.105336.
 #'
 #' De Keyser, S. & Gijbels, I. (2024).

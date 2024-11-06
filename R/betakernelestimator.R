@@ -11,7 +11,7 @@
 #' and samples \eqn{X_{ij}^{(1)}, \dots, X_{ij}^{(n)}} from \eqn{X_{ij}} for \eqn{i = 1, \dots, k} and \eqn{j = 1, \dots, d_{i}},
 #' the beta kernel estimator for the copula density of \eqn{\mathbf{X}} equals, at \eqn{\mathbf{u} = (u_{11}, \dots, u_{kd_{k}}) \in \mathbb{R}^{q}},
 #' \deqn{\widehat{c}_{\text{B}}(\mathbf{u}) = \frac{1}{n} \sum_{\ell = 1}^{n} \prod_{i = 1}^{k} \prod_{j = 1}^{d_{i}} k_{\text{B}} \left (\widehat{U}_{ij}^{(\ell)},\frac{u_{ij}}{h_{n}} + 1, \frac{1-u_{ij}}{h_{n}} + 1 \right ),}
-#' where \eqn{h_{n} > 0} is a bandwidth parameter, \eqn{\widehat{U}_{ij}^{(\ell)} = \widehat{F}_{ij} (X_{ij}^{(\ell)})} with \eqn{\widehat{F}_{ij}(x_{ij}) = \frac{1}{n+1} \sum_{\ell = 1}^{n} 1 \left (X_{ij}^{(\ell)} \leq x_{ij} \right )} the (rescaled) empirical cdf of \eqn{X_{ij}}, and
+#' where \eqn{h_{n} > 0} is a bandwidth parameter, \eqn{\widehat{U}_{ij}^{(\ell)} = \widehat{F}_{ij} (X_{ij}^{(\ell)})} with \deqn{\widehat{F}_{ij}(x_{ij}) = \frac{1}{n+1} \sum_{\ell = 1}^{n} 1 \left (X_{ij}^{(\ell)} \leq x_{ij} \right )} the (rescaled) empirical cdf of \eqn{X_{ij}}, and
 #' \deqn{k_{\text{B}}(u,\alpha,\beta) = \frac{u^{\alpha - 1} (1-u)^{\beta-1}}{B(\alpha,\beta)},} with \eqn{B} the beta function.
 #'
 #'

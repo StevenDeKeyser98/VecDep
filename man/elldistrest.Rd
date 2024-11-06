@@ -67,7 +67,7 @@ with \eqn{a > 0} a tuning parameter was introduced by Liebscher (2005), and the 
 \deqn{\alpha(t) = 1 - \frac{1}{t^{\delta} + 1},}
 where \eqn{\delta \in (3/4 - 1/q, 1)} is another tuning parameter. When \eqn{q = 2}, one can just take \eqn{\alpha(t) = 1}, and the value of \eqn{a} does not matter.
 
-The estimator without the shrinkage function \eqn{\alpha} is implemented in the R package 'ElliptCopulas'.
+The estimator without the shrinkage function \eqn{\alpha} is implemented in the R package ElliptCopulas.
 We use this implementation and bring in the shrinkage function.
 
 In order to make \eqn{g_{\mathcal{R}}} identifiable, an extra normalization procedure is implemented
@@ -126,8 +126,7 @@ url: https://CRAN.R-project.org/package=ElliptCopulas.
 
 Derumigny, A. & Fermanian, J.-D. (2022).
 Identifiability and estimation of meta-elliptical copula generators.
-Journal of Multivariate Analysis 190:104962.
-
+Journal of Multivariate Analysis 190:104962. \cr
 doi: https://doi.org/10.1016/j.jmva.2022.104962.
 
 De Keyser, S. & Gijbels, I. (2024).

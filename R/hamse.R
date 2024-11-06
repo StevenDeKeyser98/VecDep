@@ -29,8 +29,7 @@
 #' International Journal of Approximate Reasoning 165:109090.
 #' doi: https://doi.org/10.1016/j.ijar.2023.109090.
 #'
-#' @seealso \code{\link{betakernelestimator}} for the computation of the beta kernel copula density estimator,
-#'
+#' @seealso \code{\link{betakernelestimator}} for the computation of the beta kernel copula density estimator, \cr
 #'          \code{\link{transformationestimator}} for the computation of the Gaussian transformation kernel copula density estimator,
 #'          \code{\link{phinp}} for fully non-parametric estimation of the \eqn{\Phi}-dependence between \eqn{k} random vectors.
 #'
