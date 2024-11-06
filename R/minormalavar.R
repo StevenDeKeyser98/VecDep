@@ -18,6 +18,7 @@
 #' De Keyser, S. & Gijbels, I. (2024).
 #' Parametric dependence between random vectors via copula-based divergence measures.
 #' Journal of Multivariate Analysis 203:105336.
+#'
 #' doi: https://doi.org/10.1016/j.jmva.2024.105336.
 #'
 #' @seealso \code{\link{minormal}} for the computation of the mutual information,
@@ -28,7 +29,10 @@
 #' @examples
 #' q = 10
 #' dim = c(1,2,3,4)
-#' R = 0.5^(abs(matrix(1:q-1,nrow = q, ncol = q, byrow = TRUE) - (1:q-1))) # AR(1) correlation matrix with correlation 0.5
+#'
+#' # AR(1) correlation matrix with correlation 0.5
+#' R = 0.5^(abs(matrix(1:q-1,nrow = q, ncol = q, byrow = TRUE) - (1:q-1)))
+#'
 #' minormalavar(R,dim)
 
 #' @export

@@ -42,23 +42,36 @@ see also the function \code{\link{phiellip}}.}
 }
 \examples{
 \dontrun{
+
 # Hierarchical Archimedean copula setting
 q = 4
 dim = c(2,2)
-n = 1000 # Sample size
 
-hac = gethac(dim,c(2,3,4),type = 1) # Four dimensional hierarchical Gumbel copula with parameters (theta_0,theta_1,theta_2) = (2,3,4)
-sample = HAC::rHAC(n,hac) # Sample
+# Sample size
+n = 1000
+
+# Four dimensional hierarchical Gumbel copula
+# with parameters (theta_0,theta_1,theta_2) = (2,3,4)
+hac = gethac(dim,c(2,3,4),type = 1)
+
+# Sample
+sample = HAC::rHAC(n,hac)
 
 # Several estimators for the mutual information between two random vectors of size 2
 
 est_phi_1 = estphi(sample,dim,list("hac",type = 1,M = 10000),function(t){t * log(t)})
-est_phi_2 = estphi(sample,dim,list("nphac",estimator = "beta",type = 1),function(t){t * log(t)})
-est_phi_3 = estphi(sample,dim,list("nphac",estimator = "trans",type = 1),function(t){t * log(t)})
-est_phi_4 = estphi(sample,dim,list("np",estimator = "beta",bw_method = 1),function(t){t * log(t)})
-est_phi_5 = estphi(sample,dim,list("np",estimator = "trans",bw_method = 1),function(t){t * log(t)})
-est_phi_6 = estphi(sample,dim,list("np",estimator = "beta",bw_method = 2),function(t){t * log(t)})
-est_phi_7 = estphi(sample,dim,list("np",estimator = "trans",bw_method = 2),function(t){t * log(t)})
+est_phi_2 = estphi(sample,dim,list("nphac",estimator = "beta",type = 1),
+                                   function(t){t * log(t)})
+est_phi_3 = estphi(sample,dim,list("nphac",estimator = "trans",type = 1),
+                                   function(t){t * log(t)})
+est_phi_4 = estphi(sample,dim,list("np",estimator = "beta",bw_method = 1),
+                                   function(t){t * log(t)})
+est_phi_5 = estphi(sample,dim,list("np",estimator = "trans",bw_method = 1),
+                                   function(t){t * log(t)})
+est_phi_6 = estphi(sample,dim,list("np",estimator = "beta",bw_method = 2),
+                                   function(t){t * log(t)})
+est_phi_7 = estphi(sample,dim,list("np",estimator = "trans",bw_method = 2),
+                                   function(t){t * log(t)})
 
 true_phi = phihac(hac,dim,10000,function(t){t * log(t)})
 
@@ -66,14 +79,20 @@ true_phi = phihac(hac,dim,10000,function(t){t * log(t)})
 
 q = 4
 dim = c(2,2)
-n = 1000 # Sample size
 
-R = 0.5^(abs(matrix(1:q-1,nrow = q, ncol = q, byrow = TRUE) - (1:q-1))) # AR(1) correlation matrix with correlation 0.5
-sample = mvtnorm::rmvnorm(n,rep(0,q),R,method = "chol") # Sample from 4-dimensional normal distribution
+# Sample size
+n = 1000
+
+# AR(1) correlation matrix with correlation 0.5
+R = 0.5^(abs(matrix(1:q-1,nrow = q, ncol = q, byrow = TRUE) - (1:q-1)))
+
+# Sample from 4-dimensional normal distribution
+sample = mvtnorm::rmvnorm(n,rep(0,q),R,method = "chol")
 
 # Estimate mutual information via MECIP procedure
 
-est_phi = estphi(sample,dim,list("ellip",grid = seq(0.005,100,by = 0.005)),function(t){t * log(t)})
+est_phi = estphi(sample,dim,list("ellip",grid = seq(0.005,100,by = 0.005)),
+                                 function(t){t * log(t)})
 
 true_phi = minormal(R,dim)
 }
@@ -88,6 +107,7 @@ doi: https://doi.org/10.1016/j.ijar.2023.109090.
 De Keyser, S. & Gijbels, I. (2024).
 Parametric dependence between random vectors via copula-based divergence measures.
 Journal of Multivariate Analysis 203:105336.
+
 doi: https://doi.org/10.1016/j.jmva.2024.105336.
 }
 \seealso{

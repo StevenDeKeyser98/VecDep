@@ -31,9 +31,16 @@ The underlying assumption is that the copula of \eqn{\mathbf{X}} is Gaussian.
 \examples{
 q = 10
 n = 50
-R = 0.5^(abs(matrix(1:q-1,nrow = q, ncol = q, byrow = TRUE) - (1:q-1))) # AR(1) correlation matrix with correlation 0.5
-sample = mvtnorm::rmvnorm(n,rep(0,q),R,method = "chol") # Sample from multivariate normal distribution
-omega = cvomega(sample = sample,omegas = seq(0.01,0.999,len = 50),K = 5) # 5-fold cross-validation with Gaussian likelihood as loss for selecting omega
+
+# AR(1) correlation matrix with correlation 0.5
+R = 0.5^(abs(matrix(1:q-1,nrow = q, ncol = q, byrow = TRUE) - (1:q-1)))
+
+# Sample from multivariate normal distribution
+sample = mvtnorm::rmvnorm(n,rep(0,q),R,method = "chol")
+
+# 5-fold cross-validation with Gaussian likelihood as loss for selecting omega
+omega = cvomega(sample = sample,omegas = seq(0.01,0.999,len = 50),K = 5)
+
 R_est = estR(sample,omega = omega)
 }
 \references{
@@ -44,6 +51,7 @@ doi: https://doi.org/10.48550/arXiv.2404.07141.
 Warton, D.I. (2008).
 Penalized normal likelihood and ridge regularization of correlation and covariance matrices.
 Journal of the American Statistical Association 103(481):340-349.
+
 doi: https://doi.org/10.1198/016214508000000021.
 }
 \seealso{

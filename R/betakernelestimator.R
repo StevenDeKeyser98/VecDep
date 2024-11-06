@@ -31,14 +31,24 @@
 #' q = 3
 #' n = 100
 #'
-#' sample = mvtnorm::rmvnorm(n,rep(0,q),diag(3),method = "chol") # Sample from multivariate normal distribution with identity covariance matrix
-#' pseudos = matrix(0,n,q)
-#' for(j in 1:q){pseudos[,j] = (n/(n+1)) * ecdf(sample[,j])(sample[,j])} # Copula pseudo-observations
+#' # Sample from multivariate normal distribution with identity covariance matrix
+#' sample = mvtnorm::rmvnorm(n,rep(0,q),diag(3),method = "chol")
 #'
-#' input = rep(0.5,q) # Argument at which to estimate the density
-#' h = hamse(input,pseudos = pseudos,n = n,estimator = "beta",bw_method = 1) # Local bandwidth selection
-#' est_dens = betakernelestimator(input,h,pseudos) # Beta kernel estimator
-#' true = copula::dCopula(input, copula::normalCopula(0, dim = q)) # True density
+#' # Copula pseudo-observations
+#' pseudos = matrix(0,n,q)
+#' for(j in 1:q){pseudos[,j] = (n/(n+1)) * ecdf(sample[,j])(sample[,j])}
+#'
+#' # Argument at which to estimate the density
+#' input = rep(0.5,q)
+#'
+#' # Local bandwidth selection
+#' h = hamse(input,pseudos = pseudos,n = n,estimator = "beta",bw_method = 1)
+#'
+#' # Beta kernel estimator
+#' est_dens = betakernelestimator(input,h,pseudos)
+#'
+#' # True density
+#' true = copula::dCopula(input, copula::normalCopula(0, dim = q))
 #'
 #' @export
 

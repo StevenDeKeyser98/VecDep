@@ -43,18 +43,32 @@ maximum pseudo-likelihood estimation to the \eqn{d_{i}}-dimensional marginals wi
 \examples{
 dim = c(2,2)
 thetas = c(2,3,4)
-n = 1000 # Sample size
-HAC = gethac(dim,thetas,type = 1) # 4 dimensional nested Gumbel copula with (theta_0,theta_1,theta_2) = (2,3,4)
-sample = suppressWarnings(HAC::rHAC(n,HAC)) # Sample
-HAC_est_1 = mlehac(sample,dim,1,thetas) # Maximum pseudo-likelihood estimator with starting values equal to thetas
-HAC_est_2 = mlehac(sample,dim,1) # Maximum pseudo-likelihood estimator with starting values theta_0 = 1.9, and theta_1, theta_2
-# determined by maximum pseudo-likelihood estimation for marginal child copulas
+
+# Sample size
+n = 1000
+
+# 4 dimensional nested Gumbel copula with (theta_0,theta_1,theta_2) = (2,3,4)
+HAC = gethac(dim,thetas,type = 1)
+
+# Sample
+sample = suppressWarnings(HAC::rHAC(n,HAC))
+
+# Maximum pseudo-likelihood estimator with starting values equal to thetas
+HAC_est_1 = mlehac(sample,dim,1,thetas)
+
+# Maximum pseudo-likelihood estimator with starting values
+# theta_0 = 1.9, and theta_1, theta_2 determined by maximum
+# pseudo-likelihood estimation for marginal child copulas
+
+HAC_est_2 = mlehac(sample,dim,1)
+
 
 }
 \references{
 De Keyser, S. & Gijbels, I. (2024).
 Parametric dependence between random vectors via copula-based divergence measures.
 Journal of Multivariate Analysis 203:105336.
+
 doi: https://doi.org/10.1016/j.jmva.2024.105336.
 
 Okhrin, O., Ristig, A. & Chen, G. (2024).

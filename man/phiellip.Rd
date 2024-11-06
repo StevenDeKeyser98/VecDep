@@ -62,21 +62,50 @@ When normalize = 2, this corresponds to the identifiability condition of Derumig
 \dontrun{
 q = 4
 dim = c(2,2)
-n = 1000 # Sample size
-grid = seq(0.005,100,by = 0.005) # Grid on which to evaluate the elliptical generator
-nu = 7 # Degrees of freedom
-g_q = ((nu/(nu-2))^(q/2))*(gamma((q+nu)/2)/(((pi*nu)^(q/2))*gamma(nu/2))) * ((1+(grid/(nu-2)))^(-(q+nu)/2)) # Student-t generator with 7 degrees of freedom
-R2 = function(t,q){(gamma((q+nu)/2)/(((nu-2)^(q/2))*gamma(nu/2)*gamma(q/2))) * (t^((q/2)-1)) * ((1+(t/(nu-2)))^(-(q+nu)/2))} # Density of squared radius
-sample = ElliptCopulas::EllDistrSim(n,q,diag(q),density_R2 = function(t){R2(t,q)}) # Sample from 4-dimensional Student-t distribution with 7 degrees of freedom
+
+# Sample size
+n = 1000
+
+# Grid on which to evaluate the elliptical generator
+grid = seq(0.005,100,by = 0.005)
+
+# Degrees of freedom
+nu = 7
+
+# Student-t generator with 7 degrees of freedom
+g_q = ((nu/(nu-2))^(q/2))*(gamma((q+nu)/2)/(((pi*nu)^(q/2))*gamma(nu/2))) *
+                          ((1+(grid/(nu-2)))^(-(q+nu)/2))
+
+# Density of squared radius
+
+R2 = function(t,q){(gamma((q+nu)/2)/(((nu-2)^(q/2))*gamma(nu/2)*gamma(q/2))) *
+                   (t^((q/2)-1)) * ((1+(t/(nu-2)))^(-(q+nu)/2))}
+
+# Sample from 4-dimensional Student-t distribution with 7 degrees of freedom
 # and identity covariance matrix
-opt_parameters_joint = elliptselect(n,q,seq((3/4)-(1/q)+0.01,1-0.01,len = 200),seq(0.01,2,len = 200)) # Tuning parameter selection for g_R
-a = opt_parameters_joint$Opta ; p = opt_parameters_joint$Optp ; h = opt_parameters_joint$Opth  # Optimal tuning parameters for g_R
-opt_parameters_marg = elliptselect(n,2,seq((3/4)-(1/2)+0.01,1-0.01,len = 200),seq(0.01,2,len = 200)) # Tuning parameter selection for g_R_1 (same for g_R_2)
-a1 = opt_parameters_marg$Opta ; p1 = opt_parameters_marg$Optp ; h1 = opt_parameters_marg$Opth  # Optimal tuning parameters for g_R_1 (same for g_R_2)
+sample = ElliptCopulas::EllDistrSim(n,q,diag(q),density_R2 = function(t){R2(t,q)})
+
+# Tuning parameter selection for g_R
+opt_parameters_joint = elliptselect(n,q,seq((3/4)-(1/q)+0.01,1-0.01,len = 200),
+                                        seq(0.01,2,len = 200))
+
+# Optimal tuning parameters for g_R
+a = opt_parameters_joint$Opta ; p = opt_parameters_joint$Optp ;
+                                h = opt_parameters_joint$Opth
+
+# Tuning parameter selection for g_R_1 (same for g_R_2)
+opt_parameters_marg = elliptselect(n,2,seq((3/4)-(1/2)+0.01,1-0.01,len = 200),
+                                       seq(0.01,2,len = 200))
+
+# Optimal tuning parameters for g_R_1 (same for g_R_2)
+a1 = opt_parameters_marg$Opta ; p1 = opt_parameters_marg$Optp ;
+                                h1 = opt_parameters_marg$Opth
+
 a2 = a1 ; p2 = p1 ; h2 = h1
 params = list("h" = c(h,h1,h2), "a" = c(a,a1,a2), "p" = c(p,p1,p2))
 
-est_phi = phiellip(sample, dim, function(t){t * log(t)}, grid, params) # Mutual information between two random vectors of size 2
+# Mutual information between two random vectors of size 2
+est_phi = phiellip(sample, dim, function(t){t * log(t)}, grid, params)
 }
 
 }

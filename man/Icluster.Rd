@@ -55,7 +55,8 @@ see also the functions \code{\link{Helnormal}}, \code{\link{estR}}, and \code{\l
 \item list("phi", phi(t), "hac", type = type, M = M) for general \eqn{\Phi}-dependence with specified function phi(t) = \eqn{\Phi(t)},
 estimated by fitting (via pseudo maximum likelihood estimation) a hierarchical Archimedean copula of given type = type,
 and computed based on a Monte Carlo sample of size \eqn{M} in order to approximate the expectation, see also the functions \code{\link{mlehac}}, \code{\link{phihac}} and \code{\link{estphi}},
-\item list("phi", phi(t), "nphac", estimator = estimator, type = type) for general \eqn{\Phi}-dependence with specified function phi(t) = \eqn{\Phi(t)},
+\item list("phi", phi(t), "nphac", estimator = estimator, type = type) for general
+\eqn{\Phi}-dependence with specified function phi(t) = \eqn{\Phi(t)},
 estimated via non-parametric beta kernel estimation or Gaussian transformation kernel estimation,
 and local bandwidth selection, by using a fitted (via pseudo maximum likelihood) hierarchical Archimedean copula
 as reference copula, see also the functions \code{\link{phinp}} and \code{\link{estphi}},
@@ -82,70 +83,133 @@ The default is \eqn{N(t) = t}, meaning that no normalization is applied.
 \examples{
 \dontrun{
 q = 20
-dim = c(2,3,3,5,7) # We will impose a clustering {{X1,X2},{X3,X4,X5},{X6,X7,X8},{X9,X10,X11,X12,X13},{X14,X15,X16,X17,X18,X19,X20}}
 
-n = 200 # Sample size
+# We will impose a clustering
+# {{X1,X2},{X3,X4,X5},{X6,X7,X8},{X9,X10,X11,X12,X13},{X14,X15,X16,X17,X18,X19,X20}}
+dim = c(2,3,3,5,7)
 
-hac = gethac(dim,c(2,3,4,5,6,7),type = 1) # Twenty dimensional hierarchical Gumbel copula with parameters
+# Sample size
+n = 200
+
+# Twenty dimensional hierarchical Gumbel copula with parameters
 # (theta_0,theta_1,theta_2,theta_3,theta_4,theta_5) = (2,3,4,5,6,7)
+hac = gethac(dim,c(2,3,4,5,6,7),type = 1)
+
 # So, strongest cluster is {X14,X15,X16,X17,X18,X19,X20}, then {X9,X10,X11,X12,X13},
 # then {X6,X7,X8}, then {X3,X4,X5}, and finally {X1,X2}
-sample = HAC::rHAC(n,hac) # Sample
+
+# Sample
+sample = HAC::rHAC(n,hac)
 
 # Cluster using different methods
 
 # Gaussian copula based methods
 
-Clustering1 =  Icluster(data = sample, est_method = list("phi", "mi", "Gauss", omegas = 1))
-Clustering1$hierarchy$Aleph_16 # 5-cluster partition
+Clustering1 =  Icluster(data = sample,
+                        est_method = list("phi", "mi", "Gauss", omegas = 1))
 
-Clustering2 =  Icluster(data = sample, est_method = list("phi", "mi", "Gauss", omegas = seq(0.01,0.999,len = 50)))
-Clustering2$hierarchy$Aleph_16 # 5-cluster partition
+# 5-cluster partition
+Clustering1$hierarchy$Aleph_16
 
-Clustering3 =  Icluster(data = sample, est_method = list("phi", "mi", "Gauss", omegas = 1), max_dim = 2)
-Clustering3$hierarchy$Aleph_16 # 5-cluster partition
+Clustering2 =  Icluster(data = sample,
+                        est_method = list("phi", "mi", "Gauss",
+                                          omegas = seq(0.01,0.999,len = 50)))
 
-Clustering4 =  Icluster(data = sample, est_method = list("phi", "Hel", "Gauss", omegas = 1))
-Clustering4$hierarchy$Aleph_16 # 5-cluster partition
+# 5-cluster partition
+Clustering2$hierarchy$Aleph_16
 
-Clustering5 =  Icluster(data = sample, est_method = list("ot", coef = 1, omegas = 1))
-Clustering5$hierarchy$Aleph_16 # 5-cluster partition
+Clustering3 =  Icluster(data = sample,
+                        est_method = list("phi", "mi", "Gauss", omegas = 1),
+                        max_dim = 2)
 
-Clustering6 =  Icluster(data = sample, est_method = list("ot", coef = 2, omegas = 1))
-Clustering6$hierarchy$Aleph_16 # 5-cluster partition
+# 5-cluster partition
+Clustering3$hierarchy$Aleph_16
 
-Clustering7 =  Icluster(data = sample, est_method = list("ot", coef = 2, omegas = 1), max_dim = 4)
-Clustering7$hierarchy$Aleph_16 # 5-cluster partition
+Clustering4 =  Icluster(data = sample,
+                        est_method = list("phi", "Hel", "Gauss", omegas = 1))
+
+# 5-cluster partition
+Clustering4$hierarchy$Aleph_16
+
+Clustering5 =  Icluster(data = sample,
+                        est_method = list("ot", coef = 1, omegas = 1))
+
+# 5-cluster partition
+Clustering5$hierarchy$Aleph_16
+
+Clustering6 =  Icluster(data = sample,
+                        est_method = list("ot", coef = 2, omegas = 1))
+
+# 5-cluster partition
+Clustering6$hierarchy$Aleph_16
+
+Clustering7 =  Icluster(data = sample,
+                        est_method = list("ot", coef = 2, omegas = 1), max_dim = 4)
+
+# 5-cluster partition
+Clustering7$hierarchy$Aleph_16
 
 # Parametric hierarchical Archimedean copula approach
 
-Clustering8 = Icluster(data = sample, est_method = list("phi", function(t){t * log(t)}, "hac", type = 1, M = 1000), max_dim = 4)
-Clustering8$hierarchy$Aleph_16 # 5-cluster partition
+Clustering8 = Icluster(data = sample,
+                       est_method = list("phi", function(t){t * log(t)}, "hac",
+                                         type = 1, M = 1000), max_dim = 4)
 
-Clustering9 = Icluster(data = sample, est_method = list("phi", function(t){(sqrt(t)-1)^2}, "hac", type = 1, M = 1000), max_dim = 2)
-Clustering9$hierarchy$Aleph_16 # 5-cluster partition
+# 5-cluster partition
+Clustering8$hierarchy$Aleph_16
+
+Clustering9 = Icluster(data = sample,
+                       est_method = list("phi", function(t){(sqrt(t)-1)^2}, "hac",
+                                         type = 1, M = 1000), max_dim = 2)
+
+# 5-cluster partition
+Clustering9$hierarchy$Aleph_16
 
 # Non-parametric approaches
 
-Clustering10 = Icluster(data = sample, est_method = list("phi", function(t){t * log(t)}, "nphac", estimator = "beta", type = 1), max_dim = 3)
-Clustering10$hierarchy$Aleph_16 # 5-cluster partition
+Clustering10 = Icluster(data = sample,
+                        est_method = list("phi", function(t){t * log(t)}, "nphac",
+                                       estimator = "beta", type = 1), max_dim = 3)
 
-Clustering11 = Icluster(data = sample, est_method = list("phi", function(t){t * log(t)}, "nphac", estimator = "trans", type = 1), max_dim = 3)
-Clustering11$hierarchy$Aleph_16 # 5-cluster partition
+# 5-cluster partition
+Clustering10$hierarchy$Aleph_16
 
-Clustering12 = Icluster(data = sample, est_method = list("phi", function(t){t * log(t)}, "np", estimator = "beta", bw_method = 1), max_dim = 3)
-Clustering12$hierarchy$Aleph_16 # 5-cluster partition
+Clustering11 = Icluster(data = sample,
+                        est_method = list("phi", function(t){t * log(t)}, "nphac",
+                                     estimator = "trans", type = 1), max_dim = 3)
 
-Clustering13 = Icluster(data = sample, est_method = list("phi", function(t){t * log(t)}, "np", estimator = "trans", bw_method = 2), max_dim = 3)
-Clustering13$hierarchy$Aleph_16 # 5-cluster partition
+# 5-cluster partition
+Clustering11$hierarchy$Aleph_16
 
-Clustering14 = Icluster(data = sample, est_method = list("phi", function(t){(sqrt(t)-1)^2}, "np", estimator = "trans", bw_method = 1), max_dim = 2)
-Clustering14$hierarchy$Aleph_16 # 5-cluster partition
+Clustering12 = Icluster(data = sample,
+                        est_method = list("phi", function(t){t * log(t)}, "np",
+                                     estimator = "beta", bw_method = 1), max_dim = 3)
+
+# 5-cluster partition
+Clustering12$hierarchy$Aleph_16
+
+Clustering13 = Icluster(data = sample,
+                        est_method = list("phi", function(t){t * log(t)}, "np",
+                                     estimator = "trans", bw_method = 2), max_dim = 3)
+
+# 5-cluster partition
+Clustering13$hierarchy$Aleph_16
+
+Clustering14 = Icluster(data = sample,
+                        est_method = list("phi", function(t){(sqrt(t)-1)^2}, "np",
+                                      estimator = "trans", bw_method = 1), max_dim = 2)
+
+# 5-cluster partition
+Clustering14$hierarchy$Aleph_16
 
 # Semi-parametric meta-elliptical copula approach
 
-Clustering15 = Icluster(data = sample, est_method = list("phi", function(t){t * log(t)}, "ellip", grid = seq(0.005,100,by = 0.005)), max_dim = 2)
-Clustering15$hierarchy$Aleph_16 # 5-cluster partition
+Clustering15 = Icluster(data = sample,
+                        est_method = list("phi", function(t){t * log(t)}, "ellip",
+                                     grid = seq(0.005,100,by = 0.005)), max_dim = 2)
+
+# 5-cluster partition
+Clustering15$hierarchy$Aleph_16
 }
 
 }
@@ -158,6 +222,7 @@ doi: https://doi.org/10.1016/j.ijar.2023.109090.
 De Keyser, S. & Gijbels, I. (2024).
 Parametric dependence between random vectors via copula-based divergence measures.
 Journal of Multivariate Analysis 203:105336.
+
 doi: https://doi.org/10.1016/j.jmva.2024.105336.
 
 De Keyser, S. & Gijbels, I. (2024).

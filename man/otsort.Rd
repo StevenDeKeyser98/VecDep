@@ -26,6 +26,9 @@ having the smallest dimension \eqn{d_{i}} comes first, then the random vector wi
 q = 10
 n = 50
 dim = c(2,3,1,4)
-sample = mvtnorm::rmvnorm(n,rep(0,q),diag(q), method = "chol") # Sample from multivariate normal distribution
+
+# Sample from multivariate normal distribution
+sample = mvtnorm::rmvnorm(n,rep(0,q),diag(q), method = "chol")
+
 ordered = otsort(sample,dim)
 }

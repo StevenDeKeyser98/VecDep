@@ -52,7 +52,8 @@ This functions performs improved kernel density estimation of the generator of a
 copula by using Liebscher's algorithm, combined with a shrinkage function.
 }
 \details{
-The context is the one of a \eqn{q}-dimensional random vector \eqn{\mathbf{X} = (\mathbf{X}_{1}, \dots, \mathbf{X}_{k})}, with \eqn{\mathbf{X}_{i} = (X_{i1}, \dots, X_{id_{i}})} for \eqn{i = 1, \dots, k}, having a meta-elliptical copula.
+The context is the one of a \eqn{q}-dimensional random vector \eqn{\mathbf{X} = (\mathbf{X}_{1}, \dots, \mathbf{X}_{k})},
+with \eqn{\mathbf{X}_{i} = (X_{i1}, \dots, X_{id_{i}})} for \eqn{i = 1, \dots, k}, having a meta-elliptical copula.
 This means that there exists a generator \eqn{g_{\mathcal{R}} : (0,\infty) \rightarrow \mathbb{R}} and a quantile function \eqn{Q}, such that the random vector \eqn{\mathbf{Z} = (\mathbf{Z}_{1}, \dots, \mathbf{Z}_{k})} with
 \deqn{\mathbf{Z}_{i} = (Z_{i1}, \dots, Z_{id_{i}}) = \left(\left (Q \circ F_{i1} \right ) \left (X_{i1} \right ), \dots, \left (Q \circ F_{id_{i}} \right ) \left (X_{id_{i}} \right )  \right )} for \eqn{i = 1, \dots, k},
 where \eqn{F_{ij}} is the cdf of \eqn{X_{ij}}, has a multivariate elliptical distribution.
@@ -76,19 +77,46 @@ When normalize = 2, this corresponds to the identifiability condition of Derumig
 \examples{
 \dontrun{
 q = 4
-n = 1000 # Sample size
-grid = seq(0.005,100,by = 0.005) # Grid on which to evaluate the elliptical generator
-nu = 7 # Degrees of freedom
-g_q = ((nu/(nu-2))^(q/2))*(gamma((q+nu)/2)/(((pi*nu)^(q/2))*gamma(nu/2))) * ((1+(grid/(nu-2)))^(-(q+nu)/2)) # Student-t generator with 7 degrees of freedom
-R2 = function(t,q){(gamma((q+nu)/2)/(((nu-2)^(q/2))*gamma(nu/2)*gamma(q/2))) * (t^((q/2)-1)) * ((1+(t/(nu-2)))^(-(q+nu)/2))} # Density of squared radius
-sample = ElliptCopulas::EllDistrSim(n,q,diag(q),density_R2 = function(t){R2(t,q)}) # Sample from 4-dimensional Student-t distribution with 7 degrees of freedom
+
+# Sample size
+n = 1000
+
+# Grid on which to evaluate the elliptical generator
+grid = seq(0.005,100,by = 0.005)
+
+# Degrees of freedom
+nu = 7
+
+# Student-t generator with 7 degrees of freedom
+g_q = ((nu/(nu-2))^(q/2))*(gamma((q+nu)/2)/(((pi*nu)^(q/2))*gamma(nu/2))) *
+      ((1+(grid/(nu-2)))^(-(q+nu)/2))
+
+# Density of squared radius
+R2 = function(t,q){(gamma((q+nu)/2)/(((nu-2)^(q/2))*gamma(nu/2)*gamma(q/2))) *
+                   (t^((q/2)-1)) * ((1+(t/(nu-2)))^(-(q+nu)/2))}
+
+# Sample from 4-dimensional Student-t distribution with 7 degrees of freedom
 # and identity covariance matrix
+sample = ElliptCopulas::EllDistrSim(n,q,diag(q),density_R2 = function(t){R2(t,q)})
+
+# Copula pseudo-observations
 pseudos = matrix(0,n,q)
-for(j in 1:q){pseudos[,j] = (n/(n+1)) * ecdf(sample[,j])(sample[,j])} # Copula pseudo-observations
-shrinkage = function(t,p){1-(1/((t^p) + 1))}  # Shrinkage function
-opt_parameters = elliptselect(n,q,seq((3/4)-(1/q)+0.01,1-0.01,len = 200),seq(0.01,2,len = 200)) # Tuning parameter selection
-a = opt_parameters$Opta ; p = opt_parameters$Optp ; h = opt_parameters$Opth  # Optimal tuning parameters
-g_est = ellcopest(dataU = pseudos,Sigma_m1 = diag(q),h = h,grid = grid,a = a,shrink = function(t){shrinkage(t,p)}) # Estimated elliptical generator
+for(j in 1:q){pseudos[,j] = (n/(n+1)) * ecdf(sample[,j])(sample[,j])}
+
+# Shrinkage function
+shrinkage = function(t,p){1-(1/((t^p) + 1))}
+
+# Tuning parameter selection
+opt_parameters = elliptselect(n,q,seq((3/4)-(1/q)+0.01,1-0.01,len = 200),
+                                  seq(0.01,2,len = 200))
+
+# Optimal tuning parameters
+a = opt_parameters$Opta ; p = opt_parameters$Optp ; h = opt_parameters$Opth
+
+# Estimated elliptical generator
+g_est = ellcopest(dataU = pseudos,Sigma_m1 = diag(q),h = h,grid = grid,a = a,
+                  shrink = function(t){shrinkage(t,p)})
+
 plot(grid,g_est,type = "l", xlim = c(0,8))
 lines(grid,g_q,col = "green")
 }
@@ -102,6 +130,7 @@ url: https://CRAN.R-project.org/package=ElliptCopulas.
 Derumigny, A. & Fermanian, J.-D. (2022).
 Identifiability and estimation of meta-elliptical copula generators.
 Journal of Multivariate Analysis 190:104962.
+
 doi: https://doi.org/10.1016/j.jmva.2022.104962.
 
 De Keyser, S. & Gijbels, I. (2024).

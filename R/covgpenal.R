@@ -20,7 +20,7 @@
 #' The matrix \eqn{\widehat{\boldsymbol{\Sigma}}_{n}} is the matrix of sample normal scores covariances.
 #'
 #' In case \eqn{p_{\omega_{n}}(t) = \omega_{n} t} is the lasso penalty, the implementation for the
-#' (weighted) covariance graphical lasso is available in the R package 'covglasso' (see the manual for further explanations). For general penalty functions,
+#' (weighted) covariance graphical lasso is available in the R package `covglasso' (see the manual for further explanations). For general penalty functions,
 #' we perform a local linear approximation to the penalty function and iteratively do (nsteps, default = 1) weighted covariance graphical lasso optimizations.
 #'
 #' The default for the penalty function is the scad (derpenal = derivative of scad penalty), i.e.,
@@ -54,14 +54,26 @@
 #' q = 10
 #' dim = c(5,5)
 #' n = 100
-
-#' R = 0.5^(abs(matrix(1:q-1,nrow = q, ncol = q, byrow = TRUE) - (1:q-1))) # AR(1) correlation matrix with correlation 0.5
-#' R0 = createR0(R,dim) # Sparsity on off-diagonal blocks
-#' sample = mvtnorm::rmvnorm(n,rep(0,q),R0,method = "chol") # Sample from multivariate normal distribution
-#' scores = matrix(0,n,q) # Normal scores
+#'
+#' # AR(1) correlation matrix with correlation 0.5
+#' R = 0.5^(abs(matrix(1:q-1,nrow = q, ncol = q, byrow = TRUE) - (1:q-1)))
+#'
+#' # Sparsity on off-diagonal blocks
+#' R0 = createR0(R,dim)
+#'
+#' # Sample from multivariate normal distribution
+#' sample = mvtnorm::rmvnorm(n,rep(0,q),R0,method = "chol")
+#'
+#' # Normal scores
+#' scores = matrix(0,n,q)
 #' for(j in 1:q){scores[,j] = qnorm((n/(n+1)) * ecdf(sample[,j])(sample[,j]))}
-#' Sigma_est = cov(scores) * ((n-1)/n) # Sample matrix of normal scores covariances
-#' omega = seq(0.01, 0.6, length = 50) # Candidate tuning parameters
+#'
+#' # Sample matrix of normal scores covariances
+#' Sigma_est = cov(scores) * ((n-1)/n)
+#'
+#' # Candidate tuning parameters
+#' omega = seq(0.01, 0.6, length = 50)
+#'
 #' Sigma_est_penal = covgpenal(Sigma_est,n,omega)
 #'
 #' @export

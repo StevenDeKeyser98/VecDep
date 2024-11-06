@@ -37,7 +37,7 @@
 #' \deqn{\text{BIC} \left (\widehat{\boldsymbol{\Sigma}}_{\omega_{n}} \right ) = -n \left [\ln \left |\widehat{\boldsymbol{\Sigma}}_{\omega_{n}} \right | + \text{tr} \left (\widehat{\boldsymbol{\Sigma}}_{\omega_{n}}^{-1} \widehat{\boldsymbol{\Sigma}}_{n} \right ) \right ] - \ln(n) \text{df} \left (\widehat{\boldsymbol{\Sigma}}_{\omega_{n}} \right ),}
 #' where \eqn{\widehat{\boldsymbol{\Sigma}}_{\omega_{n}}} is the estimated candidate covariance matrix using \eqn{\omega_{n}}
 #' and df (degrees of freedom) equals
-#' \deqn{\text{df} \left (\widehat{\boldsymbol{\Sigma}}_{\omega_{n}} \right ) = \sum_{i,j = 1, j > i}^{k} 1 \left (\left | \left |\widehat{\boldsymbol{\Sigma}}_{\omega_{n},ij} \right | \right |_{\text{F}} > 0 \right )  \left (1 + \frac{\left | \left |\widehat{\boldsymbol{\Sigma}}_{\omega_{n},ij} \right | \right |_{\text{F}}}{\left | \left |\widehat{\boldsymbol{\Sigma}}_{n,ij} \right | \right |_{\text{F}}} \left (d_{i}d_{j} - 1 \right ) \right ) \newline \hspace{3cm} + \sum_{i = 1}^{k} 1 \left (\left | \left |\boldsymbol{\Delta}_{i} * \widehat{\boldsymbol{\Sigma}}_{\omega_{n},ii} \right | \right |_{\text{F}} > 0 \right ) \left (1 + \frac{\left | \left |\boldsymbol{\Delta}_{i} * \widehat{\boldsymbol{\Sigma}}_{\omega_{n},ii}  \right | \right |_{\text{F}}}{\left | \left |\boldsymbol{\Delta}_{i} * \widehat{\boldsymbol{\Sigma}}_{n,ii}  \right | \right |_{\text{F}}} \left (\frac{d_{i}(d_{i}-1)}{2} - 1 \right ) \right ) \\ \hspace{-6cm} + \hspace{0.1cm} q,}
+#' \deqn{\text{df} \left (\widehat{\boldsymbol{\Sigma}}_{\omega_{n}} \right ) = \sum_{i,j = 1, j > i}^{k} 1 \left (\left | \left |\widehat{\boldsymbol{\Sigma}}_{\omega_{n},ij} \right | \right |_{\text{F}} > 0 \right )  \left (1 + \frac{\left | \left |\widehat{\boldsymbol{\Sigma}}_{\omega_{n},ij} \right | \right |_{\text{F}}}{\left | \left |\widehat{\boldsymbol{\Sigma}}_{n,ij} \right | \right |_{\text{F}}} \left (d_{i}d_{j} - 1 \right ) \right ) \newline + \sum_{i = 1}^{k} 1 \left (\left | \left |\boldsymbol{\Delta}_{i} * \widehat{\boldsymbol{\Sigma}}_{\omega_{n},ii} \right | \right |_{\text{F}} > 0 \right ) \left (1 + \frac{\left | \left |\boldsymbol{\Delta}_{i} * \widehat{\boldsymbol{\Sigma}}_{\omega_{n},ii}  \right | \right |_{\text{F}}}{\left | \left |\boldsymbol{\Delta}_{i} * \widehat{\boldsymbol{\Sigma}}_{n,ii}  \right | \right |_{\text{F}}} \left (\frac{d_{i}(d_{i}-1)}{2} - 1 \right ) \right ) \\ \hspace{-6cm} + \hspace{0.1cm} q,}
 #' with \eqn{\widehat{\boldsymbol{\Sigma}}_{\omega_{n},ij}} the \eqn{(i,j)}'th block of \eqn{\widehat{\boldsymbol{\Sigma}}_{\omega_{n}}}, similarly for \eqn{\widehat{\boldsymbol{\Sigma}}_{n,ij}}.
 #'
 #' @return A list with elements "est" containing the (group lasso) penalized matrix of sample normal scores rank correlations (output as provided by the function spcov.R), and "omega" containing the optimal tuning parameter.
@@ -63,14 +63,26 @@
 #' q = 10
 #' dim = c(5,5)
 #' n = 100
-
-#' R = 0.5^(abs(matrix(1:q-1,nrow = q, ncol = q, byrow = TRUE) - (1:q-1))) # AR(1) correlation matrix with correlation 0.5
-#' R0 = createR0(R,dim) # Sparsity on off-diagonal blocks.
-#' sample = mvtnorm::rmvnorm(n,rep(0,q),R0,method = "chol") # Sample from multivariate normal distribution
-#' scores = matrix(0,n,q) # Normal scores
+#'
+#' # AR(1) correlation matrix with correlation 0.5
+#' R = 0.5^(abs(matrix(1:q-1,nrow = q, ncol = q, byrow = TRUE) - (1:q-1)))
+#'
+#' # Sparsity on off-diagonal blocks
+#' R0 = createR0(R,dim)
+#'
+#' # Sample from multivariate normal distribution
+#' sample = mvtnorm::rmvnorm(n,rep(0,q),R0,method = "chol")
+#'
+#' # Normal scores
+#' scores = matrix(0,n,q)
 #' for(j in 1:q){scores[,j] = qnorm((n/(n+1)) * ecdf(sample[,j])(sample[,j]))}
-#' Sigma_est = cov(scores) * ((n-1)/n) # Sample matrix of normal scores covariances
-#' omega = seq(0.01, 0.6, length = 50) # Candidate tuning parameters
+#'
+#' # Sample matrix of normal scores covariances
+#' Sigma_est = cov(scores) * ((n-1)/n)
+#'
+#' # Candidate tuning parameters
+#' omega = seq(0.01, 0.6, length = 50)
+#'
 #' Sigma_est_penal = grouplasso(Sigma_est, Sigma_est, n, omega, dim)
 #'}
 #' @export

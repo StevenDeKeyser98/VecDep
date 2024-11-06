@@ -22,8 +22,8 @@
 #' Hereby, \eqn{\widehat{F}_{ij}(x_{ij}) = \frac{1}{n+1} \sum_{\ell = 1}^{n} 1 \left (X_{ij}^{(\ell)} \leq x_{ij} \right )} is the (rescaled) empirical cdf of \eqn{X_{ij}} based on a sample \eqn{X_{ij}^{(1)}, \dots, X_{ij}^{(n)}} for \eqn{i = 1, \dots, k} and \eqn{j = 1, \dots, d_{i}}.
 #'
 #' The joint copula density \eqn{c} and marginal copula densities \eqn{c_{i}} for \eqn{i = 1, \dots, k} are estimated via fully non-parametric copula kernel density estimation.
-#' When estimator = ``beta'', the beta kernel copula density estimator is used.
-#' When estimator = ``trans'', the Gaussian transformation kernel copula density estimator is used.
+#' When estimator = "beta", the beta kernel copula density estimator is used.
+#' When estimator = "trans", the Gaussian transformation kernel copula density estimator is used.
 #'
 #' Bandwidth selection is done locally by using the function \code{\link{hamse}}.
 #' When bw_method = 0, then the given fitted (e.g., via MLE using \code{\link{mlehac}}) hac object (hierarchical Archimedean copula) cop is used as reference copula.
@@ -40,6 +40,7 @@
 #' doi: https://doi.org/10.1016/j.ijar.2023.109090.
 #'
 #' @seealso \code{\link{betakernelestimator}} for the computation of the beta kernel copula density estimator,
+#'
 #'          \code{\link{transformationestimator}} for the computation of the Gaussian transformation kernel copula density estimator,
 #'          \code{\link{hamse}} for local bandwidth selection for the beta kernel or Gaussian transformation kernel copula density estimator.
 #'
@@ -48,21 +49,34 @@
 #' \dontrun{
 #' q = 4
 #' dim = c(2,2)
-#' n = 500 # Sample size
 #'
-#' HAC = gethac(dim,c(2,3,4),type = 1) # Four dimensional hierarchical Gumbel copula with parameters (theta_0,theta_1,theta_2) = (2,3,4)
-#' sample = HAC::rHAC(n,HAC) # Sample
+#' # Sample size
+#' n = 500
 #'
-#' est_cop = mlehac(sample,dim,1,c(2,3,4)) # Maximum pseudo-likelihood estimator to be used as reference copula for bw_method = 0
+#' # Four dimensional hierarchical Gumbel copula
+#' # with parameters (theta_0,theta_1,theta_2) = (2,3,4)
+#' HAC = gethac(dim,c(2,3,4),type = 1)
+#'
+#' # Sample
+#' sample = HAC::rHAC(n,HAC)
+#'
+#' # Maximum pseudo-likelihood estimator to be used as reference copula for bw_method = 0
+#' est_cop = mlehac(sample,dim,1,c(2,3,4))
 #'
 #' # Estimate mutual information between two random vectors of size 2 in different ways
 #'
-#' est_phi_1 = phinp(sample,cop = est_cop,dim = dim,phi = function(t){t * log(t)},estimator = "beta",bw_method = 0)
-#' est_phi_2 = phinp(sample,cop = est_cop,dim = dim,phi = function(t){t * log(t)},estimator = "trans",bw_method = 0)
-#' est_phi_3 = phinp(sample,dim = dim,phi = function(t){t * log(t)},estimator = "beta",bw_method = 1)
-#' est_phi_4 = phinp(sample,dim = dim,phi = function(t){t * log(t)},estimator = "trans",bw_method = 1)
-#' est_phi_5 = phinp(sample,dim = dim,phi = function(t){t * log(t)},estimator = "beta",bw_method = 2)
-#' est_phi_6 = phinp(sample,dim = dim,phi = function(t){t * log(t)},estimator = "trans",bw_method = 2)
+#' est_phi_1 = phinp(sample,cop = est_cop,dim = dim,phi = function(t){t * log(t)},
+#'                   estimator = "beta",bw_method = 0)
+#' est_phi_2 = phinp(sample,cop = est_cop,dim = dim,phi = function(t){t * log(t)},
+#'                   estimator = "trans",bw_method = 0)
+#' est_phi_3 = phinp(sample,dim = dim,phi = function(t){t * log(t)},
+#'                   estimator = "beta",bw_method = 1)
+#' est_phi_4 = phinp(sample,dim = dim,phi = function(t){t * log(t)},
+#'                   estimator = "trans",bw_method = 1)
+#' est_phi_5 = phinp(sample,dim = dim,phi = function(t){t * log(t)},
+#'                   estimator = "beta",bw_method = 2)
+#' est_phi_6 = phinp(sample,dim = dim,phi = function(t){t * log(t)},
+#'                   estimator = "trans",bw_method = 2)
 #'}
 #'
 #' @export

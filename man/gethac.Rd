@@ -42,19 +42,26 @@ See also the package HAC for the different possibilities of type (specified by a
 \examples{
 dim = c(3,5,1,2)
 thetas = c(2,2,3,1,4)
-HAC = gethac(dim,thetas,type = 1) # 11 dimensional nested Gumbel copula with (theta_0,theta_1,theta_2,theta_3,theta_4) = (2,2,3,1,4)
-                                  # where the value of theta_3 could be anything, because the third random vector is one dimensional
+
+# 11 dimensional nested Gumbel copula with
+# (theta_0,theta_1,theta_2,theta_3,theta_4) = (2,2,3,1,4),
+# where the value of theta_3 could be anything,
+# because the third random vector is one dimensional
+
+HAC = gethac(dim,thetas,type = 1)
 
 }
 \references{
 De Keyser, S. & Gijbels, I. (2024).
 Parametric dependence between random vectors via copula-based divergence measures.
 Journal of Multivariate Analysis 203:105336.
+
 doi: https://doi.org/10.1016/j.jmva.2024.105336.
 
 Okhrin, O., Ristig, A. & Chen, G. (2024).
 HAC: estimation, simulation and visualization of hierarchical Archimedean copulae (HAC), R package version 1.1-1.
-url:  https://CRAN.R-project.org/package=HAC.
+
+url: https://CRAN.R-project.org/package=HAC.
 }
 \seealso{
 \code{\link{phihac}} for computing the \eqn{\Phi}-dependence between all the child copulas of a hac object with two nesting levels,

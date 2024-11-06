@@ -27,7 +27,9 @@ This function performs local bandwidth selection based on the amse (asymptotic m
 for the beta kernel or Gaussian transformation kernel copula density estimator.
 }
 \details{
-When estimator = \verb{beta'', this function computes, at a certain input, a numerical approximation of the optimal local bandwidth (for the beta kernel copula density estimator) in terms of the amse (asymptotic mean squared error) given in equation (27) of De Keyser & Gijbels (2024). When estimator = }trans'' (for the Gaussian transformation kernel copula density estimator), this optimal bandwidth is given
+When estimator = "beta", this function computes, at a certain input, a numerical approximation of the optimal local bandwidth (for the beta kernel copula density estimator) in terms of the amse
+(asymptotic mean squared error) given in equation (27) of De Keyser & Gijbels (2024).
+When estimator = "trans" (for the Gaussian transformation kernel copula density estimator), this optimal bandwidth is given
 at the end of Section 5.2 in De Keyser & Gijbels (2024).
 
 Of course, these optimal bandwidths depend upon the true unknown copula.
@@ -38,14 +40,24 @@ using the big O bandwidth (i.e., \eqn{n^{-2/(q+4)}} in case of the beta estimato
 \examples{
 q = 4
 dim = c(2,2)
-n = 1000 # Sample size
 
-HAC = gethac(dim,c(2,3,4),type = 1) # Four dimensional hierarchical Gumbel copula with parameters (theta_0,theta_1,theta_2) = (2,3,4)
-sample = suppressWarnings(HAC::rHAC(n,HAC)) # Sample
+# Sample size
+n = 1000
+
+# Four dimensional hierarchical Gumbel copula
+# with parameters (theta_0,theta_1,theta_2) = (2,3,4)
+HAC = gethac(dim,c(2,3,4),type = 1)
+
+# Sample
+sample = suppressWarnings(HAC::rHAC(n,HAC))
+
+# Copula pseudo-observations
 pseudos = matrix(0,n,q)
-for(j in 1:q){pseudos[,j] = (n/(n+1)) * ecdf(sample[,j])(sample[,j])} # Copula pseudo-observations
+for(j in 1:q){pseudos[,j] = (n/(n+1)) * ecdf(sample[,j])(sample[,j])}
 
-est_cop = mlehac(sample,dim,1,c(2,3,4)) # Maximum pseudo-likelihood estimator to be used as reference copula for bw_method = 0
+# Maximum pseudo-likelihood estimator to be used
+# as reference copula for bw_method = 0
+est_cop = mlehac(sample,dim,1,c(2,3,4))
 
 h_1 = hamse(rep(0.5,q),cop = est_cop,n = n,estimator = "beta",bw_method = 0)
 h_2 = hamse(rep(0.5,q),cop = est_cop,n = n,estimator = "trans",bw_method = 0)
@@ -68,6 +80,8 @@ doi: https://doi.org/10.1016/j.ijar.2023.109090.
 }
 \seealso{
 \code{\link{betakernelestimator}} for the computation of the beta kernel copula density estimator,
-\code{\link{transformationestimator}} for the computation of the Gaussian transformation kernel copula density estimator,
-\code{\link{phinp}} for fully non-parametric estimation of the \eqn{\Phi}-dependence between \eqn{k} random vectors.
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{     \code{\link{transformationestimator}} for the computation of the Gaussian transformation kernel copula density estimator,
+     \code{\link{phinp}} for fully non-parametric estimation of the \eqn{\Phi}-dependence between \eqn{k} random vectors.
+}\if{html}{\out{</div>}}
 }

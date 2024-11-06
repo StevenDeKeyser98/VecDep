@@ -28,15 +28,21 @@ Given a correlation matrix \deqn{\mathbf{R} = \begin{pmatrix} \mathbf{R}_{11} & 
 and a certain amount of degrees of freedom \eqn{\nu > 0},
 the Student-t mutual information equals \deqn{\mathcal{D}_{t \ln(t)}^{\text{S}}(\mathbf{R},\nu) = - \frac{1}{2} \ln \left (\frac{|\mathbf{R}|}{\prod_{i = 1}^{k} \left |\mathbf{R}_{ii} \right |} \right ) + K(\nu),}
 where
-\deqn{K(\nu) = \ln \left (\frac{\Gamma((q+\nu)/2) \Gamma(\nu/2)^{k-1}}{\prod_{i = 1}^{k} \Gamma((d_{i} + \nu)/2)} \right ) + \sum_{i = 1}^{k} \left [\frac{d_{i} + \nu}{2} \psi((d_{i} + \nu)/2) \right ] - \frac{q + \nu}{2} \psi((q + \nu)/2) - \frac{\nu}{2}(k-1)\psi(\nu/2),}
+\deqn{K(\nu) = \ln \left (\frac{\Gamma((q+\nu)/2) \Gamma(\nu/2)^{k-1}}{\prod_{i = 1}^{k} \Gamma((d_{i} + \nu)/2)} \right ) + \sum_{i = 1}^{k} \left [\frac{d_{i} + \nu}{2} \psi((d_{i} + \nu)/2) \right ]
+- \frac{q + \nu}{2} \psi((q + \nu)/2) - \frac{\nu}{2}(k-1)\psi(\nu/2),}
 with \eqn{\Gamma} the gamma function and \eqn{\psi} the digamma function.
 The underlying assumption is that the copula of \eqn{\mathbf{X}} is Student-t.
 }
 \examples{
 q = 10
 dim = c(1,2,3,4)
-R = 0.5^(abs(matrix(1:q-1,nrow = q, ncol = q, byrow = TRUE) - (1:q-1))) # AR(1) correlation matrix with correlation 0.5
+
+# AR(1) correlation matrix with correlation 0.5
+R = 0.5^(abs(matrix(1:q-1,nrow = q, ncol = q, byrow = TRUE) - (1:q-1)))
+
+# Degrees of freedom
 nu = 7
+
 miStudent(R,dim,nu)
 }
 \references{

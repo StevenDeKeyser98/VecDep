@@ -26,6 +26,7 @@
 #' De Keyser, S. & Gijbels, I. (2024).
 #' Parametric dependence between random vectors via copula-based divergence measures.
 #' Journal of Multivariate Analysis 203:105336.
+#'
 #' doi: https://doi.org/10.1016/j.jmva.2024.105336.
 #'
 #' @seealso \code{\link{gethac}} for creating a hac object with two nesting levels,
@@ -37,8 +38,12 @@
 #' \dontrun{
 #' dim = c(2,2)
 #' thetas = c(2,3,4)
-#' HAC = gethac(dim,thetas,type = 1) # 4 dimensional nested Gumbel copula with (theta_0,theta_1,theta_2) = (2,3,4)
-#' Phi_dep = phihac(HAC,dim,10000,function(t){t * log(t)}) # Mutual information based on Monte Carlo sample of size 10000
+#'
+#' # 4 dimensional nested Gumbel copula with (theta_0,theta_1,theta_2) = (2,3,4)
+#' HAC = gethac(dim,thetas,type = 1)
+#'
+#' # Mutual information based on Monte Carlo sample of size 10000
+#' Phi_dep = phihac(HAC,dim,10000,function(t){t * log(t)})
 #'}
 #'
 #' @export
