@@ -60,7 +60,7 @@
 #'          \code{\link{elliptselect}} for selecting optimal tuning parameters for the improved kernel estimator of the elliptical generator.
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' q = 4
 #' dim = c(2,2)
 #' n = 1000 # Sample size

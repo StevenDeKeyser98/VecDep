@@ -45,7 +45,7 @@
 #'
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' q = 4
 #' dim = c(2,2)
 #' n = 500 # Sample size
