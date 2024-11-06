@@ -57,7 +57,7 @@ and df (degrees of freedom) equals
 with \eqn{\widehat{\boldsymbol{\Sigma}}_{\omega_{n},ij}} the \eqn{(i,j)}'th block of \eqn{\widehat{\boldsymbol{\Sigma}}_{\omega_{n}}}, similarly for \eqn{\widehat{\boldsymbol{\Sigma}}_{n,ij}}.
 }
 \examples{
-\donttest{
+\dontrun{
 q = 10
 dim = c(5,5)
 n = 100

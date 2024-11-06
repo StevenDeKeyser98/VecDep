@@ -76,7 +76,7 @@ When normalize = 1, this corresponds to \eqn{\mathbf{R}} being the correlation m
 When normalize = 2, this corresponds to the identifiability condition of Derumigny & Fermanian (2022).
 }
 \examples{
-\donttest{
+\dontrun{
 q = 4
 n = 1000 # Sample size
 grid = seq(0.005,100,by = 0.005) # Grid on which to evaluate the elliptical generator

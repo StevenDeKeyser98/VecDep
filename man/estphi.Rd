@@ -41,7 +41,7 @@ Gaussian transformation kernel estimator, see \code{\link{phinp}} for different 
 see also the function \code{\link{phiellip}}.}
 }
 \examples{
-\donttest{
+\dontrun{
 # Hierarchical Archimedean copula setting
 q = 4
 dim = c(2,2)

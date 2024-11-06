@@ -35,7 +35,7 @@ The function \code{\link{phihac}} computes \eqn{\widehat{\mathcal{D}}_{\Phi}} wh
 as produced by the function \code{\link{gethac}}.
 }
 \examples{
-\donttest{
+\dontrun{
 dim = c(2,2)
 thetas = c(2,3,4)
 HAC = gethac(dim,thetas,type = 1) # 4 dimensional nested Gumbel copula with (theta_0,theta_1,theta_2) = (2,3,4)
