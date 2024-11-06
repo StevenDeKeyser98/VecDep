@@ -9,7 +9,7 @@ scipy = NULL
   numpy <<- reticulate::import("numpy", delay_load = TRUE)
   scipy <<- reticulate::import("scipy", delay_load = TRUE)
 
-  packageStartupMessage(welcome.message)
+  suppressPackageStartupMessages(welcome.message)
 
 }
 
