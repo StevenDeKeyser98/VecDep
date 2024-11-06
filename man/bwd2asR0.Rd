@@ -58,5 +58,5 @@ doi: https://doi.org/10.48550/arXiv.2404.07141.
 \code{\link{bwd2avar}} for the computation of the asymptotic variance of the plug-in estimator for \eqn{\mathcal{D}_{2}},
 \code{\link{bwd1asR0}} for sampling from the asymptotic distribution of the plug-in estimator for \eqn{\mathcal{D}_{1}} under the hypothesis of independence between \eqn{\mathbf{X}_{1},\dots,\mathbf{X}_{k}},
 \code{\link{estR}} for the computation of the sample matrix of normal scores rank correlations,
-\code{\link{sortot}} for rearranging the columns of sample such that dim is in ascending order.
+\code{\link{otsort}} for rearranging the columns of sample such that dim is in ascending order.
 }

@@ -11,8 +11,10 @@
 #' @param a The tuning parameter to improve the performance at \eqn{0}.
 #' @param Kernel The kernel used for the smoothing (default = "epanechnikov").
 #' @param shrink The shrinkage function to further improve the performance at \eqn{0} and guarantee the existence of the AMISE bandwidth.
+#' @param verbose See the EllDistrEst function of the R package ElliptCopulas.
+#' @param startPoint See the EllDistrEst function of the R package ElliptCopulas.
+#' @param prenormalization See the EllDistrEst function of the R package ElliptCopulas.
 #' @param normalize  A value in \eqn{\{1,2\}} indicating the normalization procedure that is applied to the estimated generator (default = 1).
-#' @param ... See the R package ElliptCopulas for details on other arguments.
 #'
 #' @details
 #' The context is the one of a \eqn{q}-dimensional random vector \eqn{\mathbf{X} = (\mathbf{X}_{1}, \dots, \mathbf{X}_{k})}, with \eqn{\mathbf{X}_{i} = (X_{i1}, \dots, X_{id_{i}})} for \eqn{i = 1, \dots, k}, having a meta-elliptical copula.

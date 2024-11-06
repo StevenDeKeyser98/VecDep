@@ -22,16 +22,17 @@ Imports:
   hash (>= 2.2.6.3),
   sets (>= 1.0-25),
   covglasso (>= 1.0.3),
-  spcov (>= 1.3),
   expm (>= 1.0-0),
   magic (>= 1.6-1),
   pbapply (>= 1.7-2),
   Rmpfr (>= 0.9-5),
-  reticulate (>= 1.39.0)
+  reticulate (>= 1.39.0),
   gtools (>= 3.9.5)
 Suggests:
     mvtnorm,
     ggplot2,
+    extraDistr,
+    dendextend,
     copula,
     knitr,
     rmarkdown,

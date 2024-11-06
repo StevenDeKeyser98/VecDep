@@ -38,7 +38,7 @@ doi: https://doi.org/10.1016/j.jmva.2024.105336.
 }
 \seealso{
 \code{\link{minormal}} for the computation of the mutual information,
-\code{\link{Helormal}} for the computation of the Hellinger distance,
+\code{\link{Helnormal}} for the computation of the Hellinger distance,
 \code{\link{minormalavar}} for the computation of the asymptotic variance of the plug-in estimator for the mutual information,
 \code{\link{estR}} for the computation of the sample matrix of normal scores rank correlations.
 }

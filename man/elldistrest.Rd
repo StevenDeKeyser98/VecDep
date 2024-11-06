@@ -36,9 +36,13 @@ elldistrest(
 
 \item{shrink}{The shrinkage function to further improve the performance at \eqn{0} and guarantee the existence of the AMISE bandwidth.}
 
-\item{normalize}{A value in \eqn{\{1,2\}} indicating the normalization procedure that is applied to the estimated generator (default = 1).}
+\item{mpfr}{See the EllDistrEst function of the R package ElliptCopulas.}
 
-\item{...}{See the R package ElliptCopulas for details on other arguments.}
+\item{precBits}{See the EllDistrEst function of the R package ElliptCopulas.}
+
+\item{dopb}{See the EllDistrEst function of the R package ElliptCopulas.}
+
+\item{normalize}{A value in \eqn{\{1,2\}} indicating the normalization procedure that is applied to the estimated generator (default = 1).}
 }
 \value{
 The estimates for \eqn{g_{\mathcal{R}}} at the grid points.
