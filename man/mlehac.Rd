@@ -45,7 +45,7 @@ dim = c(2,2)
 thetas = c(2,3,4)
 n = 1000 # Sample size
 HAC = gethac(dim,thetas,type = 1) # 4 dimensional nested Gumbel copula with (theta_0,theta_1,theta_2) = (2,3,4)
-sample = HAC::rHAC(n,HAC) # Sample
+sample = suppressWarnings(HAC::rHAC(n,HAC)) # Sample
 HAC_est_1 = mlehac(sample,dim,1,thetas) # Maximum pseudo-likelihood estimator with starting values equal to thetas
 HAC_est_2 = mlehac(sample,dim,1) # Maximum pseudo-likelihood estimator with starting values theta_0 = 1.9, and theta_1, theta_2
 # determined by maximum pseudo-likelihood estimation for marginal child copulas
