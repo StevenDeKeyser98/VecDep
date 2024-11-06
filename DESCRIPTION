@@ -4,6 +4,8 @@ Version: 0.0.1
 Authors@R: 
     person("Steven", "De Keyser", , "steven.dekeyser@kuleuven.be", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-3469-8692"))
+    person("Irène", "Gijbels", email = "irene.gijbels@kuleuven.be",role = c("ctb"),
+           comment = c(ORCID = "0000-0002-4443-9803"))
 Description: Provides functions for estimation (parametric, semi-parametric and non-parametric)
              of copula-based dependence coefficients between a finite collection of random vectors,
              including phi-dependence measures and Bures-Wasserstein dependence measures. 
