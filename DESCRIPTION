@@ -29,7 +29,12 @@ Imports:
   Rmpfr (>= 0.9-5),
   reticulate (>= 1.39.0)
 Suggests:
-  mvtnorm,
-  ggplot2,
-  copula
+    mvtnorm,
+    ggplot2,
+    copula,
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
 Language: en-US
+VignetteBuilder: knitr
+Config/testthat/edition: 3
