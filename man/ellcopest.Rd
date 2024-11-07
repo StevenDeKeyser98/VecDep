@@ -36,11 +36,11 @@ ellcopest(
 
 \item{shrink}{The shrinkage function to further improve the performance at \eqn{0} and guarantee the existence of the AMISE bandwidth.}
 
-\item{verbose}{See the EllDistrEst function of the R package `ElliptCopulas'.}
+\item{verbose}{See the \dQuote{EllDistrEst.R} function of the R package \sQuote{ElliptCopulas}.}
 
-\item{startPoint}{See the EllDistrEst function of the R package `ElliptCopulas'.}
+\item{startPoint}{See the \dQuote{EllDistrEst.R} function of the R package \sQuote{ElliptCopulas}.}
 
-\item{prenormalization}{See the EllDistrEst function of the R package `ElliptCopulas'.}
+\item{prenormalization}{See the \dQuote{EllDistrEst.R} function of the R package \sQuote{ElliptCopulas}.}
 
 \item{normalize}{A value in \eqn{\{1,2\}} indicating the normalization procedure that is applied to the estimated generator (default = 1).}
 }
@@ -59,7 +59,7 @@ This means that there exists a generator \eqn{g_{\mathcal{R}} : (0,\infty) \righ
 \deqn{\mathbf{Z}_{i} = (Z_{i1}, \dots, Z_{id_{i}}) = \left(\left (Q \circ F_{i1} \right ) \left (X_{i1} \right ), \dots, \left (Q \circ F_{id_{i}} \right ) \left (X_{id_{i}} \right )  \right )} for \eqn{i = 1, \dots, k},
 where \eqn{F_{ij}} is the cdf of \eqn{X_{ij}}, has a multivariate elliptical distribution.
 Denoting \eqn{\widehat{F}_{ij}(x_{ij}) = \frac{1}{n+1} \sum_{\ell = 1}^{n} 1 \left (X_{ij}^{(\ell)} \leq x_{ij} \right )} for the (rescaled) empirical cdf of \eqn{X_{ij}} based on a sample \eqn{X_{ij}^{(1)}, \dots, X_{ij}^{(n)}} for \eqn{i = 1, \dots, k} and \eqn{j = 1, \dots, d_{i}},
-and \eqn{\widehat{\mathbf{R}}} for an estimator of the scale matrix \eqn{\mathbf{R}}, this functions estimates \eqn{g_{\mathcal{R}}} by using the MECIP (Meta-Elliptical Copula Iterative Procedure) of Derumigny & Fermanian (2022).
+and \eqn{\widehat{\mathbf{R}}} for an estimator of the scale matrix \eqn{\mathbf{R}}, this function estimates \eqn{g_{\mathcal{R}}} by using the MECIP (Meta-Elliptical Copula Iterative Procedure) of Derumigny & Fermanian (2022).
 
 This means that we start from an initial guess \eqn{\widehat{g}_{\mathcal{R},0}} for the generator \eqn{g_{\mathcal{R}}}, based on which we obtain an estimated
 sample from \eqn{\mathbf{Z}} through the quantile function corresponding to \eqn{\widehat{g}_{\mathcal{R},0}}.
@@ -67,7 +67,7 @@ Based on this estimated sample, we then obtain an estimator \eqn{\widehat{g}_{\m
 \code{\link{elldistrest}}, performing improved kernel estimation with shrinkage function.
 This procedure is repeated for a certain amount (niter) of iterations to obtain a final estimate for \eqn{g_{\mathcal{R}}}.
 
-The estimator without the shrinkage function \eqn{\alpha} is implemented in the R package `ElliptCopulas'.
+The estimator without the shrinkage function \eqn{\alpha} is implemented in the R package \sQuote{ElliptCopulas}.
 We use this implementation and bring in the shrinkage function.
 
 In order to make \eqn{g_{\mathcal{R}}} identifiable, an extra normalization procedure is implemented

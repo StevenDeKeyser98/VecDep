@@ -36,11 +36,11 @@ elldistrest(
 
 \item{shrink}{The shrinkage function to further improve the performance at \eqn{0} and guarantee the existence of the AMISE bandwidth.}
 
-\item{mpfr}{See the EllDistrEst function of the R package `ElliptCopulas'.}
+\item{mpfr}{See the \dQuote{EllDistrEst.R} function of the R package \sQuote{ElliptCopulas}.}
 
-\item{precBits}{See the EllDistrEst function of the R package `ElliptCopulas'.}
+\item{precBits}{See the \dQuote{EllDistrEst.R} function of the R package \sQuote{ElliptCopulas}.}
 
-\item{dopb}{See the EllDistrEst function of the R package `ElliptCopulas'.}
+\item{dopb}{See the \sQuote{EllDistrEst.R} function of the R package \sQuote{ElliptCopulas}.}
 
 \item{normalize}{A value in \eqn{\{1,2\}} indicating the normalization procedure that is applied to the estimated generator (default = 1).}
 }
@@ -67,7 +67,7 @@ with \eqn{a > 0} a tuning parameter was introduced by Liebscher (2005), and the 
 \deqn{\alpha(t) = 1 - \frac{1}{t^{\delta} + 1},}
 where \eqn{\delta \in (3/4 - 1/q, 1)} is another tuning parameter. When \eqn{q = 2}, one can just take \eqn{\alpha(t) = 1}, and the value of \eqn{a} does not matter.
 
-The estimator without the shrinkage function \eqn{\alpha} is implemented in the R package `ElliptCopulas'.
+The estimator without the shrinkage function \eqn{\alpha} is implemented in the R package \sQuote{ElliptCopulas}.
 We use this implementation and bring in the shrinkage function.
 
 In order to make \eqn{g_{\mathcal{R}}} identifiable, an extra normalization procedure is implemented

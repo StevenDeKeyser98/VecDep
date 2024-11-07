@@ -30,7 +30,7 @@
 #' For now, the only possibility in this function for \eqn{p_{\omega_{n}}} is the lasso penalty \eqn{p_{\omega_{n}}(t) = \omega_{n} t}.
 #' For other penalties (e.g., scad), one can do a local linear approximation to the penalty function and iteratively perform weighted group lasso optimizations (similar to what is done in the function \code{\link{covgpenal}}).
 #'
-#' Regarding the implementation, we used the code available in the R package `spcov' (see the manual for further explanations),
+#' Regarding the implementation, we used the code available in the R package \sQuote{spcov} (see the manual for further explanations),
 #' but altered it to the context of a group-lasso penalty.
 #'
 #' For tuning \eqn{\omega_{n}}, we maximize (over a grid of candidate values) the BIC criterion
@@ -42,7 +42,7 @@
 #' \left (1 + \frac{\left | \left |\boldsymbol{\Delta}_{i} * \widehat{\boldsymbol{\Sigma}}_{\omega_{n},ii} \right | \right |_{\text{F}}}{\left | \left |\boldsymbol{\Delta}_{i} * \widehat{\boldsymbol{\Sigma}}_{n,ii} \right | \right |_{\text{F}}} \left (\frac{d_{i} \left ( d_{i} - 1 \right )}{2} - 1 \right )  \right ) + q,}
 #' with \eqn{\widehat{\boldsymbol{\Sigma}}_{\omega_{n},ij}} the \eqn{(i,j)}'th block of \eqn{\widehat{\boldsymbol{\Sigma}}_{\omega_{n}}}, similarly for \eqn{\widehat{\boldsymbol{\Sigma}}_{n,ij}}.
 #'
-#' @return A list with elements "est" containing the (group lasso) penalized matrix of sample normal scores rank correlations (output as provided by the function spcov.R), and "omega" containing the optimal tuning parameter.
+#' @return A list with elements "est" containing the (group lasso) penalized matrix of sample normal scores rank correlations (output as provided by the function \dQuote{spcov.R}), and "omega" containing the optimal tuning parameter.
 #'
 #' @references
 #' De Keyser, S. & Gijbels, I. (2024).

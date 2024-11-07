@@ -20,7 +20,7 @@ grouplasso(Sigma, S, n, omegas, dim, step.size = 100)
 \item{step.size}{The step size used in the generalized gradient descent, affects the speed of the algorithm (default = 100).}
 }
 \value{
-A list with elements "est" containing the (group lasso) penalized matrix of sample normal scores rank correlations (output as provided by the function spcov.R), and "omega" containing the optimal tuning parameter.
+A list with elements "est" containing the (group lasso) penalized matrix of sample normal scores rank correlations (output as provided by the function \dQuote{spcov.R}), and "omega" containing the optimal tuning parameter.
 }
 \description{
 Given a \eqn{q}-dimensional random vector \eqn{\mathbf{X} = (\mathbf{X}_{1},...,\mathbf{X}_{k})} with \eqn{\mathbf{X}_{i}} a \eqn{d_{i}}-dimensional random vector, i.e., \eqn{q = d_{1} + ... + d_{k}},
@@ -46,7 +46,7 @@ on the diagonal (in order to avoid shrinking the variances, the operator \eqn{*}
 For now, the only possibility in this function for \eqn{p_{\omega_{n}}} is the lasso penalty \eqn{p_{\omega_{n}}(t) = \omega_{n} t}.
 For other penalties (e.g., scad), one can do a local linear approximation to the penalty function and iteratively perform weighted group lasso optimizations (similar to what is done in the function \code{\link{covgpenal}}).
 
-Regarding the implementation, we used the code available in the R package `spcov' (see the manual for further explanations),
+Regarding the implementation, we used the code available in the R package \sQuote{spcov} (see the manual for further explanations),
 but altered it to the context of a group-lasso penalty.
 
 For tuning \eqn{\omega_{n}}, we maximize (over a grid of candidate values) the BIC criterion

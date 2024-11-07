@@ -22,8 +22,6 @@ Duration: 56.3s
 
 * GCC13 - Fedora Linux 38 (Container Image)
 
-## Package check on win-builder (using devtools::check_win_devel())
-
 ## Reverse dependencies
 
 There are no reverse dependencies.

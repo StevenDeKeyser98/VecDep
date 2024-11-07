@@ -20,7 +20,7 @@
 #' The matrix \eqn{\widehat{\boldsymbol{\Sigma}}_{n}} is the matrix of sample normal scores covariances.
 #'
 #' In case \eqn{p_{\omega_{n}}(t) = \omega_{n} t} is the lasso penalty, the implementation for the
-#' (weighted) covariance graphical lasso is available in the R package `covglasso' (see the manual for further explanations). For general penalty functions,
+#' (weighted) covariance graphical lasso is available in the R package \sQuote{covglasso} (see the manual for further explanations). For general penalty functions,
 #' we perform a local linear approximation to the penalty function and iteratively do (nsteps, default = 1) weighted covariance graphical lasso optimizations.
 #'
 #' The default for the penalty function is the scad (derpenal = derivative of scad penalty), i.e.,
@@ -32,7 +32,7 @@
 #' where \eqn{\widehat{\boldsymbol{\Sigma}}_{\omega_{n}}} is the estimated candidate covariance matrix using \eqn{\omega_{n}}
 #' and df (degrees of freedom) equals the number of non-zero entries in \eqn{\widehat{\boldsymbol{\Sigma}}_{\omega_{n}}}, not taking the elements under the diagonal into account.
 #'
-#' @return A list with elements "est" containing the (lasso-type) penalized matrix of sample normal scores rank correlations (output as provided by the function covglasso.R), and "omega" containing the optimal tuning parameter.
+#' @return A list with elements "est" containing the (lasso-type) penalized matrix of sample normal scores rank correlations (output as provided by the function \dQuote{covglasso.R}), and "omega" containing the optimal tuning parameter.
 #'
 #' @references
 #' De Keyser, S. & Gijbels, I. (2024).
