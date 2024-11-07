@@ -8,7 +8,7 @@ estR(
   sample,
   omega = 1,
   Q = function(t) {
-     qnorm(t)
+     stats::qnorm(t)
  }
 )
 }

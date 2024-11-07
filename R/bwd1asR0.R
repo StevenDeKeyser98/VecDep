@@ -100,7 +100,7 @@ bwd1asR0 = function(R, dim, M){
       for(m in 1:M){
 
         print(m)
-        Wij = matrix(rnorm(di * dj),nrow = di, ncol = dj) # Random matrix with normal entries
+        Wij = matrix(stats::rnorm(di * dj),nrow = di, ncol = dj) # Random matrix with normal entries
         Hji = Ujj %*% sqrt(Ljj) %*% t(Wij) %*% sqrt(Lii) %*% t(Uii)
         C = Uii %*% solve(sqrt(Lii)) %*% Wij %*% solve(sqrt(Ljj)) %*% t(Ujj)
         Yij = scipy$linalg$solve_sylvester(A,B,C) # Numerically solve Sylvester equation using Python

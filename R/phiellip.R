@@ -120,7 +120,7 @@ phiellip = function(sample, dim, phi, grid, params, normalize = 1){
   k = length(dim)
   pseudos = matrix(0,n,q)
 
-  for(j in 1:q){pseudos[,j] = (n/(n+1)) * ecdf(sample[,j])(sample[,j])} # Pseudo copula observations
+  for(j in 1:q){pseudos[,j] = (n/(n+1)) * stats::ecdf(sample[,j])(sample[,j])} # Pseudo copula observations
 
   R_joint = sin((pi/2) * ElliptCopulas::KTMatrixEst(sample)) # Estimate correlation matrix via empirical Kendall's tau matrix
   R_joint_inv = solve(R_joint) # Inverse of estimated correlation matrix
@@ -140,7 +140,7 @@ phiellip = function(sample, dim, phi, grid, params, normalize = 1){
   for(l in 1:n){
 
     joint_densTC = as.vector(Z[l,] %*% R_joint_inv %*% Z[l,])
-    joint_dens[l] = approx(x = grid, y = g_joint, xout = joint_densTC)$y # Interpolation for joint density in Z[l,]
+    joint_dens[l] = stats::approx(x = grid, y = g_joint, xout = joint_densTC)$y # Interpolation for joint density in Z[l,]
 
   }
 
@@ -155,7 +155,7 @@ phiellip = function(sample, dim, phi, grid, params, normalize = 1){
 
     if(length(start:sumdim) == 1){ # In case of a one dimensional marginal random vector
 
-      marg_dens[,i] = approx(x = grid, y = umarg, xout = Z[,start:sumdim]^2)$y
+      marg_dens[,i] = stats::approx(x = grid, y = umarg, xout = Z[,start:sumdim]^2)$y
 
     } else{
 
@@ -169,7 +169,7 @@ phiellip = function(sample, dim, phi, grid, params, normalize = 1){
       for(l in 1:n){
 
         marg_densTC = as.vector(Z[l,start:sumdim] %*% R_marg_inv %*% Z[l,start:sumdim])
-        marg_dens[l,i] = approx(x = grid, y = g_marg, xout = marg_densTC)$y
+        marg_dens[l,i] = stats::approx(x = grid, y = g_marg, xout = marg_densTC)$y
 
       }
 

@@ -176,8 +176,8 @@ hamse = function(input, cop = NULL, pseudos = NULL, n, estimator, bw_method){
 
   if(estimator == "trans"){
 
-    b_T = 0.5 * (sum((dnorm(qnorm(input))^2) * der[,2]) - 3 * sum(qnorm(input)*dnorm(qnorm(input)) * der[,1]) + dens * (sum(qnorm(input)^2) - q))
-    var_T = dens/(((4 * pi)^(q/2)) * prod(dnorm(qnorm(input))))
+    b_T = 0.5 * (sum((stats::dnorm(stats::qnorm(input))^2) * der[,2]) - 3 * sum(stats::qnorm(input)*stats::dnorm(stats::qnorm(input)) * der[,1]) + dens * (sum(stats::qnorm(input)^2) - q))
+    var_T = dens/(((4 * pi)^(q/2)) * prod(stats::dnorm(stats::qnorm(input))))
     term1 = ((4 * (b_T^2)) /(q * var_T))^(-1/(q+4))
     term2 = n^(-1/(q+4))
 

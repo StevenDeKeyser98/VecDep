@@ -66,7 +66,7 @@ transformationestimator = function(input, h, pseudos){
 
     for(i in 1:q){
 
-      prod = prod * dnorm((qnorm(input[i]) - qnorm(pseudos[j,i]))/h)
+      prod = prod * stats::dnorm((stats::qnorm(input[i]) - stats::qnorm(pseudos[j,i]))/h)
 
     }
 
@@ -74,6 +74,6 @@ transformationestimator = function(input, h, pseudos){
 
   }
 
-  return(sum/(n * (h^q) * prod(dnorm(qnorm(input)))))
+  return(sum/(n * (h^q) * prod(stats::dnorm(stats::qnorm(input)))))
 
 }

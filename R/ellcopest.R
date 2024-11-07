@@ -264,3 +264,20 @@ iterationStandard = function(env,shrink = shrink,normalize = normalize){
 
   }
 }
+
+simulateEllDistrForNA = function(dataZ, grid, g_d, Sigma, whichRowsHasNA, d, genR){
+
+  density_R2_ =  Convert_gd_To_fR2(grid = grid, g_d = g_d, d = d)
+
+  for (irow in whichRowsHasNA){
+
+    dataZ[irow, which(is.na(dataZ[irow,]))] =
+      EllDistrSimCond(n = 1, xobs = dataZ[irow,], d = d,
+                      Sigma = Sigma, mu = rep(0,d),
+                      density_R2_ = density_R2_,
+                      genR = list(method = "MH", niter = 500))
+  }
+
+  return (dataZ)
+
+}

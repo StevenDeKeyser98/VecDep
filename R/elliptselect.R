@@ -130,10 +130,10 @@ bw_ellip = function(a,q,p,r,n){
 
   integrand2 = function(t,a,q,p,r){((shrink(t,p,r)^2) * sdpsi(t,a,q))^2}
 
-  v1 = integrate(function(t,a,q,p,r){integrand1(t,a,q,p,r)}, lower = 0, upper = Inf,
+  v1 = stats::integrate(function(t,a,q,p,r){integrand1(t,a,q,p,r)}, lower = 0, upper = Inf,
                  a = a, q = q, p = p, r = r)$value
 
-  v2 = integrate(function(t,a,q,p,r){integrand2(t,a,q,p,r)}, lower = 0, upper = Inf,
+  v2 = stats::integrate(function(t,a,q,p,r){integrand2(t,a,q,p,r)}, lower = 0, upper = Inf,
                  a = a, q = q, p = p, r = r)$value
 
   return(((((3/5) * v1)/(((1/5)^2)*v2))^(1/5)) * n^(-1/5))
@@ -148,7 +148,7 @@ I1 = function(a,q,p,r){
       (((((a^(q/2)) + (t^(q/2)))^(2)) * t^(2-q) - 3*(q-2)*(((a^(q/2)) + (t^(q/2))))*(t^(1-(q/2))) -
           (2-q)*(((a^(q/2)) + (t^(q/2)))^(2))*(t^(1-q)) + (q-4)*(q-2))^2)}
 
-  value = integrate(function(t,a,q,p,r){integrand(t,a,q,p,r)}, lower = 0, upper = Inf,
+  value = stats::integrate(function(t,a,q,p,r){integrand(t,a,q,p,r)}, lower = 0, upper = Inf,
                     a = a, q = q, p = p, r = r)$value
 
   return(value)
@@ -161,7 +161,7 @@ I2 = function(a,q,p,r){
 
   integrand = function(t,a,q,p,r){(shrink(psifun(t,a,q),p,r)^(-1)) * (t^((q/2)-1)) * ((a^(q/2) + t^(q/2))^((2/q)-1))*exp(-t/2)}
 
-  value = integrate(function(t,a,q,p,r){integrand(t,a,q,p,r)}, lower = 0, upper = Inf,
+  value = stats::integrate(function(t,a,q,p,r){integrand(t,a,q,p,r)}, lower = 0, upper = Inf,
                     a = a, q = q, p = p, r = r)$value
 
   return(value)

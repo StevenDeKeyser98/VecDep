@@ -55,7 +55,7 @@ cvomega = function(sample, omegas, K){
 
   for(j in 1:q){
 
-    scores[,j] = qnorm((n/(n+1)) * ecdf(sample[,j])(sample[,j])) # Normal scores
+    scores[,j] = stats::qnorm((n/(n+1)) * stats::ecdf(sample[,j])(sample[,j])) # Normal scores
 
   }
 
@@ -81,7 +81,7 @@ LogL = function(data,R,omega){
 
   q = nrow(R)
   n = nrow(data)
-  sigmaD = diag(rep(sqrt(sum(qnorm(seq(1,n)/(n+1))^2)/(n-1)),q)) # Diagonal matrix with normal scores standard deviations (independent of the data)
+  sigmaD = diag(rep(sqrt(sum(stats::qnorm(seq(1,n)/(n+1))^2)/(n-1)),q)) # Diagonal matrix with normal scores standard deviations (independent of the data)
   sigmaL = (1/omega) * sigmaD %*% (omega * R + (1-omega) * diag(q)) %*% sigmaD # Penalized estimate based on training data
   t1 = n * q * log(2*pi) + n * log(det(sigmaL)) # First term for log-likelihood
   t2 = sum(diag(data %*% solve(sigmaL) %*% t(data))) # Second term for log-likelihood

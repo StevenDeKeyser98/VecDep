@@ -233,8 +233,8 @@ getKernel = function(Kernel){
 
   # GetKernel function from package ElliptCopulas
 
-  if(class(Kernel) != "character"){
-    return (Kernel)
+  if(!("character" %in% class(Kernel))){
+    return(Kernel)
   }
 
   switch(Kernel,
@@ -251,7 +251,7 @@ getKernel = function(Kernel){
                "Possible choices are 'gaussian', 'epanechnikov' and 'triangular'. ")}
   )
 
-  return (kernelFun)
+  return(kernelFun)
 
 }
 

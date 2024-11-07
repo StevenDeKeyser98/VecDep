@@ -89,7 +89,7 @@ phinp = function(sample, cop = NULL, dim, phi, estimator, bw_method){
 
   pseudos = matrix(0,n,q) # Pseudo copula observations
 
-  for(j in 1:q){pseudos[,j] = (n/(n+1)) * ecdf(sample[,j])(sample[,j])}
+  for(j in 1:q){pseudos[,j] = (n/(n+1)) * stats::ecdf(sample[,j])(sample[,j])}
 
   h_joint = integer(n) # Bandwidths for q-dimensional observations
   h_child = matrix(0,n,k) # Bandwidths for d_i-dimensional observations for i = 1,...,k

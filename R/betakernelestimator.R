@@ -65,7 +65,7 @@ betakernelestimator = function(input, h, pseudos){
 
     for(i in 1:q){
 
-      prod = prod * dbeta(pseudos[j,i],(input[i]/h)+1,((1-input[i])/h)+1)
+      prod = prod * stats::dbeta(pseudos[j,i],(input[i]/h)+1,((1-input[i])/h)+1)
 
     }
 

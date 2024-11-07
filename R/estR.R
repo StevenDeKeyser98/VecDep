@@ -78,7 +78,7 @@
 #' @export
 
 
-estR = function(sample, omega = 1, Q = function(t){qnorm(t)}){
+estR = function(sample, omega = 1, Q = function(t){stats::qnorm(t)}){
 
   n = nrow(sample) # Sample size
   q = ncol(sample) # Total dimension
@@ -87,11 +87,11 @@ estR = function(sample, omega = 1, Q = function(t){qnorm(t)}){
 
   for(j in 1:q){
 
-    scores[,j] = Q((n/(n+1)) * ecdf(sample[,j])(sample[,j])) # Q-scores
+    scores[,j] = Q((n/(n+1)) * stats::ecdf(sample[,j])(sample[,j])) # Q-scores
 
   }
 
-  R_est = cor(scores)
+  R_est = stats::cor(scores)
 
   return(omega * R_est + (1-omega) * diag(q))
 
