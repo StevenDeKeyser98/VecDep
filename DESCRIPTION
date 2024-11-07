@@ -1,10 +1,11 @@
 Package: VecDep
+Type: Package
 Title: Measuring copula-based Dependence between Random Vectors
-Version: 0.0.1
+Version: 0.1.0
 Authors@R: c(
-    person("Steven", "De Keyser", , "steven.dekeyser@kuleuven.be", role = c("aut", "cre"),
+    person("Steven", "De Keyser",, "steven.dekeyser@kuleuven.be", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-3469-8692")),
-    person("Irène", "Gijbels", email = "irene.gijbels@kuleuven.be",role = c("ctb"),
+    person("Irène", "Gijbels",, email = "irene.gijbels@kuleuven.be", role = "ctb",
            comment = c(ORCID = "0000-0002-4443-9803")))
 Description: Provides functions for estimation (parametric, semi-parametric and non-parametric)
              of copula-based dependence coefficients between a finite collection of random vectors,

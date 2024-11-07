@@ -1,3 +1,3 @@
-# VecDep 0.0.1
+# VecDep 0.1.0
 
-* Initial submission.
+* Initial release
