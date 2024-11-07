@@ -13,7 +13,7 @@
 #' @param shrink The shrinkage function to further improve the performance at \eqn{0} and guarantee the existence of the AMISE bandwidth.
 #' @param mpfr See the \dQuote{EllDistrEst.R} function of the R package \sQuote{ElliptCopulas}.
 #' @param precBits See the \dQuote{EllDistrEst.R} function of the R package \sQuote{ElliptCopulas}.
-#' @param dopb See the \sQuote{EllDistrEst.R} function of the R package \sQuote{ElliptCopulas}.
+#' @param dopb See the \dQuote{EllDistrEst.R} function of the R package \sQuote{ElliptCopulas}.
 #' @param normalize  A value in \eqn{\{1,2\}} indicating the normalization procedure that is applied to the estimated generator (default = 1).
 #'
 #' @details

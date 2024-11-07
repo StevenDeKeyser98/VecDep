@@ -40,7 +40,7 @@ elldistrest(
 
 \item{precBits}{See the \dQuote{EllDistrEst.R} function of the R package \sQuote{ElliptCopulas}.}
 
-\item{dopb}{See the \sQuote{EllDistrEst.R} function of the R package \sQuote{ElliptCopulas}.}
+\item{dopb}{See the \dQuote{EllDistrEst.R} function of the R package \sQuote{ElliptCopulas}.}
 
 \item{normalize}{A value in \eqn{\{1,2\}} indicating the normalization procedure that is applied to the estimated generator (default = 1).}
 }
