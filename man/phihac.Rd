@@ -20,7 +20,7 @@ The \eqn{\Phi}-dependence between \eqn{\mathbf{X}_{1}, \dots, \mathbf{X}_{k}} (i
 }
 \description{
 This function computes the \eqn{\Phi}-dependence between all the child copulas of a hac object obtained by the function \code{\link{gethac}}, i.e.,
-given a \eqn{q}-dimensional random vector \eqn{\mathbf{X} = (\mathbf{X_{1}},...,\mathbf{X}_{k})} with \eqn{\mathbf{X}_{i}} a \eqn{d_{i}}-dimensional random vector, i.e., \eqn{q = d_{1} + ... + d_{k}},
+given a \eqn{q}-dimensional random vector \eqn{\mathbf{X} = (\mathbf{X}_{1},...,\mathbf{X}_{k})} with \eqn{\mathbf{X}_{i}} a \eqn{d_{i}}-dimensional random vector, i.e., \eqn{q = d_{1} + ... + d_{k}},
 where \eqn{\mathbf{X}_{1},...,\mathbf{X}_{k}} are connected via a hierarchical Archimedean copula with two nesting levels, phihac computes the \eqn{\Phi}-dependence
 between \eqn{\mathbf{X}_{1},...,\mathbf{X}_{k}}.
 }

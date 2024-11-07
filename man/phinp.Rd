@@ -15,7 +15,7 @@ phinp(sample, cop = NULL, dim, phi, estimator, bw_method)
 
 \item{phi}{The function \eqn{\Phi}.}
 
-\item{estimator}{Either \verb{beta'' or }trans'' for the beta kernel or the Gaussian transformation kernel copula density estimator.}
+\item{estimator}{Either "beta" or "trans" for the beta kernel or the Gaussian transformation kernel copula density estimator.}
 
 \item{bw_method}{A number in \eqn{\{0,1,2\}} specifying the method used for computing optimal local bandwidths.}
 }

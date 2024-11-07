@@ -51,7 +51,7 @@ Then, all tuning parameters should be given as
 \deqn{\text{params} = \text{list}(\text{"h"} = (h,h_{1},\dots,h_{m}), \text{"a"} = (a,a_{1}, \dots, a_{m}), \text{"p"} = (\delta, \delta_{1}, \dots, \delta_{m})),}
 i.e., \eqn{(h,a,\delta)} will be used for estimating \eqn{g_{\mathcal{R}}}, and \eqn{(h_{i},a_{i},\delta_{i})} will be used for estimating \eqn{g_{\mathcal{R}_{i}}} for \eqn{i = 1, \dots, k}.
 
-When \eqn{d_{i} = 1} for a certain \eqn{i \in \{1, \dots, k \}}, the function Convert_gd_To_g1 from the R package 'ElliptCopulas' is used to estimate \eqn{g_{\mathcal{R}_{i}}}.
+When \eqn{d_{i} = 1} for a certain \eqn{i \in \{1, \dots, k \}}, the function Convert_gd_To_g1 from the R package ElliptCopulas is used to estimate \eqn{g_{\mathcal{R}_{i}}}.
 
 In order to make \eqn{g_{\mathcal{R}}} identifiable, an extra normalization procedure is implemented
 in line with an extra constraint on \eqn{g_{\mathcal{R}}}.
@@ -77,7 +77,6 @@ g_q = ((nu/(nu-2))^(q/2))*(gamma((q+nu)/2)/(((pi*nu)^(q/2))*gamma(nu/2))) *
                           ((1+(grid/(nu-2)))^(-(q+nu)/2))
 
 # Density of squared radius
-
 R2 = function(t,q){(gamma((q+nu)/2)/(((nu-2)^(q/2))*gamma(nu/2)*gamma(q/2))) *
                    (t^((q/2)-1)) * ((1+(t/(nu-2)))^(-(q+nu)/2))}
 

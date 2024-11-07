@@ -15,7 +15,7 @@ hamse(input, cop = NULL, pseudos = NULL, n, estimator, bw_method)
 
 \item{n}{The sample size.}
 
-\item{estimator}{Either \verb{beta'' or }trans'' for the beta kernel or the Gaussian transformation kernel copula density estimator.}
+\item{estimator}{Either "beta" or "trans" for the beta kernel or the Gaussian transformation kernel copula density estimator.}
 
 \item{bw_method}{A number in \eqn{\{0,1\}} specifying the method used for computing the bandwidth.}
 }
@@ -34,7 +34,7 @@ at the end of Section 5.2 in De Keyser & Gijbels (2024).
 
 Of course, these optimal bandwidths depend upon the true unknown copula.
 If bw_method = 0, then the given fitted (e.g., via MLE using \code{\link{mlehac}}) hac object (hierarchical Archimedean copula) cop is used as reference copula.
-If bw_method = 0, then a non-parametric (beta or Gaussian transformation) kernel copula density estimator based on the pseudos as pivot is used. This pivot is computed
+If bw_method = 1, then a non-parametric (beta or Gaussian transformation) kernel copula density estimator based on the pseudos as pivot is used. This pivot is computed
 using the big O bandwidth (i.e., \eqn{n^{-2/(q+4)}} in case of the beta estimator, and \eqn{n^{-1/(q+4)}} for the transformation estimator, with \eqn{q} the total dimension).
 }
 \examples{

@@ -66,7 +66,6 @@ nu = 7
 
 # Density of R^2, with R the radius of the elliptical distribution
 # Identifiability contraint is that R is the correlation matrix
-
 R2 = function(t,q){(gamma((q+nu)/2)/(((nu-2)^(q/2)) * gamma(nu/2) * gamma(q/2))) *
                    (t^((q/2)-1)) * ((1+(t/(nu-2)))^(-(q+nu)/2))}
 

@@ -90,7 +90,6 @@ R = 0.5^(abs(matrix(1:q-1,nrow = q, ncol = q, byrow = TRUE) - (1:q-1)))
 sample = mvtnorm::rmvnorm(n,rep(0,q),R,method = "chol")
 
 # Estimate mutual information via MECIP procedure
-
 est_phi = estphi(sample,dim,list("ellip",grid = seq(0.005,100,by = 0.005)),
                                  function(t){t * log(t)})
 
