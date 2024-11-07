@@ -7,7 +7,7 @@
 #' @param cop A fitted reference hac object, in case bw_method = 0 (default = NULL).
 #' @param pseudos The (estimated) copula observations from a \eqn{q}-dimensional random vector \eqn{\mathbf{X}} (\eqn{n \times q} matrix with observations in rows, variables in columns), in case bw_method = 1 (default = NULL).
 #' @param n The sample size.
-#' @param estimator Either ``beta'' or ``trans'' for the beta kernel or the Gaussian transformation kernel copula density estimator.
+#' @param estimator Either "beta" or "trans" for the beta kernel or the Gaussian transformation kernel copula density estimator.
 #' @param bw_method A number in \eqn{\{0,1\}} specifying the method used for computing the bandwidth.
 #'
 #' @details
@@ -18,7 +18,7 @@
 #'
 #' Of course, these optimal bandwidths depend upon the true unknown copula.
 #' If bw_method = 0, then the given fitted (e.g., via MLE using \code{\link{mlehac}}) hac object (hierarchical Archimedean copula) cop is used as reference copula.
-#' If bw_method = 0, then a non-parametric (beta or Gaussian transformation) kernel copula density estimator based on the pseudos as pivot is used. This pivot is computed
+#' If bw_method = 1, then a non-parametric (beta or Gaussian transformation) kernel copula density estimator based on the pseudos as pivot is used. This pivot is computed
 #' using the big O bandwidth (i.e., \eqn{n^{-2/(q+4)}} in case of the beta estimator, and \eqn{n^{-1/(q+4)}} for the transformation estimator, with \eqn{q} the total dimension).
 #'
 #' @return The optimal local bandwidth (in terms of amse).

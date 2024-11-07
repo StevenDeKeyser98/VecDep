@@ -21,7 +21,7 @@
 #' where \eqn{c( \cdot ; \boldsymbol{\theta}_{C})} is the copula density of the hierarchical Archimedean copula.
 #'
 #' We assume that \eqn{C_{i}} belongs to the same family of Archimedean copulas (e.g., Clayton) for \eqn{i = 0, \dots, k},
-#' and make use of the R package 'HAC'.
+#' and make use of the R package HAC.
 #'
 #' In case the starting values (start_val) are not specified, the starting value for \eqn{\theta_{0}} is put equal to 1.9
 #' and the starting values for \eqn{\theta_{i}} with \eqn{i \in \{1, \dots, k \}} are determined by performing

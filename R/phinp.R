@@ -8,7 +8,7 @@
 #' @param cop A fitted reference hac object, in case bw_method = 0 (default = NULL).
 #' @param dim The vector of dimensions \eqn{(d_{1},...,d_{k})}.
 #' @param phi The function \eqn{\Phi}.
-#' @param estimator Either ``beta'' or ``trans'' for the beta kernel or the Gaussian transformation kernel copula density estimator.
+#' @param estimator Either "beta" or "trans" for the beta kernel or the Gaussian transformation kernel copula density estimator.
 #' @param bw_method A number in \eqn{\{0,1,2\}} specifying the method used for computing optimal local bandwidths.
 #'
 #' @details
