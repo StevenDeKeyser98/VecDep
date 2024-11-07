@@ -121,7 +121,7 @@ CVLF = function(omega,data,K){
 
     valid = data[flds[[i]],] # Validation data
     train = data[setdiff(seq(1,n),flds[[i]]),] # Training data
-    R_est = cor(train) # Normal scores rank correlation matrix computed using training data
+    R_est = stats::cor(train) # Normal scores rank correlation matrix computed using training data
     LL = LL + LogL(valid,R_est,omega)
 
   }
