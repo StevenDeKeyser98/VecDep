@@ -13,7 +13,7 @@ Description: Provides functions for estimation (parametric, semi-parametric and 
              An algorithm for agglomerative hierarchical variable clustering is also implemented.
              Following the articles De Keyser & Gijbels (2024) <doi:10.1016/j.jmva.2024.105336>,
              De Keyser & Gijbels (2024) <doi:10.1016/j.ijar.2023.109090>, and De Keyser & Gijbels (2024)
-             <doi:10.48550/arXiv.2404.07141>
+             <doi:10.48550/arXiv.2404.07141>.
 License: GPL-3
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
