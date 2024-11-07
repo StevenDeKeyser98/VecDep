@@ -1,5 +1,29 @@
-## R CMD check results
+## R CMD check results (using devtools::check())
 
-0 errors | 0 warnings | 1 note
+── R CMD check results ──────────────────────────────────────────────────────────── VecDep 0.1.0 ────
+Duration: 56.3s
 
-* This is a new release.
+0 errors ✔ | 0 warnings ✔ | 0 notes ✔
+
+
+## CRAN check for package on R-hub (using rhub::rhub_check())
+
+* Linux Ubuntu-latest on GitHub
+
+* MacOS-13 on GitHub
+
+* MacOS-latest on GitHub
+
+* Windows-latest on GitHub
+
+* ATLAS - Fedora Linux 38 (Container Image)
+
+* C23 - Ubuntu 22.04.5 LTS
+
+* GCC13 - Fedora Linux 38 (Container Image)
+
+## Package check on win-builder (using devtools::check_win_devel())
+
+## Reverse dependencies
+
+There are no reverse dependencies.

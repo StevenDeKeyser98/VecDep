@@ -26,7 +26,7 @@
 #' Here, \eqn{\widehat{Q}} will be the quantile function corresponding to the final estimator for \eqn{g_{\mathcal{R}}}, and \deqn{\widehat{F}_{ij}(x_{ij}) = \frac{1}{n+1} \sum_{\ell = 1}^{n} 1 \left (X_{ij}^{(\ell)} \leq x_{ij} \right )} is the (rescaled) empirical cdf of \eqn{X_{ij}} based on a sample \eqn{X_{ij}^{(1)}, \dots, X_{ij}^{(n)}} for \eqn{i = 1, \dots, k} and \eqn{j = 1, \dots, d_{i}}.
 #'
 #' The estimation of \eqn{\mathbf{R}} is done via its relation with the Kendall's tau matrix, see the function ElliptCopulas::KTMatrixEst in
-#' the R package ElliptCopulas of Derumigny et al. (2024).
+#' the R package `ElliptCopulas' of Derumigny et al. (2024).
 #'
 #' For estimating \eqn{g_{\mathcal{R}}} and \eqn{g_{\mathcal{R}_{i}}} for \eqn{i = 1, \dots, k}, the function \code{\link{ellcopest}} is used.
 #' This function requires certain tuning parameters (a bandwidth \eqn{h}, a parameter \eqn{a}, and a parameter \eqn{\delta} for the shrinkage function). Suppose that there are
@@ -35,7 +35,7 @@
 #' \deqn{\text{params} = \text{list}(\text{"h"} = (h,h_{1},\dots,h_{m}), \text{"a"} = (a,a_{1}, \dots, a_{m}), \text{"p"} = (\delta, \delta_{1}, \dots, \delta_{m})),}
 #' i.e., \eqn{(h,a,\delta)} will be used for estimating \eqn{g_{\mathcal{R}}}, and \eqn{(h_{i},a_{i},\delta_{i})} will be used for estimating \eqn{g_{\mathcal{R}_{i}}} for \eqn{i = 1, \dots, k}.
 #'
-#' When \eqn{d_{i} = 1} for a certain \eqn{i \in \{1, \dots, k \}}, the function Convert_gd_To_g1 from the R package ElliptCopulas is used to estimate \eqn{g_{\mathcal{R}_{i}}}.
+#' When \eqn{d_{i} = 1} for a certain \eqn{i \in \{1, \dots, k \}}, the function `Convert_gd_To_g1.R' from the R package `ElliptCopulas' is used to estimate \eqn{g_{\mathcal{R}_{i}}}.
 #'
 #' In order to make \eqn{g_{\mathcal{R}}} identifiable, an extra normalization procedure is implemented
 #' in line with an extra constraint on \eqn{g_{\mathcal{R}}}.

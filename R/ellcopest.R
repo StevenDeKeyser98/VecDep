@@ -11,9 +11,9 @@
 #' @param a The tuning parameter to improve the performance at \eqn{0}.
 #' @param Kernel The kernel used for the smoothing (default = "epanechnikov").
 #' @param shrink The shrinkage function to further improve the performance at \eqn{0} and guarantee the existence of the AMISE bandwidth.
-#' @param verbose See the EllDistrEst function of the R package ElliptCopulas.
-#' @param startPoint See the EllDistrEst function of the R package ElliptCopulas.
-#' @param prenormalization See the EllDistrEst function of the R package ElliptCopulas.
+#' @param verbose See the EllDistrEst function of the R package `ElliptCopulas'.
+#' @param startPoint See the EllDistrEst function of the R package `ElliptCopulas'.
+#' @param prenormalization See the EllDistrEst function of the R package `ElliptCopulas'.
 #' @param normalize  A value in \eqn{\{1,2\}} indicating the normalization procedure that is applied to the estimated generator (default = 1).
 #'
 #' @details
@@ -32,7 +32,7 @@
 #' \code{\link{elldistrest}}, performing improved kernel estimation with shrinkage function.
 #' This procedure is repeated for a certain amount (niter) of iterations to obtain a final estimate for \eqn{g_{\mathcal{R}}}.
 #'
-#' The estimator without the shrinkage function \eqn{\alpha} is implemented in the R package ElliptCopulas.
+#' The estimator without the shrinkage function \eqn{\alpha} is implemented in the R package `ElliptCopulas'.
 #' We use this implementation and bring in the shrinkage function.
 #'
 #' In order to make \eqn{g_{\mathcal{R}}} identifiable, an extra normalization procedure is implemented

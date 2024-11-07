@@ -36,11 +36,11 @@ ellcopest(
 
 \item{shrink}{The shrinkage function to further improve the performance at \eqn{0} and guarantee the existence of the AMISE bandwidth.}
 
-\item{verbose}{See the EllDistrEst function of the R package ElliptCopulas.}
+\item{verbose}{See the EllDistrEst function of the R package `ElliptCopulas'.}
 
-\item{startPoint}{See the EllDistrEst function of the R package ElliptCopulas.}
+\item{startPoint}{See the EllDistrEst function of the R package `ElliptCopulas'.}
 
-\item{prenormalization}{See the EllDistrEst function of the R package ElliptCopulas.}
+\item{prenormalization}{See the EllDistrEst function of the R package `ElliptCopulas'.}
 
 \item{normalize}{A value in \eqn{\{1,2\}} indicating the normalization procedure that is applied to the estimated generator (default = 1).}
 }
@@ -67,7 +67,7 @@ Based on this estimated sample, we then obtain an estimator \eqn{\widehat{g}_{\m
 \code{\link{elldistrest}}, performing improved kernel estimation with shrinkage function.
 This procedure is repeated for a certain amount (niter) of iterations to obtain a final estimate for \eqn{g_{\mathcal{R}}}.
 
-The estimator without the shrinkage function \eqn{\alpha} is implemented in the R package ElliptCopulas.
+The estimator without the shrinkage function \eqn{\alpha} is implemented in the R package `ElliptCopulas'.
 We use this implementation and bring in the shrinkage function.
 
 In order to make \eqn{g_{\mathcal{R}}} identifiable, an extra normalization procedure is implemented

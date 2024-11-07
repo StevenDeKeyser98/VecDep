@@ -30,7 +30,7 @@
 #' For now, the only possibility in this function for \eqn{p_{\omega_{n}}} is the lasso penalty \eqn{p_{\omega_{n}}(t) = \omega_{n} t}.
 #' For other penalties (e.g., scad), one can do a local linear approximation to the penalty function and iteratively perform weighted group lasso optimizations (similar to what is done in the function \code{\link{covgpenal}}).
 #'
-#' Regarding the implementation, we used the code available in the R package spcov (see the manual for further explanations),
+#' Regarding the implementation, we used the code available in the R package `spcov' (see the manual for further explanations),
 #' but altered it to the context of a group-lasso penalty.
 #'
 #' For tuning \eqn{\omega_{n}}, we maximize (over a grid of candidate values) the BIC criterion
