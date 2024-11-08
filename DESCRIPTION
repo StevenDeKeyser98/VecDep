@@ -1,7 +1,7 @@
 Package: VecDep
 Type: Package
-Title: Measuring copula-based Dependence between Random Vectors
-Version: 0.1.0
+Title: Measuring Copula-Based Dependence Between Random Vectors
+Version: 0.1.1
 Authors@R: c(
     person("Steven", "De Keyser",, "steven.dekeyser@kuleuven.be", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-3469-8692")),
