@@ -67,7 +67,7 @@
 #'          \code{\link{phiellip}} for estimating the \eqn{\Phi}-dependence between \eqn{k} random vectors having a meta-elliptical copula.
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' q = 4
 #'
 #' # Sample size

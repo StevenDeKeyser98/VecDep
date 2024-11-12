@@ -34,7 +34,7 @@
 #'
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' dim = c(2,2)
 #' thetas = c(2,3,4)
 #'

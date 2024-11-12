@@ -48,7 +48,7 @@ using the big O bandwidth (i.e., \eqn{n^{-2/(q+4)}} in case of the beta estimato
 When bw_method = 2, the big O bandwidths are taken.
 }
 \examples{
-\dontrun{
+\donttest{
 q = 4
 dim = c(2,2)
 

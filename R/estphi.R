@@ -46,7 +46,7 @@
 #'
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'
 #' # Hierarchical Archimedean copula setting
 #' q = 4

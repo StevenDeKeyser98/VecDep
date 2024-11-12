@@ -37,7 +37,7 @@
 #'          \code{\link{mlehac}} for maximum pseudo-likelihood estimation of the parameters of a hac object with two nesting levels.
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' dim = c(2,2)
 #' thetas = c(2,3,4)
 #'

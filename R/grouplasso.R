@@ -61,7 +61,7 @@
 #' @seealso \code{\link{covgpenal}} for (elementwise) lasso-type estimation of the normal scores rank correlation matrix.
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' q = 10
 #' dim = c(5,5)
 #' n = 100

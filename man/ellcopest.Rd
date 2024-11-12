@@ -76,7 +76,7 @@ When normalize = 1, this corresponds to \eqn{\mathbf{R}} being the correlation m
 When normalize = 2, this corresponds to the identifiability condition of Derumigny & Fermanian (2022).
 }
 \examples{
-\dontrun{
+\donttest{
 q = 4
 
 # Sample size

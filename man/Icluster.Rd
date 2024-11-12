@@ -82,7 +82,7 @@ computing \eqn{\mathcal{D}} (using the method specified by est_method), the simi
 The default is \eqn{N(t) = t}, meaning that no normalization is applied.
 }
 \examples{
-\dontrun{
+\donttest{
 q = 20
 
 # We will impose a clustering
@@ -203,14 +203,15 @@ Clustering14 = Icluster(data = sample,
 # 5-cluster partition
 Clustering14$hierarchy$Aleph_16
 
-# Semi-parametric meta-elliptical copula approach
+# Semi-parametric meta-elliptical copula approach, uncomment to run (takes a long time)
 
-Clustering15 = Icluster(data = sample,
-                        est_method = list("phi", function(t){t * log(t)}, "ellip",
-                                     grid = seq(0.005,100,by = 0.005)), max_dim = 2)
+# Clustering15 = Icluster(data = sample,
+#                        est_method = list("phi", function(t){t * log(t)}, "ellip",
+#                                     grid = seq(0.005,100,by = 0.005)), max_dim = 2)
 
 # 5-cluster partition
-Clustering15$hierarchy$Aleph_16
+# Clustering15$hierarchy$Aleph_16
+
 }
 
 }

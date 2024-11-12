@@ -45,7 +45,7 @@
 #'
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' q = 4
 #' dim = c(2,2)
 #'

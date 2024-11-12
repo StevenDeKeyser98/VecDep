@@ -35,7 +35,7 @@ The function \code{\link{phihac}} computes \eqn{\widehat{\mathcal{D}}_{\Phi}} wh
 as produced by the function \code{\link{gethac}}.
 }
 \examples{
-\dontrun{
+\donttest{
 dim = c(2,2)
 thetas = c(2,3,4)
 

@@ -4,6 +4,8 @@
 #'
 #' @param envname Name of the environment.
 #'
+#' @return No return value, used for creating a python virtual environment.
+#'
 #' @export
 
 install_tensorflow = function(envname = "r-tensorflow"){

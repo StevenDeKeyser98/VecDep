@@ -38,7 +38,7 @@ For each of these candidate values, compute the corresponding optimal (AMISE) ba
 Take the combination of parameters that minimizes (a numerical approximation of) the (normal reference) AMISE given in equation (20) of De Keyser & Gijbels (2024).
 }
 \examples{
-\dontrun{
+\donttest{
 q = 4
 n = 1000
 opt_parameters = elliptselect(n,q,seq((3/4)-(1/q)+0.01,1-0.01,len = 200),

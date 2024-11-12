@@ -90,7 +90,7 @@
 #'          \code{\link{bwd2}} for the computation of the second Bures-Wasserstein dependence coefficient \eqn{\mathcal{D}_{2}}.
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' q = 20
 #'
 #' # We will impose a clustering
@@ -211,14 +211,15 @@
 #' # 5-cluster partition
 #' Clustering14$hierarchy$Aleph_16
 #'
-#' # Semi-parametric meta-elliptical copula approach
+#' # Semi-parametric meta-elliptical copula approach, uncomment to run (takes a long time)
 #'
-#' Clustering15 = Icluster(data = sample,
-#'                         est_method = list("phi", function(t){t * log(t)}, "ellip",
-#'                                      grid = seq(0.005,100,by = 0.005)), max_dim = 2)
+#' # Clustering15 = Icluster(data = sample,
+#' #                        est_method = list("phi", function(t){t * log(t)}, "ellip",
+#' #                                     grid = seq(0.005,100,by = 0.005)), max_dim = 2)
 #'
 #' # 5-cluster partition
-#' Clustering15$hierarchy$Aleph_16
+#' # Clustering15$hierarchy$Aleph_16
+#'
 #'}
 #'
 #' @export

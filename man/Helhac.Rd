@@ -37,7 +37,7 @@ The function \code{\link{Helhac}} computes \eqn{\widetilde{\mathcal{D}}_{(\sqrt{
 as produced by the function \code{\link{gethac}}.
 }
 \examples{
-\dontrun{
+\donttest{
 dim = c(2,2)
 thetas = c(2,3,4)
 
