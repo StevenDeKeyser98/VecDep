@@ -1,0 +1,53 @@
+---
+title: "EstPhiNestedGumbel"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{EstPhiNestedGumbel}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(VecDep)
+```
+
+First, let us fix some parameters.
+```{r}
+
+q = 4
+dim = c(2,2)
+n = 1000
+
+```
+
+Construct a four dimensional hierarchical Gumbel copula
+with parameters (theta_0,theta_1,theta_2) = (2,3,4)
+```{r}
+
+hac = gethac(dim,c(2,3,4),type = 1)
+
+```
+
+Draw a sample of size n from the copula
+```{r}
+
+sample = suppressWarnings(HAC::rHAC(n,hac))
+
+
+```
+
+Estimate the mutual information between two random vectors of size two
+via pseudo maximum likelihood estimation
+
+```{r}
+
+estphi(sample,dim,list("hac",type = 1,M = 10000),function(t){t * log(t)})
+
+```
