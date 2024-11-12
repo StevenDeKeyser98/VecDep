@@ -60,7 +60,7 @@ n = 500
 HAC = gethac(dim,c(2,3,4),type = 1)
 
 # Sample
-sample = HAC::rHAC(n,HAC)
+sample =  suppressWarnings(HAC::rHAC(n,HAC))
 
 # Maximum pseudo-likelihood estimator to be used as reference copula for bw_method = 0
 est_cop = mlehac(sample,dim,1,c(2,3,4))

@@ -8,6 +8,7 @@
 #' @param max_dim The maximum dimension of the random vectors for which no link function is used when computing the similarity (default = Inf).
 #' @param norm A possible normalization function applied to the dependence measure (default = NULL, meaning no normalization).
 #' @param link The link function to be used when max_dim is exceeded (default = "average").
+#' @param trace Controls how verbose output should be (default = 1, showing the progress).
 #'
 #' @details
 #' Suppose that the \eqn{q} variables (of which we have \eqn{n} observations in data) are \eqn{\mathcal{S} = \{X_{1}, \dots, X_{q}\}}.
@@ -108,7 +109,7 @@
 #' # then {X6,X7,X8}, then {X3,X4,X5}, and finally {X1,X2}
 #'
 #' # Sample
-#' sample = HAC::rHAC(n,hac)
+#' sample =  suppressWarnings(HAC::rHAC(n,hac))
 #'
 #' # Cluster using different methods
 #'
@@ -211,7 +212,8 @@
 #' # 5-cluster partition
 #' Clustering14$hierarchy$Aleph_16
 #'
-#' # Semi-parametric meta-elliptical copula approach, uncomment to run (takes a long time)
+#' # Semi-parametric meta-elliptical copula approach
+#' # Uncomment to run (takes a long time)
 #'
 #' # Clustering15 = Icluster(data = sample,
 #' #                        est_method = list("phi", function(t){t * log(t)}, "ellip",
@@ -224,7 +226,7 @@
 #'
 #' @export
 
-Icluster = function(data, est_method, max_dim = Inf, norm = NULL, link = "average"){
+Icluster = function(data, est_method, max_dim = Inf, norm = NULL, link = "average", trace = 1){
 
   start_time = Sys.time() # Time the algorithm
 
@@ -380,7 +382,13 @@ Icluster = function(data, est_method, max_dim = Inf, norm = NULL, link = "averag
       if(ncol(sample) == 2){
 
         S = sim(sample,dim,est_method) # Compute bivariate similarity
-        print(paste("Bivariate similarity ", stepp, " out of ", choose(q,2), " is found"))
+
+        if(trace > 0){
+
+          cat(paste("Bivariate similarity ", stepp, " out of ", choose(q,2), " is found"), fill = T)
+
+        }
+
         stepp = stepp + 1 # Update stepp index
 
       }
@@ -394,7 +402,12 @@ Icluster = function(data, est_method, max_dim = Inf, norm = NULL, link = "averag
       } else{ # Or compute multivariate similarity
 
         S = sim(sample,dim,est_method)
-        print(paste(ncol(sample), "dimensional similarity is found"))
+
+        if(trace > 0){
+
+          cat(paste(ncol(sample), "dimensional similarity is found"), fill = T)
+
+        }
 
       }
 
@@ -404,7 +417,12 @@ Icluster = function(data, est_method, max_dim = Inf, norm = NULL, link = "averag
       if(choose(q,2) != length_STC_new){ # In case we are not in the first iteration of the algorithm
         # where only bivariate similarities are computed
 
-        print(paste("Similarity", count, " out of ", length_STC_new, " is found"))
+        if(trace > 0){
+
+          cat(paste("Similarity", count, " out of ", length_STC_new, " is found"), fill = T)
+
+        }
+
         count = count + 1 # Update count index
 
       }
@@ -433,7 +451,11 @@ Icluster = function(data, est_method, max_dim = Inf, norm = NULL, link = "averag
 
     hierarchy = sets::set_union(hierarchy,sets::set(cluster))
 
-    print(paste("Partition of ", q - index , " elements is found"))
+    if(trace > 0){
+
+      cat(paste("Partition of ", q - index , " elements is found"), fill = T)
+
+    }
 
     STC_computed = sets::set_union(STC_new,STC_computed) # Update already computed similarities
 
@@ -447,7 +469,13 @@ Icluster = function(data, est_method, max_dim = Inf, norm = NULL, link = "averag
   }
 
   end_time = Sys.time()
-  print(difftime(end_time, start_time, units='mins')) # Print total running time
+
+  if(trace > 0){
+
+    cat(paste("Elapsed time (in minutes): ", difftime(end_time, start_time, units='mins')), fill = T) # Print total running time
+    cat("Finalizing the algorithm", fill = T)
+
+  }
 
   # Finalization
 
@@ -467,6 +495,13 @@ Icluster = function(data, est_method, max_dim = Inf, norm = NULL, link = "averag
     name = paste("Aleph_",length(hierarchy) - pos, sep = "")
     new_hierarchy[[name]] = set_to_string(set)
     pos = pos + 1
+
+  }
+
+
+  if(trace > 0){
+
+    cat("Computing average diameter and maximum split", fill = T)
 
   }
 
@@ -498,7 +533,12 @@ Icluster = function(data, est_method, max_dim = Inf, norm = NULL, link = "averag
   }
 
   end_time = Sys.time()
-  print(difftime(end_time, start_time, units='mins')) # Print total running time
+
+  if(trace > 0){
+
+    cat(paste("Elapsed time (in minutes): ", difftime(end_time, start_time, units='mins')), fill = T) # Print total running time
+
+  }
 
   # Return a list containing the "hierarchy" (hash object), "all" similarities computed in the algorithm (hash)
   # the average diameters "diam" (vector) and the maximum splits "split" (vector)

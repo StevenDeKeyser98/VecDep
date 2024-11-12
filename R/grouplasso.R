@@ -12,6 +12,7 @@
 #' @param omegas The candidate values for the tuning parameter in \eqn{[0,\infty)}.
 #' @param dim    The vector of dimensions \eqn{(d_{1},...,d_{k})}.
 #' @param step.size The step size used in the generalized gradient descent, affects the speed of the algorithm (default = 100).
+#' @param trace Controls how verbose output should be (default = 0, meaning no verbose output).
 #'
 #' @details
 #' Given a covariance matrix \deqn{\boldsymbol{\Sigma} = \begin{pmatrix} \boldsymbol{\Sigma}_{11} & \boldsymbol{\Sigma}_{12} & \cdots & \boldsymbol{\Sigma}_{1k} \\
@@ -89,7 +90,7 @@
 #'}
 #' @export
 
-grouplasso = function(Sigma, S, n, omegas, dim, step.size = 100){
+grouplasso = function(Sigma, S, n, omegas, dim, step.size = 100, trace = 0){
 
   q = nrow(S)
   bic = integer(length(omegas)) # BIC values
@@ -98,7 +99,7 @@ grouplasso = function(Sigma, S, n, omegas, dim, step.size = 100){
   for(o in 1:length(omegas)){
 
     omega = omegas[o]
-    gspcov = Gspcov(Sigma, S, omega, dim, step.size) # Perform group lasso estimation
+    gspcov = Gspcov(Sigma, S, omega, dim, step.size, trace = trace) # Perform group lasso estimation
     names(gspcov)[[2]] = "sigma"
     sigma = gspcov$sigma # Estimate
     penal = df(sigma,S,dim) * log(n) # Compute penalty
@@ -195,7 +196,11 @@ Gspcov = function(Sigma, S, omega, dim, step.size, nesterov = TRUE,
 
   if(all(omega == 0)){
 
-    cat("Skipping MM.  Solution is S!", fill = T)
+    if(trace > 0){
+
+      cat("Skipping MM.  Solution is S!", fill = T)
+
+    }
 
     return(list(n.iter=0, Sigma=S, obj=ComputeObjective(S, S, omega, dim = dim)))
 
@@ -271,7 +276,11 @@ Gspcov = function(Sigma, S, omega, dim, step.size, nesterov = TRUE,
 
     if(objective[i + 1] > objective[i] - tol.outer){
 
-      cat("MM converged in", i, "steps!", fill = T)
+      if(trace > 0){
+
+        cat("MM converged in", i, "steps!", fill = T)
+
+      }
 
       break
 
@@ -327,7 +336,12 @@ GGDescent = function(Sigma, Sigma0, S, omega, del, nsteps,
 
       if(is.na(left) || is.na(right)){
 
-        print("left or right is NA.")
+        if(trace > 0){
+
+          cat("left or right is NA.")
+
+        }
+
         # browser()
 
       }
@@ -369,8 +383,14 @@ GGDescent = function(Sigma, Sigma0, S, omega, del, nsteps,
 
       if(ttt < 1e-15){
 
-        cat("Step size too small: no step taken", fill = T)
+        if(trace > 0){
+
+          cat("Step size too small: no step taken", fill = T)
+
+        }
+
         exit = TRUE
+
         break
 
       }
@@ -426,7 +446,11 @@ GGDescent = function(Sigma, Sigma0, S, omega, del, nsteps,
 
     if(nesterov){
 
-      cat("Objective rose with Nesterov.  Using generalized gradient instead.", fill = T)
+      if(trace > 0){
+
+        cat("Objective rose with Nesterov.  Using generalized gradient instead.", fill = T)
+
+      }
 
       return(GGDescent(Sigma = Sigma.starting, Sigma0 = Sigma0, S = S, omega = omega,
                        del = del, nsteps = nsteps, step.size = step.size,
@@ -436,7 +460,13 @@ GGDescent = function(Sigma, Sigma0, S, omega, del, nsteps,
     }
 
     # browser()
-    cat("--Returning initial Sigma since GGDescent/Nesterov did not decrease objective", fill=T)
+
+    if(trace > 0){
+
+      cat("--Returning initial Sigma since GGDescent/Nesterov did not decrease objective", fill=T)
+
+    }
+
     Sigma = Sigma.starting
 
   }
@@ -670,6 +700,7 @@ ProxADMM = function(A, del, omega, dim, rho = .1, tol = 1e-6, maxiters = 100, ve
       if(obj[i] > obj[i - 1] - tol){
 
         if(verb)
+
           cat(" ADMM converged after ", i, " steps.", fill = T)
 
         break

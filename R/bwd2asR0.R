@@ -99,7 +99,6 @@ bwd2asR0 = function(R, dim, M){
 
       for(m in 1:M){
 
-        print(m)
         Wij = matrix(stats::rnorm(di * dj),nrow = di, ncol = dj) # Random matrix with normal entries
         C = Uii %*% Lii %*% Wij %*% Ljj %*% t(Ujj)
         Kij = scipy$linalg$solve_sylvester(A,B,C)

@@ -60,7 +60,7 @@
 #' hac = gethac(dim,c(2,3,4),type = 1)
 #'
 #' # Sample
-#' sample = HAC::rHAC(n,hac)
+#' sample =  suppressWarnings(HAC::rHAC(n,hac))
 #'
 #' # Several estimators for the mutual information between two random vectors of size 2
 #'

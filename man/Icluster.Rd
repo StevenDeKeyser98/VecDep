@@ -4,7 +4,14 @@
 \alias{Icluster}
 \title{Icluster}
 \usage{
-Icluster(data, est_method, max_dim = Inf, norm = NULL, link = "average")
+Icluster(
+  data,
+  est_method,
+  max_dim = Inf,
+  norm = NULL,
+  link = "average",
+  trace = 1
+)
 }
 \arguments{
 \item{data}{The dataset (\eqn{n \times q} matrix with observations in rows, variables in columns) whose columns need to be clustered.}
@@ -16,6 +23,8 @@ Icluster(data, est_method, max_dim = Inf, norm = NULL, link = "average")
 \item{norm}{A possible normalization function applied to the dependence measure (default = NULL, meaning no normalization).}
 
 \item{link}{The link function to be used when max_dim is exceeded (default = "average").}
+
+\item{trace}{Controls how verbose output should be (default = 1, showing the progress).}
 }
 \value{
 A list with elements "hierarchy" containing the hierarchy constructed throughout the algorithm (a hash object), "all" containing all similarities that were computed throughout the algorithm (a hash object),
@@ -100,7 +109,7 @@ hac = gethac(dim,c(2,3,4,5,6,7),type = 1)
 # then {X6,X7,X8}, then {X3,X4,X5}, and finally {X1,X2}
 
 # Sample
-sample = HAC::rHAC(n,hac)
+sample =  suppressWarnings(HAC::rHAC(n,hac))
 
 # Cluster using different methods
 
@@ -203,7 +212,8 @@ Clustering14 = Icluster(data = sample,
 # 5-cluster partition
 Clustering14$hierarchy$Aleph_16
 
-# Semi-parametric meta-elliptical copula approach, uncomment to run (takes a long time)
+# Semi-parametric meta-elliptical copula approach
+# Uncomment to run (takes a long time)
 
 # Clustering15 = Icluster(data = sample,
 #                        est_method = list("phi", function(t){t * log(t)}, "ellip",

@@ -4,7 +4,7 @@
 \alias{grouplasso}
 \title{grouplasso}
 \usage{
-grouplasso(Sigma, S, n, omegas, dim, step.size = 100)
+grouplasso(Sigma, S, n, omegas, dim, step.size = 100, trace = 0)
 }
 \arguments{
 \item{Sigma}{An initial guess for the covariance matrix (typically equal to S).}
@@ -18,6 +18,8 @@ grouplasso(Sigma, S, n, omegas, dim, step.size = 100)
 \item{dim}{The vector of dimensions \eqn{(d_{1},...,d_{k})}.}
 
 \item{step.size}{The step size used in the generalized gradient descent, affects the speed of the algorithm (default = 100).}
+
+\item{trace}{Controls how verbose output should be (default = 0, meaning no verbose output).}
 }
 \value{
 A list with elements "est" containing the (group lasso) penalized matrix of sample normal scores rank correlations (output as provided by the function \dQuote{spcov.R}), and "omega" containing the optimal tuning parameter.
