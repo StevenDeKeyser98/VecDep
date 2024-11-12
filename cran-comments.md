@@ -1,6 +1,9 @@
 ## R CMD check results (using devtools::check())
 
+── R CMD check results ──────────────────────────────────────────────────────────── VecDep 0.1.2 ────
+Duration: 1h 13m 2.2s
 
+0 errors ✔ | 0 warnings ✔ | 0 notes ✔
 
 ## CRAN check for package on R-hub (using rhub::rhub_check())
 
