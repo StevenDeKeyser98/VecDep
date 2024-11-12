@@ -1,9 +1,5 @@
 ## R CMD check results (using devtools::check())
 
-── R CMD check results ──────────────────────────────────────────────────────────── VecDep 0.1.0 ────
-Duration: 56.3s
-
-0 errors ✔ | 0 warnings ✔ | 0 notes ✔
 
 
 ## CRAN check for package on R-hub (using rhub::rhub_check())
@@ -24,4 +20,11 @@ Duration: 56.3s
 
 ## Reverse dependencies
 
-There are no reverse dependencies.
+* There are no reverse dependencies.
+
+
+## Wrapped examples in \dontrun{}
+
+* In bwd1asR0 and bwd2asR0, because of missing additional software (as explained in details)
+
+
