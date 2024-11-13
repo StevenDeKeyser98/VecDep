@@ -40,7 +40,7 @@ reticulate::py_install("numpy")
 reticulate::py_install("scipy")
 }
 \examples{
-\dontrun{
+\donttest{
 q = 5
 dim = c(2,3)
 
@@ -48,7 +48,14 @@ dim = c(2,3)
 R = 0.5^(abs(matrix(1:q-1,nrow = q, ncol = q, byrow = TRUE) - (1:q-1)))
 
 R0 = createR0(R,dim)
+
+have_scipy = reticulate::py_module_available("scipy") # Check whether scipy module is available
+
+if(have_scipy){
+
 sample = bwd2asR0(R0,dim,1000)
+
+}
 }
 }
 \references{
