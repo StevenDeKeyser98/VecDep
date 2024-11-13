@@ -40,7 +40,7 @@ reticulate::py_install("numpy")
 reticulate::py_install("scipy")
 }
 \examples{
-\dontrun{
+\donttest{
 q = 5
 dim = c(2,3)
 
