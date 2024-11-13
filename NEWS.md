@@ -1,4 +1,8 @@
 
+# VecDep 0.1.3
+
+* Adjustments to examples in bwd1asR0.R and bwd2asR0.R
+
 # VecDep 0.1.2
 
 * Added a \value to install_tensorflow.Rd
