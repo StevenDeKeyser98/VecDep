@@ -52,7 +52,8 @@
 #'
 #' R0 = createR0(R,dim)
 #'
-#' have_scipy = reticulate::py_module_available("scipy") # Check whether scipy module is available
+#' # Check whether scipy module is available (see details)
+#' have_scipy = reticulate::py_module_available("scipy")
 #'
 #' if(have_scipy){
 #'
