@@ -43,7 +43,7 @@
 #'          \code{\link{otsort}} for rearranging the columns of sample such that dim is in ascending order.
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' q = 5
 #' dim = c(2,3)
 #'

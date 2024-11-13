@@ -26,8 +26,4 @@ Duration: 1h 13m 2.2s
 * There are no reverse dependencies.
 
 
-## Wrapped examples in \dontrun{}
-
-* In bwd1asR0 and bwd2asR0, because of missing additional software (as explained in details)
-
 
