@@ -1,7 +1,7 @@
 ## R CMD check results (using devtools::check())
 
-── R CMD check results ──────────────────────────────────────────────────────────── VecDep 0.1.2 ────
-Duration: 1h 13m 2.2s
+── R CMD check results ──────────────────────────────────────────────────────────── VecDep 0.1.3 ────
+Duration: 1h 17m 1.1s
 
 0 errors ✔ | 0 warnings ✔ | 0 notes ✔
 
